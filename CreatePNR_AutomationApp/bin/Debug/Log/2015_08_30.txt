@@ -1,0 +1,148 @@
+<DATA>8/30/2015 9:48:30 AM : ====== Create PNR Started at : 8/30/2015 9:48:30 AM</DATA>
+<DATA>8/30/2015 9:48:41 AM : Origin: DXB, Destination: AMM not processed.</DATA>
+<DATA>8/30/2015 9:48:41 AM : Error message: 
+Additional Source Information: ERR9999: Unexpected error in CreateReservation.Error Generation Source Location: FZVRDXQCPI01 Session ID: 851eaa43-4d6c-430c-b6a5-f2cc2b8db23b Error Details: Unable to apply SSR BAGB, LF: 8694472 on 9/2/2015 7:00:00 AM to reservation</DATA>
+<DATA>8/30/2015 9:48:46 AM : ====== Create PNR Process ended at : 8/30/2015 9:48:46 AM</DATA>
+<DATA>8/30/2015 9:49:38 AM : ====== Create PNR Started at : 8/30/2015 9:49:38 AM</DATA>
+<DATA>8/30/2015 9:52:43 AM : Origin: DXB, Destination: AMM not processed.</DATA>
+<DATA>8/30/2015 9:52:43 AM : Error message: 
+Additional Source Information: ERR9999: Unexpected error in CreateReservation.Error Generation Source Location: FZVRDXQCPI01 Session ID: 11359bcb-9251-4233-822a-b4b8852599ae Error Details: Unable to apply SSR BAGB, LF: 8694472 on 9/2/2015 7:00:00 AM to reservation</DATA>
+<DATA>8/30/2015 9:52:46 AM : ====== Create PNR Process ended at : 8/30/2015 9:52:46 AM</DATA>
+<DATA>8/30/2015 9:53:07 AM : ====== Create PNR Started at : 8/30/2015 9:53:07 AM</DATA>
+<DATA>8/30/2015 10:01:40 AM : Origin: DXB, Destination: AMM not processed.</DATA>
+<DATA>8/30/2015 10:01:40 AM : Error message: 
+Additional Source Information: ERR9999: Unexpected error in CreateReservation.Error Generation Source Location: FZVRDXQCPI02 Session ID: b4925c24-4446-4c24-a76d-4d020e61c14a Error Details: Unable to apply SSR BAGB, LF: 8694472 on 9/2/2015 7:00:00 AM to reservation</DATA>
+<DATA>8/30/2015 10:01:43 AM : ====== Create PNR Process ended at : 8/30/2015 10:01:43 AM</DATA>
+<DATA>8/30/2015 10:08:04 AM : ====== Create PNR Started at : 8/30/2015 10:08:04 AM</DATA>
+<DATA>8/30/2015 10:20:45 AM : ====== Create PNR Started at : 8/30/2015 10:20:45 AM</DATA>
+<DATA>8/30/2015 10:21:00 AM : PNR: BVLA48 created successfully.</DATA>
+<DATA>8/30/2015 10:23:09 AM : ====== Create PNR Process ended at : 8/30/2015 10:23:09 AM</DATA>
+<DATA>8/30/2015 10:25:43 AM : ====== Create PNR Started at : 8/30/2015 10:25:43 AM</DATA>
+<DATA>8/30/2015 10:25:52 AM : PNR: WK1TS6 created successfully.</DATA>
+<DATA>8/30/2015 10:26:09 AM : ====== Create PNR Process ended at : 8/30/2015 10:26:09 AM</DATA>
+<DATA>8/30/2015 10:37:58 AM : ====== Create PNR Started at : 8/30/2015 10:37:58 AM</DATA>
+<DATA>8/30/2015 10:38:15 AM : PNR: LJ9TMU created successfully.</DATA>
+<DATA>8/30/2015 10:38:46 AM : ====== Create PNR Process ended at : 8/30/2015 10:38:46 AM</DATA>
+<DATA>8/30/2015 10:38:55 AM : ====== Create PNR Started at : 8/30/2015 10:38:55 AM</DATA>
+<DATA>8/30/2015 10:39:07 AM : PNR: EUBYM6 created successfully.</DATA>
+<DATA>8/30/2015 10:39:15 AM : ====== Create PNR Process ended at : 8/30/2015 10:39:15 AM</DATA>
+<DATA>8/30/2015 10:40:48 AM : ====== Create PNR Started at : 8/30/2015 10:40:48 AM</DATA>
+<DATA>8/30/2015 10:40:51 AM : Origin: DXB, Destination: HRI not processed.</DATA>
+<DATA>8/30/2015 10:40:51 AM : Error message: Fares not available</DATA>
+<DATA>8/30/2015 10:40:51 AM : Origin: DXB, Destination: HRI not processed.</DATA>
+<DATA>8/30/2015 10:40:51 AM : Error message: Fares not available</DATA>
+<DATA>8/30/2015 10:41:10 AM : ====== Create PNR Process ended at : 8/30/2015 10:41:10 AM</DATA>
+<DATA>8/30/2015 10:41:28 AM : ====== Create PNR Started at : 8/30/2015 10:41:28 AM</DATA>
+<DATA>8/30/2015 10:49:29 AM : Origin: DXB, Destination: HRI not processed.</DATA>
+<DATA>8/30/2015 10:49:29 AM : Error message: Fares not available</DATA>
+<DATA>8/30/2015 10:49:30 AM : Origin: DXB, Destination: HRI not processed.</DATA>
+<DATA>8/30/2015 10:49:30 AM : Error message: Fares not available</DATA>
+<DATA>8/30/2015 10:49:32 AM : ====== Create PNR Process ended at : 8/30/2015 10:49:32 AM</DATA>
+<DATA>8/30/2015 10:50:39 AM : ====== Create PNR Started at : 8/30/2015 10:50:39 AM</DATA>
+<DATA>8/30/2015 10:51:00 AM : PNR: BJF7FH created successfully.</DATA>
+<DATA>8/30/2015 10:53:07 AM : ====== Create PNR Process ended at : 8/30/2015 10:53:07 AM</DATA>
+<DATA>8/30/2015 10:54:00 AM : ====== Create PNR Started at : 8/30/2015 10:54:00 AM</DATA>
+<DATA>8/30/2015 10:54:02 AM : Origin: DXB, Destination: AMM not processed.</DATA>
+<DATA>8/30/2015 10:54:02 AM : Error message: Value cannot be null.
+Parameter name: source</DATA>
+<DATA>8/30/2015 10:54:05 AM : ====== Create PNR Process ended at : 8/30/2015 10:54:05 AM</DATA>
+<DATA>8/30/2015 10:54:37 AM : ====== Create PNR Started at : 8/30/2015 10:54:37 AM</DATA>
+<DATA>8/30/2015 10:56:04 AM : Origin: DXB, Destination: AMM not processed.</DATA>
+<DATA>8/30/2015 10:56:04 AM : Error message: Value cannot be null.
+Parameter name: source</DATA>
+<DATA>8/30/2015 10:56:07 AM : ====== Create PNR Process ended at : 8/30/2015 10:56:07 AM</DATA>
+<DATA>8/30/2015 10:56:48 AM : ====== Create PNR Started at : 8/30/2015 10:56:48 AM</DATA>
+<DATA>8/30/2015 10:56:51 AM : Origin: DXB, Destination: AMM not processed.</DATA>
+<DATA>8/30/2015 10:56:51 AM : Error message: Value cannot be null.
+Parameter name: source</DATA>
+<DATA>8/30/2015 10:56:55 AM : ====== Create PNR Process ended at : 8/30/2015 10:56:55 AM</DATA>
+<DATA>8/30/2015 10:57:19 AM : ====== Create PNR Started at : 8/30/2015 10:57:19 AM</DATA>
+<DATA>8/30/2015 10:57:23 AM : Origin: DXB, Destination: AMM not processed.</DATA>
+<DATA>8/30/2015 10:57:23 AM : Error message: Value cannot be null.
+Parameter name: source</DATA>
+<DATA>8/30/2015 10:57:24 AM : ====== Create PNR Process ended at : 8/30/2015 10:57:24 AM</DATA>
+<DATA>8/30/2015 10:57:45 AM : ====== Create PNR Started at : 8/30/2015 10:57:45 AM</DATA>
+<DATA>8/30/2015 10:58:00 AM : PNR: 0FASM0 created successfully.</DATA>
+<DATA>8/30/2015 10:59:01 AM : ====== Create PNR Process ended at : 8/30/2015 10:59:01 AM</DATA>
+<DATA>8/30/2015 10:59:14 AM : ====== Create PNR Started at : 8/30/2015 10:59:14 AM</DATA>
+<DATA>8/30/2015 10:59:23 AM : PNR: VCQMLS created successfully.</DATA>
+<DATA>8/30/2015 11:00:09 AM : ====== Create PNR Process ended at : 8/30/2015 11:00:09 AM</DATA>
+<DATA>8/30/2015 11:01:56 AM : ====== Create PNR Started at : 8/30/2015 11:01:56 AM</DATA>
+<DATA>8/30/2015 11:01:58 AM : Origin: DXB, Destination: KRT not processed.</DATA>
+<DATA>8/30/2015 11:01:58 AM : Error message: Value cannot be null.
+Parameter name: source</DATA>
+<DATA>8/30/2015 11:02:00 AM : Origin: DXB, Destination: KRT not processed.</DATA>
+<DATA>8/30/2015 11:02:00 AM : Error message: Value cannot be null.
+Parameter name: source</DATA>
+<DATA>8/30/2015 11:02:02 AM : ====== Create PNR Process ended at : 8/30/2015 11:02:02 AM</DATA>
+<DATA>8/30/2015 11:02:43 AM : ====== Create PNR Started at : 8/30/2015 11:02:43 AM</DATA>
+<DATA>8/30/2015 11:03:00 AM : PNR: O9Q9QP created successfully.</DATA>
+<DATA>8/30/2015 11:03:10 AM : PNR: 47V6T1 created successfully.</DATA>
+<DATA>8/30/2015 11:04:50 AM : ====== Create PNR Process ended at : 8/30/2015 11:04:50 AM</DATA>
+<DATA>8/30/2015 11:05:28 AM : ====== Create PNR Started at : 8/30/2015 11:05:28 AM</DATA>
+<DATA>8/30/2015 11:06:11 AM : Origin: DXB, Destination: KRT not processed.</DATA>
+<DATA>8/30/2015 11:06:11 AM : Error message: Value cannot be null.
+Parameter name: source</DATA>
+<DATA>8/30/2015 11:06:13 AM : ====== Create PNR Process ended at : 8/30/2015 11:06:13 AM</DATA>
+<DATA>8/30/2015 11:06:39 AM : ====== Create PNR Started at : 8/30/2015 11:06:39 AM</DATA>
+<DATA>8/30/2015 11:07:52 AM : Origin: DOH, Destination: KWI not processed.</DATA>
+<DATA>8/30/2015 11:07:52 AM : Error message: Voucher no: YZC4NT not valid or Balanced amount is 0 ,</DATA>
+<DATA>8/30/2015 11:08:03 AM : Origin: DXB, Destination: DOH not processed.</DATA>
+<DATA>8/30/2015 11:08:03 AM : Error message: Voucher no: YZC4NT not valid or Balanced amount is 0 ,</DATA>
+<DATA>8/30/2015 11:08:08 AM : Origin: DXB, Destination: DOH not processed.</DATA>
+<DATA>8/30/2015 11:08:08 AM : Error message: Voucher no: YZC4NT not valid or Balanced amount is 0 ,</DATA>
+<DATA>8/30/2015 11:08:26 AM : ====== Create PNR Process ended at : 8/30/2015 11:08:26 AM</DATA>
+<DATA>8/30/2015 11:08:26 AM : ======== Create PNR process ended at :8/30/2015 11:08:26 AM</DATA>
+<DATA>8/30/2015 11:38:08 AM : ====== Create PNR Started at : 8/30/2015 11:38:08 AM</DATA>
+<DATA>8/30/2015 11:38:56 AM : PNR: WEKNL1 created successfully.</DATA>
+<DATA>8/30/2015 11:39:04 AM : PNR: URAXPF created successfully.</DATA>
+<DATA>8/30/2015 12:33:48 PM : ====== Create PNR Started at : 8/30/2015 12:33:48 PM</DATA>
+<DATA>8/30/2015 12:34:46 PM : PNR: H2RPG6 created successfully.</DATA>
+<DATA>8/30/2015 12:37:37 PM : ====== Create PNR Process ended at : 8/30/2015 12:37:37 PM</DATA>
+<DATA>8/30/2015 12:38:25 PM : ====== Create PNR Started at : 8/30/2015 12:38:25 PM</DATA>
+<DATA>8/30/2015 12:39:52 PM : PNR: VLF62L created successfully.</DATA>
+<DATA>8/30/2015 12:40:14 PM : PNR: F8YQR6 created successfully.</DATA>
+<DATA>8/30/2015 12:40:24 PM : PNR: PW7N1U created successfully.</DATA>
+<DATA>8/30/2015 12:43:22 PM : ====== Create PNR Process ended at : 8/30/2015 12:43:22 PM</DATA>
+<DATA>8/30/2015 12:43:22 PM : ======== Create PNR process ended at :8/30/2015 12:43:22 PM</DATA>
+<DATA>8/30/2015 3:09:57 PM : ====== Create PNR Started at : 8/30/2015 3:09:57 PM</DATA>
+<DATA>8/30/2015 3:10:50 PM : PNR: 0A367R, Lastname: CMHOY created successfully.</DATA>
+<DATA>8/30/2015 3:10:57 PM : PNR: 97SG8Q, Lastname: YXOGI created successfully.</DATA>
+<DATA>8/30/2015 3:11:11 PM : ====== Create PNR Process ended at : 8/30/2015 3:11:11 PM</DATA>
+<DATA>8/30/2015 3:31:04 PM : ====== Create PNR Started at : 8/30/2015 3:31:04 PM</DATA>
+<DATA>8/30/2015 3:32:57 PM : PNR: ZD98ZR, Lastname: MXPLP created successfully.</DATA>
+<DATA>8/30/2015 3:34:40 PM : ====== Create PNR Process ended at : 8/30/2015 3:34:40 PM</DATA>
+<DATA>8/30/2015 3:41:54 PM : ====== Create PNR Started at : 8/30/2015 3:41:54 PM</DATA>
+<DATA>8/30/2015 3:41:55 PM : Origin: DXB, Destination: HRI not processed.</DATA>
+<DATA>8/30/2015 3:41:55 PM : Error message: Fares not available</DATA>
+<DATA>8/30/2015 3:41:56 PM : Origin: DXB, Destination: HRI not processed.</DATA>
+<DATA>8/30/2015 3:41:56 PM : Error message: Fares not available</DATA>
+<DATA>8/30/2015 3:42:02 PM : ====== Create PNR Process ended at : 8/30/2015 3:42:02 PM</DATA>
+<DATA>8/30/2015 3:42:15 PM : ====== Create PNR Started at : 8/30/2015 3:42:15 PM</DATA>
+<DATA>8/30/2015 3:42:15 PM : Origin: DXB, Destination: HRI not processed.</DATA>
+<DATA>8/30/2015 3:42:15 PM : Error message: Fares not available</DATA>
+<DATA>8/30/2015 3:42:16 PM : Origin: DXB, Destination: HRI not processed.</DATA>
+<DATA>8/30/2015 3:42:16 PM : Error message: Fares not available</DATA>
+<DATA>8/30/2015 3:42:17 PM : ====== Create PNR Process ended at : 8/30/2015 3:42:17 PM</DATA>
+<DATA>8/30/2015 3:42:26 PM : ====== Create PNR Started at : 8/30/2015 3:42:26 PM</DATA>
+<DATA>8/30/2015 3:43:05 PM : PNR: 11BWWM, Lastname: XXFJM created successfully.</DATA>
+<DATA>8/30/2015 3:43:15 PM : PNR: PP4MW7, Lastname: CJPSK created successfully.</DATA>
+<DATA>8/30/2015 3:43:22 PM : ====== Create PNR Process ended at : 8/30/2015 3:43:22 PM</DATA>
+<DATA>8/30/2015 3:44:28 PM : ====== Create PNR Started at : 8/30/2015 3:44:28 PM</DATA>
+<DATA>8/30/2015 3:44:35 PM : Origin: DXB, Destination: CMB not processed.</DATA>
+<DATA>8/30/2015 3:44:35 PM : Error message: Voucher no: YZC4NT not valid or Balanced amount is 0 ,</DATA>
+<DATA>8/30/2015 3:44:52 PM : ====== Create PNR Process ended at : 8/30/2015 3:44:52 PM</DATA>
+<DATA>8/30/2015 3:46:07 PM : ====== Create PNR Started at : 8/30/2015 3:46:07 PM</DATA>
+<DATA>8/30/2015 3:46:47 PM : Origin: DXB, Destination: CMB not processed.</DATA>
+<DATA>8/30/2015 3:46:47 PM : Error message: Voucher no: YZC4NT not valid or Balanced amount is 0 ,</DATA>
+<DATA>8/30/2015 3:46:49 PM : ====== Create PNR Process ended at : 8/30/2015 3:46:49 PM</DATA>
+<DATA>8/30/2015 3:47:13 PM : ====== Create PNR Started at : 8/30/2015 3:47:13 PM</DATA>
+<DATA>8/30/2015 3:48:18 PM : PNR: K6I15X, Lastname: CGENN created successfully.</DATA>
+<DATA>8/30/2015 3:48:32 PM : PNR: YXN2RY, Lastname: ROTYF created successfully.</DATA>
+<DATA>8/30/2015 3:48:58 PM : ====== Create PNR Process ended at : 8/30/2015 3:48:58 PM</DATA>
+<DATA>8/30/2015 3:48:58 PM : ======== Create PNR process ended at :8/30/2015 3:48:58 PM</DATA>
+<DATA>8/30/2015 4:03:43 PM : ====== Create PNR Started at : 8/30/2015 4:03:43 PM</DATA>
+<DATA>8/30/2015 4:03:56 PM : PNR: 52WNGK, Lastname: KEZHJ created successfully.</DATA>
+<DATA>8/30/2015 4:04:03 PM : PNR: TV8SVG, Lastname: RWCZW created successfully.</DATA>
+<DATA>8/30/2015 4:13:50 PM : ====== Create PNR Process ended at : 8/30/2015 4:13:50 PM</DATA>
+<DATA>8/30/2015 4:21:49 PM : ====== Create PNR Started at : 8/30/2015 4:21:49 PM</DATA>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://fzstgtmp.internal.connectpoint.radixx.com/ConnectPoint.Pricing.svc?xsd=xsd8" filename="ConnectPoint.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://fzstgtmp.internal.connectpoint.radixx.com/ConnectPoint.Pricing.svc?xsd=xsd6" filename="ConnectPoint0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://fzstgtmp.internal.connectpoint.radixx.com/ConnectPoint.Pricing.svc?xsd=xsd7" filename="ConnectPoint1.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://fzstgtmp.internal.connectpoint.radixx.com/ConnectPoint.Pricing.svc?xsd=xsd4" filename="ConnectPoint2.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://fzstgtmp.internal.connectpoint.radixx.com/ConnectPoint.Pricing.svc?xsd=xsd5" filename="ConnectPoint3.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://fzstgtmp.internal.connectpoint.radixx.com/ConnectPoint.Pricing.svc?xsd=xsd2" filename="ConnectPoint4.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://fzstgtmp.internal.connectpoint.radixx.com/ConnectPoint.Pricing.svc?xsd=xsd3" filename="ConnectPoint5.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://fzstgtmp.internal.connectpoint.radixx.com/ConnectPoint.Pricing.svc?xsd=xsd0" filename="ConnectPoint6.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://fzstgtmp.internal.connectpoint.radixx.com/ConnectPoint.Pricing.svc?xsd=xsd1" filename="ConnectPoint7.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://fzstgtmp.internal.connectpoint.radixx.com/connectpoint.Pricing.svc?wsdl" filename="ConnectPoint_Pricing.wsdl" />
+  </Results>
+</DiscoveryClientResultsFile>

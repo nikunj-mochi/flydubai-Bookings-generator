@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="TransactionInfo">
+    <xs:sequence>
+      <xs:element name="SecurityGUID" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 2147483647.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CarrierCodes" nillable="true" type="tns:ArrayOfCarrierCode">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range 1 and 2147483647.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ClientIPAddress" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The value supplied in this property represent the Consumers IP address. The connect point integrator will need to capture this information from the browser object.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="HistoricUserName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The value supplied in this property the user name that will be associated to the history record, in the event that the object for the action being performed does not have a UserName property.  Note the property is option so that existing Data Contracts are still honored..  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 0 and 15.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TransactionInfo" nillable="true" type="tns:TransactionInfo" />
+  <xs:complexType name="ArrayOfCarrierCode">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CarrierCode" nillable="true" type="tns:CarrierCode" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCarrierCode" nillable="true" type="tns:ArrayOfCarrierCode" />
+  <xs:complexType name="CarrierCode">
+    <xs:sequence>
+      <xs:element name="AccessibleCarrierCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 4.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CarrierCode" nillable="true" type="tns:CarrierCode" />
+  <xs:simpleType name="Enumerations.TypeofLid">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Aircraft" />
+      <xs:enumeration value="Cabin" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Enumerations.TypeofLid" nillable="true" type="tns:Enumerations.TypeofLid" />
+</xs:schema>

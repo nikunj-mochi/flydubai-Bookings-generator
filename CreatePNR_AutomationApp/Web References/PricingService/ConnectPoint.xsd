@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Pricing.Request.Service" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Pricing.Request.Service" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://fzstgtmp.internal.connectpoint.radixx.com/ConnectPoint.Pricing.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" />
+  <xs:complexType name="RetrieveServiceQuote">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" base="q1:TransactionInfo">
+        <xs:sequence>
+          <xs:element name="LogicalFlightID" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: .  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+              <xs:documentation>Range: Value must be in the range -2147483648 and 2147483647.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="DepartureDate" type="xs:dateTime">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: .  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="AirportCode" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: .  </xs:documentation>
+              <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+              <xs:documentation>Range: Length must be in the range 3 and 4.  </xs:documentation>
+              <xs:documentation>Format: AlphaNumericUpper.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ServiceCode" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: .  </xs:documentation>
+              <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+              <xs:documentation>Range: Length must be in the range 1 and 8.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Cabin" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: .  </xs:documentation>
+              <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+              <xs:documentation>Range: Length must be in the range 1 and 13.  </xs:documentation>
+              <xs:documentation>Format: AlphaNumericCode.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Category" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: .  </xs:documentation>
+              <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Currency" type="q1:Enumerations.CurrencyCodeTypes">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: .  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+              <xs:documentation>Range: Value must be in the range 3 and 3.  </xs:documentation>
+              <xs:documentation>Format: AlphaUpper.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="UTCOffset" type="xs:long">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: .  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="OperatingCarrierCode" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: .  </xs:documentation>
+              <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+              <xs:documentation>Range: Length must be in the range 1 and 3.  </xs:documentation>
+              <xs:documentation>Format: AlphaNumericUpper.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="MarketingCarrierCode" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: .  </xs:documentation>
+              <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+              <xs:documentation>Range: Length must be in the range 1 and 3.  </xs:documentation>
+              <xs:documentation>Format: AlphaNumericUpper.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="FareClass" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: .  </xs:documentation>
+              <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+              <xs:documentation>Range: Length must be in the range 1 and 2.  </xs:documentation>
+              <xs:documentation>Format: AlphaUpper.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="FareBasisCode" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: .  </xs:documentation>
+              <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+              <xs:documentation>Range: Length must be in the range 1 and 15.  </xs:documentation>
+              <xs:documentation>Format: AlphaNumericCode.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ReservationChannel" type="q1:Enumerations.ReservationChannelTypes">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: .  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RetrieveServiceQuote" nillable="true" type="tns:RetrieveServiceQuote" />
+  <xs:complexType name="RetrieveServiceQuotes">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" base="q2:TransactionInfo">
+        <xs:sequence>
+          <xs:element name="RetrieveServiceQuotes" nillable="true" type="tns:ArrayOfServiceQuote">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Collection of Service Quote Requests.  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+              <xs:documentation>Range: Value must be in the range 1 and 99.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RetrieveServiceQuotes" nillable="true" type="tns:RetrieveServiceQuotes" />
+  <xs:complexType name="ArrayOfServiceQuote">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ServiceQuote" nillable="true" type="tns:ServiceQuote" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfServiceQuote" nillable="true" type="tns:ArrayOfServiceQuote" />
+  <xs:complexType name="ServiceQuote">
+    <xs:sequence>
+      <xs:element name="LogicalFlightID" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Retrieve services for this logical flight ID..  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range -2147483648 and 2147483647.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DepartureDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Retrieve services for this departrue date.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AirportCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Airport code.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 3 and 4.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumericUpper.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ServiceCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Limit the search results to this service code..  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 8.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Cabin" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Limit the search results to this cabin..  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 13.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumericCode.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Category" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Limit the results to this service category..  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" name="Currency" type="q3:Enumerations.CurrencyCodeTypes">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The currency to be used for pricing.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range 3 and 3.  </xs:documentation>
+          <xs:documentation>Format: AlphaUpper.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="UTCOffset" type="xs:long">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Universal Time (UTC) offset.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OperatingCarrierCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Limit the search results to this operating carrier code.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 3.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumericUpper.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MarketingCarrierCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Limit the search results to this marketing carrier code.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 3.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumericUpper.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FareClass" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Limit the search results to this fare class..  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 2.  </xs:documentation>
+          <xs:documentation>Format: AlphaUpper.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FareBasisCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Limit the search results to this fare basis code..  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 15.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumericCode.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" name="ReservationChannel" type="q4:Enumerations.ReservationChannelTypes">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Find services for this reservation channel..  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DestinationAirportCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Destination Airport code.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 3 and 4.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumericUpper.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceQuote" nillable="true" type="tns:ServiceQuote" />
+</xs:schema>

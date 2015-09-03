@@ -1,0 +1,436 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9A2FE11F-687D-4AC2-B438-339E3282997B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CreatePNR_AutomationApp</RootNamespace>
+    <AssemblyName>CreatePNR_AutomationApp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>\\flydubai.local\share\Nikunj\Create_PNRs\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ProductName>flydubai- Booking Generator</ProductName>
+    <PublisherName>flydubai</PublisherName>
+    <SuiteName>flydubai</SuiteName>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>11</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>23E7BFA8F093F066EF9052417BB67D87FEE280D0</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>CreatePNR_AutomationApp_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="LinqToExcel, Version=1.10.1.0, Culture=neutral, PublicKeyToken=9c8ea65a58f03f1f, processorArchitecture=x86">
+      <HintPath>..\packages\LinqToExcel.1.10.1\lib\LinqToExcel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Remotion, Version=1.13.52.2, Culture=neutral, PublicKeyToken=0669cf0452175907, processorArchitecture=MSIL">
+      <HintPath>..\packages\LinqToExcel.1.10.1\lib\Remotion.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Remotion.Data.Linq, Version=1.13.52.2, Culture=neutral, PublicKeyToken=0669cf0452175907, processorArchitecture=MSIL">
+      <HintPath>..\packages\LinqToExcel.1.10.1\lib\Remotion.Data.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Remotion.Interfaces, Version=1.13.52.2, Culture=neutral, PublicKeyToken=0669cf0452175907, processorArchitecture=MSIL">
+      <HintPath>..\packages\LinqToExcel.1.10.1\lib\Remotion.Interfaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClassToDatatable.cs" />
+    <Compile Include="FrmCreatePNRs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCreatePNRs.Designer.cs">
+      <DependentUpon>FrmCreatePNRs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEmailPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmailPopup.Designer.cs">
+      <DependentUpon>frmEmailPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperClass.cs" />
+    <Compile Include="PrcessReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrcessReport.Designer.cs">
+      <DependentUpon>PrcessReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Web References\BookingTPAPIService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\FlightService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\PricingService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\ReservationService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SecurityService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FrmCreatePNRs.resx">
+      <DependentUpon>FrmCreatePNRs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEmailPopup.resx">
+      <DependentUpon>frmEmailPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrcessReport.resx">
+      <DependentUpon>PrcessReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="CreatePNR_AutomationApp_TemporaryKey.pfx" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\PNRsProcessed.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="bin\Debug\Template\Records.xlsx" />
+    <None Include="Test.xlsx" />
+    <None Include="Web References\BookingTPAPIService\EvaluateModificationOfPNRList.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\BookingTPAPIService\HistoryPNRList.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\BookingTPAPIService\RadixxBooking.wsdl" />
+    <None Include="Web References\BookingTPAPIService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\FlightService\ConnectPoint.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\FlightService\ConnectPoint0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\FlightService\ConnectPoint1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\FlightService\ConnectPoint2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\FlightService\ConnectPoint3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\FlightService\ConnectPoint4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\FlightService\ConnectPoint_Flight.wsdl" />
+    <None Include="Web References\FlightService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\FlightService\ViewAirportRoutes.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\FlightService\ViewSeatAvailability.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\FlightService\ViewUpdateLidAircraftCollection.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PricingService\ConnectPoint.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\PricingService\ConnectPoint0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\PricingService\ConnectPoint1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\PricingService\ConnectPoint2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\PricingService\ConnectPoint3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\PricingService\ConnectPoint4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\PricingService\ConnectPoint5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\PricingService\ConnectPoint6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\PricingService\ConnectPoint7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\PricingService\ConnectPoint_Pricing.wsdl" />
+    <None Include="Web References\PricingService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\PricingService\ViewFareQuote.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PricingService\ViewFastFareSearch.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PricingService\ViewServiceQuotes.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PricingService\ViewSystemFareQuote.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReservationService\ConnectPoint.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\ReservationService\ConnectPoint0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\ReservationService\ConnectPoint1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\ReservationService\ConnectPoint2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\ReservationService\ConnectPoint3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\ReservationService\ConnectPoint4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\ReservationService\ConnectPoint_Reservation.wsdl" />
+    <None Include="Web References\ReservationService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ReservationService\ViewHistoryPNRCollection.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReservationService\ViewImportPNR.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReservationService\ViewPNR.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ReservationService\ViewPNRModificationImpactCollection.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SecurityService\ConnectPoint.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\SecurityService\ConnectPoint0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\SecurityService\ConnectPoint1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\SecurityService\ConnectPoint2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\SecurityService\ConnectPoint3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\SecurityService\ConnectPoint4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\SecurityService\ConnectPoint_Security.wsdl" />
+    <None Include="Web References\SecurityService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SecurityService\ResponseGetGroupDataByUserid.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SecurityService\ViewSecurityToken.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SecurityService\ViewValidatedSecurityToken.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="plane_v1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://fzstgtmp.internal.connectpoint.radixx.com/connectpoint.Flight.svc%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\FlightService\</RelPath>
+      <UpdateFromURL>http://fzstgtmp.internal.connectpoint.radixx.com/connectpoint.Flight.svc%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CreatePNR_AutomationApp_FlightService_ConnectPoint_Flight</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://fzstgtmp.internal.connectpoint.radixx.com/connectpoint.Pricing.svc%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\PricingService\</RelPath>
+      <UpdateFromURL>http://fzstgtmp.internal.connectpoint.radixx.com/connectpoint.Pricing.svc%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CreatePNR_AutomationApp_PricingService_ConnectPoint_Pricing</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://qa.internalcp.flydubai.com/connectpoint.Reservation.svc%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ReservationService\</RelPath>
+      <UpdateFromURL>http://qa.internalcp.flydubai.com/connectpoint.Reservation.svc%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CreatePNR_AutomationApp_ReservationService_ConnectPoint_Reservation</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://qa.internalcp.flydubai.com/connectpoint.security.svc%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SecurityService\</RelPath>
+      <UpdateFromURL>http://qa.internalcp.flydubai.com/connectpoint.security.svc%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CreatePNR_AutomationApp_SecurityService_ConnectPoint_Security</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://qa.internaltpapi.flydubai.com/RadixxBooking.asmx%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\BookingTPAPIService\</RelPath>
+      <UpdateFromURL>http://qa.internaltpapi.flydubai.com/RadixxBooking.asmx%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CreatePNR_AutomationApp_BookingTPAPIService_RadixxBooking</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

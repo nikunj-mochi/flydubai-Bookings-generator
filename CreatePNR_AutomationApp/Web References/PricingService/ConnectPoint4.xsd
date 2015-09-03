@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Pricing.Request.FastFareSearch" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Pricing.Request.FastFareSearch" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://fzstgtmp.internal.connectpoint.radixx.com/ConnectPoint.Pricing.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" />
+  <xs:import schemaLocation="http://fzstgtmp.internal.connectpoint.radixx.com/ConnectPoint.Pricing.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Pricing.Request" />
+  <xs:complexType name="RetrieveFastFareSearch">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" base="q1:CarrierInfo">
+        <xs:sequence>
+          <xs:element name="FastFareSearchInfo" nillable="true" type="tns:FastFareSearchInfo">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: List of passenger types to include in the search.  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+              <xs:documentation>Range: Value must be in the range 1 and 20.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RetrieveFastFareSearch" nillable="true" type="tns:RetrieveFastFareSearch" />
+  <xs:complexType name="FastFareSearchInfo">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" name="CurrencyOfFastFareSearch" type="q2:Enumerations.CurrencyCodeTypes">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The currency to be used for pricing.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range 3 and 3.  </xs:documentation>
+          <xs:documentation>Format: AlphaUpper.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PromotionalCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Promotional code to apply.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 0 and 20.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumericCode.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IataNumberOfRequestor" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: IATA Number associated to fares.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 8.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumericCodeMixedDotDash.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CabinToSearch" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Cabin to search.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Pricing.Request" name="InventoryTypeToSearch" type="q3:Enums.InventoryFilterMethodType">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: indicator of inventory needing to be searched (Available Only or All (Including non-available)).  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Pricing.Request" name="FareFilterGrouping" type="q4:Enums.FareFilterGroupingsMethodType">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Fare Filter Grouping Method applies different rules to the fare selection logic.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Pricing.Request" name="FareFilterTypeToSearch" type="q5:Enums.FareGroupMethodType">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Fare Filter Method applies different rules to the fare selection logic.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Pricing.Request" name="DateSearchType" type="q6:Enums.DateSearchType">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: indicator of how search is being requested (Flexible or Date Range).  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Pricing.Request" name="FareSelectionType" type="q7:Enums.FareSelectionType">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: indicator of the fares that should be searched (All - Oneway, RoundTrip, and OpenJaw ~ OnewayOnly ~ RoundTripOnly).  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FastFareSearchTripDetails" nillable="true" type="tns:ArrayOfFastFareSearchTripDetail">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The details of each trip being requested to be searched.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range 1 and 20.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FastFareSearchInfo" nillable="true" type="tns:FastFareSearchInfo" />
+  <xs:complexType name="ArrayOfFastFareSearchTripDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FastFareSearchTripDetail" nillable="true" type="tns:FastFareSearchTripDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFastFareSearchTripDetail" nillable="true" type="tns:ArrayOfFastFareSearchTripDetail" />
+  <xs:complexType name="FastFareSearchTripDetail">
+    <xs:sequence>
+      <xs:element name="DepartureLocation" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Origin airport code.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 3 and 4.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumericUpper.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ArrivalLocation" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Destination airport code.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 3 and 4.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumericUpper.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DepartureDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The departure date to search for&lt;.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NumberOfFelxibleDaysBefore" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Number of scheduled days before departure date to include in search&lt;.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range 0 and 364.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NumberOfFlexibleDaysAfter" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Number of scheduled days after departure date to include in search&lt;.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range 0 and 364.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DepartureDateBeginRange" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The beginning departure date range requesting to be searched.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DepartureDateEndRange" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The ending departure date range requesting to be searched.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TripOrderIndex" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Numeric value indication the trip info order in requested travel sequence.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range 1 and 99.  </xs:documentation>
+          <xs:documentation>Format: Number.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FastFareSearchTravelerInfos" nillable="true" type="tns:ArrayOfFastFareSearchTravelerInfo">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: List of passenger types to include in the search.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range 1 and 20.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FastFareSearchTripDetail" nillable="true" type="tns:FastFareSearchTripDetail" />
+  <xs:complexType name="ArrayOfFastFareSearchTravelerInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FastFareSearchTravelerInfo" nillable="true" type="tns:FastFareSearchTravelerInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFastFareSearchTravelerInfo" nillable="true" type="tns:ArrayOfFastFareSearchTravelerInfo" />
+  <xs:complexType name="FastFareSearchTravelerInfo">
+    <xs:sequence>
+      <xs:element name="PassengerTypeID" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Passenger type ID.  Standard types are: 1=Adult, 5=Infant, 6=Child. Others may exist per airline setup..  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range 1 and 99.  </xs:documentation>
+          <xs:documentation>Format: Number.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TotalSeatsRequired" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Number of seats requested for this passenger type..  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range 1 and 99.  </xs:documentation>
+          <xs:documentation>Format: Number.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FastFareSearchTravelerInfo" nillable="true" type="tns:FastFareSearchTravelerInfo" />
+</xs:schema>

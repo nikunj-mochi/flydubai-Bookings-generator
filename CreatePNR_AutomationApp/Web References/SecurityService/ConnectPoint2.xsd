@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://qa.internalcp.flydubai.com/ConnectPoint.Security.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="CarrierInfo">
+    <xs:sequence>
+      <xs:element name="CarrierCodes" nillable="true" type="tns:ArrayOfCarrierCode" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CarrierInfo" nillable="true" type="tns:CarrierInfo" />
+  <xs:complexType name="ArrayOfCarrierCode">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CarrierCode" nillable="true" type="tns:CarrierCode" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCarrierCode" nillable="true" type="tns:ArrayOfCarrierCode" />
+  <xs:complexType name="CarrierCode">
+    <xs:sequence>
+      <xs:element name="AccessibleCarrierCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CarrierCode" nillable="true" type="tns:CarrierCode" />
+  <xs:complexType name="TransactionInfo">
+    <xs:sequence>
+      <xs:element name="SecurityGUID" nillable="true" type="xs:string" />
+      <xs:element name="CarrierCodes" nillable="true" type="tns:ArrayOfCarrierCode" />
+      <xs:element minOccurs="0" name="ClientIPAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HistoricUserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TransactionInfo" nillable="true" type="tns:TransactionInfo" />
+  <xs:simpleType name="Enumerations.ReservationChannelTypes">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="STANDARD">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WEB">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GDS">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TPAPI">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DCS">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EXT_WEB">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PNRIMPORT">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">11</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MOBILE">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">12</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ALL">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">999</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Enumerations.ReservationChannelTypes" nillable="true" type="tns:Enumerations.ReservationChannelTypes" />
+</xs:schema>

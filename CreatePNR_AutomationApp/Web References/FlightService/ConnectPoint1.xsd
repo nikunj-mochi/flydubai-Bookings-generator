@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Flight.Request" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Flight.Request" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://fzstgtmp.internal.connectpoint.radixx.com/ConnectPoint.Flight.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" />
+  <xs:complexType name="RetrieveSeatAvailabilityList">
+    <xs:annotation>
+      <xs:appinfo />
+      <xs:documentation>	&lt;summary&gt;
+	&lt;/summary&gt;</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" base="q1:TransactionInfo">
+        <xs:sequence>
+          <xs:element name="LogicalFlightID" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: The automatically system generated unique identifier for the booked light (known as a logical flight)..  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+              <xs:documentation>Range: Value must be in the range 1 and 2147483647.  </xs:documentation>
+              <xs:documentation>Format: Number.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="DepartureDate" type="xs:dateTime">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: The day the flight takes leave..  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="CabinName" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: The cabin the passenger will be assigned to.  </xs:documentation>
+              <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+              <xs:documentation>Range: Length must be in the range 1 and 13.  </xs:documentation>
+              <xs:documentation>Format: AlphaNumericCode.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Currency" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: The currency used to display fares.  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+              <xs:documentation>Range: Length must be in the range 1 and 3.  </xs:documentation>
+              <xs:documentation>Format: AlphaUpper.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="UTCOffset" type="xs:long">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: The Universal Time Code Offset used for calculating the time local departure time.  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+              <xs:documentation>Range: Value must be in the range -23 and 23.  </xs:documentation>
+              <xs:documentation>Format: Number.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RetrieveSeatAvailabilityList" nillable="true" type="tns:RetrieveSeatAvailabilityList" />
+  <xs:complexType name="RetrieveAirportRoutes">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" base="q2:TransactionInfo">
+        <xs:sequence>
+          <xs:element name="LanguageCode" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: The language in which the airport definitions should be returned if the client has defined. IF the client has not defined then the client systems default language will be returned..  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+              <xs:documentation>Range: Length must be in the range 1 and 8.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RetrieveAirportRoutes" nillable="true" type="tns:RetrieveAirportRoutes" />
+  <xs:complexType name="UpdateInventoryAirCraftLid">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" base="q3:TransactionInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CabinValue" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: If the update is a Cabin Lid update then the value supplied will define which cabin will get it's lid updated.  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="DestinationAirportCode" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Destination..  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="FlightDate" type="xs:dateTime">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Flight Date..  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="FlightNumber" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Flight number..  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="LidType" type="q3:Enumerations.TypeofLid">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: The Type of lid being requested to be updated, Currently Aircraft or Cabin.  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="LidValue" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Lid value..  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="OriginAirportCode" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Origin..  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UpdateInventoryAirCraftLid" nillable="true" type="tns:UpdateInventoryAirCraftLid" />
+</xs:schema>

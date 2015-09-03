@@ -1,0 +1,3062 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Reservation.Request" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Reservation.Request" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://qa.internalcp.flydubai.com/ConnectPoint.Reservation.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" />
+  <xs:complexType name="CreatePNR">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" base="q1:TransactionInfo">
+        <xs:sequence>
+          <xs:element name="ActionType" type="tns:CreatePNR.ActionTypes">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Defines the action the Radixx.ConnectPoint.consumer is wanting to take.  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ReservationInfo" nillable="true" type="q1:ReservationInfo">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: .  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CreatePNR" nillable="true" type="tns:CreatePNR" />
+  <xs:simpleType name="CreatePNR.ActionTypes">
+    <xs:annotation>
+      <xs:appinfo />
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SaveReservation">
+        <xs:annotation>
+          <xs:documentation>	&lt;summary&gt;Action to save changes which have been performed on a reservation&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CommitSummary">
+        <xs:annotation>
+          <xs:documentation>	&lt;summary&gt;Action to perform final commit to the database of data that was submitted during GetSummary call&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CreatePNR.ActionTypes" nillable="true" type="tns:CreatePNR.ActionTypes" />
+  <xs:complexType name="SummaryPNR">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" base="q2:TransactionInfo">
+        <xs:sequence>
+          <xs:element name="ActionType" type="tns:SummaryPNR.ActionTypes">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Defines the action the Radixx.ConnectPoint.consumer is wanting to take.  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ReservationInfo" nillable="true" type="q2:ReservationInfo">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: .  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="SecurityToken" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: The security token that was returned in the RetrieveSecurityToken call which initiates the session.  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="CarrierCurrency" type="q2:Enumerations.CurrencyCodeTypes">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Primary Currency Code of the Marketing Carrier.  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="DisplayCurrency" type="q2:Enumerations.CurrencyCodeTypes">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Currency Code of the that will be displayed on the user interface.  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="IATANum" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: IATA Number of the requesting Travel Agency.  </xs:documentation>
+              <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+              <xs:documentation>Range: Length must be in the range 0 and 8.  </xs:documentation>
+              <xs:documentation>Format: AlphaNumericCodeMixedDotDash.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="User" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: .  </xs:documentation>
+              <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ReceiptLanguageID" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: This value will be supplied by the client IT lead a the value can be dynamic and change from carrier to carrier.  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+              <xs:documentation>Range: Length must be in the range 1 and 1.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="PromoCode" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: If carrier supports promotional codes then the value submitted in this attribute will be used to verfify the promotion against what was submitted in FareQuote request..  </xs:documentation>
+              <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ExternalBookingID" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: If the PNR was originally imported from another system then this value will contain the reference number from the originating system.  </xs:documentation>
+              <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Address" nillable="true" type="tns:Address">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Primary Address information used for the reservation contacts.  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+              <xs:documentation>Range: Value must be in the range 1 and 1.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ContactInfos" nillable="true" type="tns:ArrayOfContactInfo">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Collection of Contact Info.  </xs:documentation>
+              <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+              <xs:documentation>Range: Value must be in the range 0 and 2147483647.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Passengers" nillable="true" type="tns:ArrayOfPerson">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Collection of Passengers.  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+              <xs:documentation>Range: Value must be in the range 1 and 2147483647.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Segments" nillable="true" type="tns:ArrayOfSegment">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Collection of Segments.  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+              <xs:documentation>Range: Value must be in the range 1 and 2147483647.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Payments" nillable="true" type="tns:ArrayOfPayment">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Collection of Payments.  </xs:documentation>
+              <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+              <xs:documentation>Range: Value must be in the range 0 and 2147483647.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SummaryPNR" nillable="true" type="tns:SummaryPNR" />
+  <xs:simpleType name="SummaryPNR.ActionTypes">
+    <xs:annotation>
+      <xs:appinfo />
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="GetSummary">
+        <xs:annotation>
+          <xs:documentation>	&lt;summary&gt;Action to perform a pre saved reservation and render result so that Radixx.ConnectPoint.consumer can render information to the end consumer&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SummaryPNR.ActionTypes" nillable="true" type="tns:SummaryPNR.ActionTypes" />
+  <xs:complexType name="Address">
+    <xs:sequence>
+      <xs:element name="Address1" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The first address line of the person.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 64.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Address2" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The second address line of the person.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 100.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="City" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The city for the person.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 50.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="State" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The state for the person.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 64.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Postal" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The postal code for the person.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 10.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Country" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The Country for the person.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 30.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CountryCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The code that represents the country where the contact resides..  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 8.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AreaCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The three-digit code that identifies the telephone area for the contact..  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 8.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PhoneNumber" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The contact's phone number..  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 12.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Display" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Logical value indicating that this contact information is to be displayed to the user.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 64.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Address" nillable="true" type="tns:Address" />
+  <xs:complexType name="ArrayOfContactInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ContactInfo" nillable="true" type="tns:ContactInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContactInfo" nillable="true" type="tns:ArrayOfContactInfo" />
+  <xs:complexType name="ContactInfo">
+    <xs:sequence>
+      <xs:element name="ContactID" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The automatically system generated unique identifier for the passenger's contact person..  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range -2147483648 and 2147483647.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PersonOrgID" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The automatically system generated unique identifier for the passenger..  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ContactField" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The field for the contact..  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range -2147483648 and 2147483647.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" name="ContactType" type="q3:Enumerations.ContactTypes">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The code that represents the specified mode for the contact. Use:0 = Home Phone 1 = Work Phone 2 = Mobile Phone 3 = Pager 4 = E-mail 5 = Fax.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Extension" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The extension number for the contact..  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 8.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CountryCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The code that represents the country where the contact resides..  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 8.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AreaCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The three-digit code that identifies the telephone area for the contact..  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 8.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PhoneNumber" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The contact's phone number..  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 17.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Display" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Logical value indicating that this contact information is to be displayed to the user.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 64.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PreferredContactMethod" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Logical value indicating that this is to be used as the preferred means of contact.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContactInfo" nillable="true" type="tns:ContactInfo" />
+  <xs:complexType name="ArrayOfPerson">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Person" nillable="true" type="tns:Person" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPerson" nillable="true" type="tns:ArrayOfPerson" />
+  <xs:complexType name="Person">
+    <xs:sequence>
+      <xs:element name="PersonOrgID" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The database identifier for this person.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FirstName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The person's first name.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range -2147483648 and 2147483647.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LastName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The person's last name.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 64.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MiddleName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The person's middle name.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 64.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Age" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The person's age.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DOB" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The person's data of birth.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" name="Gender" type="q4:Enumerations.GenderTypes">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The person's Gender.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Title" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The person's title.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 20.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NationalityLaguageID" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The IATCN Language ID of the person's nationality.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" name="RelationType" type="q5:Enumerations.RelationshipTypes">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="WBCID" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Wieght and Balance Passenger Type Code ID for this passenger.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PTCID" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The code representing the Passenger Type Code for the passenger segment. (Radixx predefined ID 1=ADULT, 5=INFANT, 6=CHILD).  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PTC" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The iata standard code representing the Passenger Type Code for the passenger segment. (industry predefined Codes ADT, INF, CHD).  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TravelsWithPersonOrgID" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: If an infant is traveling with an adult then the infants person org id will be populated in this property.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range -2147483648 and 2147483647.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="RedressNumber" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Secure Flight Information.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="KnownTravelerNumber" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Secure Flight Information.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MarketingOptIn" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Indicator if the passenger wishes to subscribe to marketing information.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="UseInventory" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Address" nillable="true" type="tns:Address">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Address Object.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Company" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Comments" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Any comments that are associated to this person.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Passport" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The passport number for this person.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Nationality" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The Nationality code for this person.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ProfileId" type="xs:long">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The ID of the Radixx profile to which this person is associated.  This can be used to determine the number of times a passenger has travelled..  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range -2147483648 and 2147483647.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IsPrimaryPassenger" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Idicator of the assumed primary passenger of the reservation. There can only be one primary traveller..  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ContactInfos" nillable="true" type="tns:ArrayOfContactInfo">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Collection of contact informations.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range 1 and 2147483647.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="FrequentFlyerNumber" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Frequent Flyer Number, to support pure data storage of FFN on the Person record. No internal Radixx functionality works off of the value stored.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Suffix" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The person's suffix.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 20.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Person" nillable="true" type="tns:Person" />
+  <xs:complexType name="ArrayOfSegment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Segment" nillable="true" type="tns:Segment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSegment" nillable="true" type="tns:ArrayOfSegment" />
+  <xs:complexType name="Segment">
+    <xs:sequence>
+      <xs:element name="PersonOrgID" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The automatically system generated unique identifier for the passenger..  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range -2147483648 and 2147483647.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FareInformationID" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range -2147483648 and 2147483647.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MarketingCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: This field contains the special marketing code that was used to book this passenger segment..  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 8.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="StoreFrontID" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: In the event that an airline has multiple storefronts, this field indicates the StoreFrontID that this booking was made under.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="RecordLocator" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: If this field is populated then the recordlocator passed in will be populated in the reservation segment of the person that it is passed under.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SpecialServices" nillable="true" type="tns:ArrayOfSpecialService">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Collection of special services.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range 0 and 2147483647.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Seats" nillable="true" type="tns:ArrayOfSeat">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Collection of seats.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range 0 and 2147483647.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Segment" nillable="true" type="tns:Segment" />
+  <xs:complexType name="ArrayOfSpecialService">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SpecialService" nillable="true" type="tns:SpecialService" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSpecialService" nillable="true" type="tns:ArrayOfSpecialService" />
+  <xs:complexType name="SpecialService">
+    <xs:sequence>
+      <xs:element name="CodeType" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The Code Type Represents the category for this charge.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 4.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ServiceID" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SSRCategory" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LogicalFlightID" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Logical Flight ID of the segment that the SSR will be tied too..  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DepartureDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Departure date of the segment that the SSR will be tied too..  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Amount" type="xs:decimal">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Amount of the SSR.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OverrideAmount" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Indicator to Overrride the base amount of the SSR amount that is in the System. (This functionality requires the Radixx.ConnectPoint.consumer to be at a higher security privelege.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" name="CurrencyCode" type="q6:Enumerations.CurrencyCodeTypes">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Currency of the reservation and the SSR charge.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Commissionable" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Indicator to if the service is commissionable.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Refundable" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Indicator to if the service is refundable.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ChargeComment" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: any comments to be added to provide additonal information.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 255.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PersonOrgID" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The person org id created by the system that will be associated with the SSR.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range -2147483648 and 2147483647.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SpecialService" nillable="true" type="tns:SpecialService" />
+  <xs:complexType name="ArrayOfSeat">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Seat" nillable="true" type="tns:Seat" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSeat" nillable="true" type="tns:ArrayOfSeat" />
+  <xs:complexType name="Seat">
+    <xs:sequence>
+      <xs:element name="PersonOrgID" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The person org id created by the system that will be associated with the SSR.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range -2147483648 and 2147483647.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LogicalFlightID" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Logical Flight ID of the segment that the Seat will be tied too..  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range 0 and 2147483647.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PhysicalFlightID" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: This is the physical flight id as identified in the fare quote response for the flight.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range 0 and 2147483647.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DepartureDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Departure date (time should be specified as 00:00:00) of the physical flight that the Seat will be tied to..  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SeatSelected" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: This represents the seat that is to be assigned.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 0 and 2.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="RowNumber" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: This represents the row number that the seat is in.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 0 and 2.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Seat" nillable="true" type="tns:Seat" />
+  <xs:complexType name="ArrayOfPayment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Payment" nillable="true" type="tns:Payment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPayment" nillable="true" type="tns:ArrayOfPayment" />
+  <xs:complexType name="Payment">
+    <xs:sequence>
+      <xs:element name="ReservationPaymentID" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The database level unique identifier for this payment.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CompanyName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The Company name for the person responsible for the payment.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FirstName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The First Name of the person responsible for the payment.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 500.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LastName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The Last Name of the person responsible for the payment.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 500.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CardType" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CardHolder" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The name of the cardholder of the payment in the event that the payment is a credit card payment.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" name="PaymentCurrency" type="q7:Enumerations.CurrencyCodeTypes">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The currency for this payment.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ISOCurrency" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The currency for this payment.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range -2147483648 and 2147483647.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PaymentAmount" type="xs:decimal">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The amount for the payment in the payment currency in the CurrencyPaid field.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" name="PaymentMethod" type="q8:Enumerations.PaymentMethodTypes">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The original payment method that was used in the event that this payment is a refund.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CardNum" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The credit card number for the payment.  NOTE:  This value will be masked.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CVCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The CVV code on the back of most credit cards.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 3 and 5.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ExpirationDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The expiration date for the payment type when applicable.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IsTACreditCard" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VoucherNum" type="xs:long">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The voucher number for the Radixx voucher that was used for this payment in the event that this payment is a voucher payment.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="GcxID" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: In the event that this payment was made using GCX Dynamic Currency Conversion, this field is the transaction ID received from GCX.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="GcxOpt" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: In the event that this payment was made using GCX Dynamic Currency Conversion, this field represents the GCX options that was used in the conversion..  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 1.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OriginalCurrency" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The Original Currency for this payment in the event this payment represents a refund.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OriginalAmount" type="xs:decimal">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The Original amount for this payment in the event this payment represents a refund.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ExchangeRate" type="xs:decimal">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The exchange rate used to convert from the payment amount in the CurrencyPaid to the ReservationCurrency.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ExchangeRateDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The effect date of the exchange rate used to convert from the payment amount in the CurrencyPaid to the ReservationCurrency.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PaymentComment" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Any comments added to the payment by the Call Center user or application.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="BillingCountry" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: This value is routinely required by payment gateways to perform fraud management. Normal value is the country 2 Letter abbreviation but can be the 3 letter country code or the ISO Country code. This varies by payment gateway.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 0 and 3.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Payment" nillable="true" type="tns:Payment" />
+  <xs:complexType name="ModifyPNR">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q9="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" base="q9:TransactionInfo">
+        <xs:sequence>
+          <xs:element name="ActionType" type="tns:ModifyPNR.ActionTypes">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Action type indicating the option to add or remove flight, passenger or special services.  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ReservationInfo" nillable="true" type="q9:ReservationInfo">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Reservation Information must be populated.  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="FareInformationID" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: The value of this field is returned in the Fare Quote Response. It will be the FareID of the flight chosen by the consumer via the User Interface.  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+              <xs:documentation>Range: Value must be in the range -2147483648 and 2147483647.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="LogicalFlightKeyToReplace" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Logical flight key to replace.  </xs:documentation>
+              <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="LogicalFlightKeyToRemove" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Logical flight key to remove.  </xs:documentation>
+              <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="PersonOrgIdentifierToRemove" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Identifier of the passenger to be removed. The value of this property can be obtained from the AirLine Person nod of ViewPNR.  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+              <xs:documentation>Range: Value must be in the range -2147483648 and 2147483647.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="PassengersToAdd" nillable="true" type="tns:ArrayOfModifyPNR.Passenger">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Collection of passengers.  </xs:documentation>
+              <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+              <xs:documentation>Range: Value must be in the range 0 and 2147483647.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="PassengersToUpdate" nillable="true" type="tns:ArrayOfModifyPNR.UpdatePassenger">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Collection of passengers who are in need of name updates.  </xs:documentation>
+              <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+              <xs:documentation>Range: Value must be in the range 0 and 2147483647.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="SpecialServices" nillable="true" type="tns:ArrayOfSpecialService">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Collection of special services.  </xs:documentation>
+              <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+              <xs:documentation>Range: Value must be in the range 0 and 2147483647.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="SpecialServicesToCancel" nillable="true" type="tns:ArrayOfSpecialServiceToCancel">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Collection of special services to be removed/cancelled from a PNR.  </xs:documentation>
+              <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+              <xs:documentation>Range: Value must be in the range 0 and 2147483647.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ContactInformationToAdd" nillable="true" type="tns:ArrayOfModifyPNR.AddContactInfo">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Collection of contact information that are in need of being added.  </xs:documentation>
+              <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+              <xs:documentation>Range: Value must be in the range 0 and 2147483647.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ContactInformationToUpdate" nillable="true" type="tns:ArrayOfModifyPNR.UpdateContactInfo">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Collection of contact information that are in need of updates.  </xs:documentation>
+              <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+              <xs:documentation>Range: Value must be in the range 0 and 2147483647.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="CommentToAdd" nillable="true" type="tns:Comment">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Comment that will be added to the PNR.  </xs:documentation>
+              <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+              <xs:documentation>Range: Value must be in the range 0 and 1.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="EmergencyContactsToAddToSegments" nillable="true" type="tns:ArrayOfModifyPNR.EmergencyContact">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Collection of Emergency Contacts to add to passenger segments.  </xs:documentation>
+              <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+              <xs:documentation>Range: Value must be in the range 0 and 2147483647.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="PassengerSegmentsToUpdateRecordLocator" nillable="true" type="tns:ArrayOfModifyPNR.UpdateRecordLocator">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Collection of Emergency Contacts to add to passenger segments.  </xs:documentation>
+              <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+              <xs:documentation>Range: Value must be in the range 0 and 2147483647.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ModifyPNR" nillable="true" type="tns:ModifyPNR" />
+  <xs:simpleType name="ModifyPNR.ActionTypes">
+    <xs:annotation>
+      <xs:appinfo />
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AddFlightToReservation">
+        <xs:annotation>
+          <xs:documentation>	&lt;summary&gt;Action to add a flight to a reservation&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RemoveFlightFromReservation">
+        <xs:annotation>
+          <xs:documentation>	&lt;summary&gt;Action to remove a flight and all passengers within from a reservation&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ReplaceFlightOnReservation">
+        <xs:annotation>
+          <xs:documentation>	&lt;summary&gt;Action to replace a flight on a reservation&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AddPassengerToReservation">
+        <xs:annotation>
+          <xs:documentation>	&lt;summary&gt;Action to add a passenger to a reservation&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RemovePassengerFromReservation">
+        <xs:annotation>
+          <xs:documentation>	&lt;summary&gt;Action to remove a passenger from a reservation&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UpdatePassengerInformationNoFee">
+        <xs:annotation>
+          <xs:documentation>	&lt;summary&gt;Action to update passenger name information without a system defined fee being assessed&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UpdatePassengerInformationAssessFee">
+        <xs:annotation>
+          <xs:documentation>	&lt;summary&gt;Action to update passenger name information with a system defined fee being assessed&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AddSpecialServiceToReservation">
+        <xs:annotation>
+          <xs:documentation>	&lt;summary&gt;Action to add a special service to a reservation&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RemoveSpecialServiceFromReservation">
+        <xs:annotation>
+          <xs:documentation>	&lt;summary&gt;Action to add a special service to a reservation&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AddContactInformation">
+        <xs:annotation>
+          <xs:documentation>	&lt;summary&gt;Action to add contact Information&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UpdateContactInformation">
+        <xs:annotation>
+          <xs:documentation>	&lt;summary&gt;Action to update contact Information&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AddCommentToReservation">
+        <xs:annotation>
+          <xs:documentation>	&lt;summary&gt;Action to add comment to a reservation&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AddEmergencyContact">
+        <xs:annotation>
+          <xs:documentation>	&lt;summary&gt;Action to add an emergency contact to a passenger segment&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UpdatePassengerSegmentRecordLocator">
+        <xs:annotation>
+          <xs:documentation>	&lt;summary&gt;Action to update the record loactor of a passenger segment&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ModifyPNR.ActionTypes" nillable="true" type="tns:ModifyPNR.ActionTypes" />
+  <xs:complexType name="ArrayOfModifyPNR.Passenger">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ModifyPNR.Passenger" nillable="true" type="tns:ModifyPNR.Passenger" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfModifyPNR.Passenger" nillable="true" type="tns:ArrayOfModifyPNR.Passenger" />
+  <xs:complexType name="ModifyPNR.Passenger">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ModifyPNR.Person">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DropOffID" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: The PersonOrgID of the individual that is authorized to drop off an unaccompanied minor..  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+              <xs:documentation>Range: Value must be in the range -2147483648 and 2147483647.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="PickUpID" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: The PersonOrgID of the individual that is authorized to pick up an unaccompanied minor..  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+              <xs:documentation>Range: Value must be in the range -2147483648 and 2147483647.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="LapChildID" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: The PersonOrgID of the passenger who is going to be carrying an Infant on his/her lap..  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+              <xs:documentation>Range: Value must be in the range -2147483648 and 2147483647.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="FrequentFlyerNumber" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: The frequent flyer number for this passenger as entered in the DCS.  </xs:documentation>
+              <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+              <xs:documentation>Range: Length must be in the range 1 and 20.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="SelecteeStatus" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: A range of values that describes the passenger’s identification under various governmental security regimes.  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+              <xs:documentation>Range: Value must be in the range -2147483648 and 2147483647.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="StoreFrontID" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: In the event that an airline has multiple storefronts, this field indicates the StoreFrontID that this booking was made under.  </xs:documentation>
+              <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="TravelsWithPersonOrgID" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: If an infant is traveling with an adult then the infants person org id will be populated in this property.  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+              <xs:documentation>Range: Value must be in the range -2147483648 and 2147483647.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="RedressNumber" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Secure Flight Information.  </xs:documentation>
+              <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="KnownTravelerNumber" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Secure Flight Information.  </xs:documentation>
+              <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="RecordLocator" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: If this field is populated then the recordlocator passed in will be populated in the reservation segment of the person that it is passed under.  </xs:documentation>
+              <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="FlightInformations" nillable="true" type="tns:ArrayOfModifyPNR.FlightInformation">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Collection of flight information.  </xs:documentation>
+              <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+              <xs:documentation>Range: Value must be in the range 1 and 2147483647.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ModifyPNR.Passenger" nillable="true" type="tns:ModifyPNR.Passenger" />
+  <xs:complexType name="ModifyPNR.Person">
+    <xs:sequence>
+      <xs:element name="PersonOrgID" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The automatically system generated unique identifier for the passenger. Unless Performing a passenger Name Change then it will be the personOrgID rendered from the ViewPNR Response.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range -2147483648 and 2147483647.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FirstName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The passenger's first name..  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 64.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LastName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The passenger's last name..  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 64.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MiddleName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The passenger's middle name..  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 64.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Age" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The age of the passenger at the time of the booking..  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range -2147483648 and 2147483647.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DOB" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The passenger's date of birth..  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" name="Gender" type="q10:Enumerations.GenderTypes">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The code specifying the gender of the passenger..  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Title" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The salutation for the passenger (e.g. Mr., Miss.)..  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 20.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NationalityLaguageID" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The unique identifier that represents the passenger's native language..  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range -2147483648 and 2147483647.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" name="RelationType" type="q11:Enumerations.RelationshipTypes">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The relation of the person booking the flight to that of the passenger..  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="WBCID" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Wieght and Balance Passenger Type Code ID for this passenger.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range -2147483648 and 2147483647.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PTCID" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The code representing the Passenger Type Code for the passenger segment..  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range -2147483648 and 2147483647.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PTC" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The iata standard code representing the Passenger Type Code for the passenger segment. (industry predefined Codes ADT, INF, CHD).  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="UseInventory" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Indicates whether the passenger uses an inventory space..  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range 1 and 3.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Address" nillable="true" type="tns:Address">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The passenger's address..  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Company" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The company where the passenger works..  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Comments" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: A comment for the passenger..  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Passport" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The passenger's passport number..  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Nationality" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The nationality of the passenger..  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ProfileId" type="xs:long">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The Radixx profile ID that is associated with this reservation.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range -2147483648 and 2147483647.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ContactInfos" nillable="true" type="tns:ArrayOfContactInfo">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Collection of passenger contacts.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range 1 and 2147483647.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ModifyPNR.Person" nillable="true" type="tns:ModifyPNR.Person" />
+  <xs:complexType name="ArrayOfModifyPNR.FlightInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ModifyPNR.FlightInformation" nillable="true" type="tns:ModifyPNR.FlightInformation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfModifyPNR.FlightInformation" nillable="true" type="tns:ArrayOfModifyPNR.FlightInformation" />
+  <xs:complexType name="ModifyPNR.FlightInformation">
+    <xs:sequence>
+      <xs:element name="LogicalFlightID" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The automatically system generated unique identifier for the booked light (known as a logical flight)..  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DepartureDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The day the flight takes leave..  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FareInformationID" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Logical flight fare information ID that is obtained from the Fare Quote response call.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ModifyPNR.FlightInformation" nillable="true" type="tns:ModifyPNR.FlightInformation" />
+  <xs:complexType name="ArrayOfModifyPNR.UpdatePassenger">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ModifyPNR.UpdatePassenger" nillable="true" type="tns:ModifyPNR.UpdatePassenger" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfModifyPNR.UpdatePassenger" nillable="true" type="tns:ArrayOfModifyPNR.UpdatePassenger" />
+  <xs:complexType name="ModifyPNR.UpdatePassenger">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ModifyPNR.Person">
+        <xs:sequence>
+          <xs:element name="RedressNumber" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Secure Flight Information.  </xs:documentation>
+              <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="KnownTravelerNumber" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Secure Flight Information.  </xs:documentation>
+              <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ModifyPNR.UpdatePassenger" nillable="true" type="tns:ModifyPNR.UpdatePassenger" />
+  <xs:complexType name="ArrayOfSpecialServiceToCancel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SpecialServiceToCancel" nillable="true" type="tns:SpecialServiceToCancel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSpecialServiceToCancel" nillable="true" type="tns:ArrayOfSpecialServiceToCancel" />
+  <xs:complexType name="SpecialServiceToCancel">
+    <xs:sequence>
+      <xs:element name="AirlineKey" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The value of the Key property on the Airline object that relates to the charge object that needs to be cancelled.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LogicalFlightKey" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The value of the Key property on the Logical Flight object that relates to the charge object that needs to be cancelled.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PhysicalFlightKey" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The value of the Key property on the Physical Flight object that relates to the charge object that needs to be cancelled.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CustomerKey" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The value of the Key property on the Customer object that relates to the charge object that needs to be cancelled.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AirlinePersonKey" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The value of the Key property on the Airline Person object that relates to the charge object that needs to be cancelled.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ChargeKey" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The value of the Key property on the charge object of the SSR that is in need of cancellation.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Comment" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: A comment pertaining to the reason that the consumer is wishing to cancel the charge.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SpecialServiceToCancel" nillable="true" type="tns:SpecialServiceToCancel" />
+  <xs:complexType name="ArrayOfModifyPNR.AddContactInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ModifyPNR.AddContactInfo" nillable="true" type="tns:ModifyPNR.AddContactInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfModifyPNR.AddContactInfo" nillable="true" type="tns:ArrayOfModifyPNR.AddContactInfo" />
+  <xs:complexType name="ModifyPNR.AddContactInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ContactInfo">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ModifyPNR.AddContactInfo" nillable="true" type="tns:ModifyPNR.AddContactInfo" />
+  <xs:complexType name="ArrayOfModifyPNR.UpdateContactInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ModifyPNR.UpdateContactInfo" nillable="true" type="tns:ModifyPNR.UpdateContactInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfModifyPNR.UpdateContactInfo" nillable="true" type="tns:ArrayOfModifyPNR.UpdateContactInfo" />
+  <xs:complexType name="ModifyPNR.UpdateContactInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ContactInfo">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ModifyPNR.UpdateContactInfo" nillable="true" type="tns:ModifyPNR.UpdateContactInfo" />
+  <xs:complexType name="Comment">
+    <xs:sequence>
+      <xs:element name="CommentID" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The automatically system generated unique identifier for the passenger's contact person..  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range -2147483648 and 2147483647.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Comment" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The field for the comment..  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 4000.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Comment" nillable="true" type="tns:Comment" />
+  <xs:complexType name="ArrayOfModifyPNR.EmergencyContact">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ModifyPNR.EmergencyContact" nillable="true" type="tns:ModifyPNR.EmergencyContact" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfModifyPNR.EmergencyContact" nillable="true" type="tns:ArrayOfModifyPNR.EmergencyContact" />
+  <xs:complexType name="ModifyPNR.EmergencyContact">
+    <xs:sequence>
+      <xs:element name="Title" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The person's title.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 20.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FirstName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The person's first name.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range -2147483648 and 2147483647.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LastName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The person's last name.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 64.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MiddleName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The person's middle name.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 64.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Age" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The person's age.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DOB" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The person's data of birth.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" name="Gender" type="q12:Enumerations.GenderTypes">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The person's Gender.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" name="RelationType" type="q13:Enumerations.RelationshipTypes">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Address" nillable="true" type="tns:Address">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Address Object.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Company" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Comments" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Any comments that are associated to this person.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" name="ContactType" type="q14:Enumerations.ContactTypes">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The code that represents the specified mode for the contact. Use:0 = Home Phone 1 = Work Phone 2 = Mobile Phone 3 = Pager 4 = E-mail 5 = Fax.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ContactInformation" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Contact information phone number, email address etc.....  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DisclosedEmergencyContact" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: If the traveler choses to disclose and emergency contact then this value wil be set to True and the indicator in the data base will reflect that they disclosed the information otherwise a False value will indicate that the Traveler chose NOT to disclose information..  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ReservationKey" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The Reservation Key returned in the PNR response.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LogicalFlightKey" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The Logical Flight Key returned in the PNR response.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PhysicalFlightKey" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The Physical Flight Key returned in the PNR response.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CustomerKey" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The Customer Key returned in the PNR response.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AirlinePersonKey" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The Airline Person Key returned in the PNR response.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ModifyPNR.EmergencyContact" nillable="true" type="tns:ModifyPNR.EmergencyContact" />
+  <xs:complexType name="ArrayOfModifyPNR.UpdateRecordLocator">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ModifyPNR.UpdateRecordLocator" nillable="true" type="tns:ModifyPNR.UpdateRecordLocator" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfModifyPNR.UpdateRecordLocator" nillable="true" type="tns:ArrayOfModifyPNR.UpdateRecordLocator" />
+  <xs:complexType name="ModifyPNR.UpdateRecordLocator">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RecordLocator" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The Record Locator from an excternal system that identifies this passenger segment.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 20.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ReservationKey" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The Reservation Key returned in the PNR response.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LogicalFlightKey" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The Logical Flight Key returned in the PNR response.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PhysicalFlightKey" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The Physical Flight Key returned in the PNR response.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CustomerKey" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The Customer Key returned in the PNR response.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AirlinePersonKey" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The Airline Person Key returned in the PNR response.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ModifyPNR.UpdateRecordLocator" nillable="true" type="tns:ModifyPNR.UpdateRecordLocator" />
+  <xs:complexType name="CancelPNR">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q15="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" base="q15:TransactionInfo">
+        <xs:sequence>
+          <xs:element name="ActionType" type="tns:CancelPNR.ActionTypes">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Defines the action the Radixx.ConnectPoint.consumer is wanting to take.  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ReservationInfo" nillable="true" type="q15:ReservationInfo">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Information about the PNR.  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CancelPNR" nillable="true" type="tns:CancelPNR" />
+  <xs:simpleType name="CancelPNR.ActionTypes">
+    <xs:annotation>
+      <xs:appinfo />
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CancelReservation">
+        <xs:annotation>
+          <xs:documentation>	&lt;summary&gt;Action to cancels PNR in session and applies all refunds and penalties so that consumer can make final decision whether to cancel or not&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RevertReservation">
+        <xs:annotation>
+          <xs:documentation>	&lt;summary&gt;Action reverts all in session work (Pre CreatePNR (SaveReservation)) back to original database loaded state&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CancelPNR.ActionTypes" nillable="true" type="tns:CancelPNR.ActionTypes" />
+  <xs:complexType name="RetrievePNR">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q16="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" base="q16:TransactionInfo">
+        <xs:sequence>
+          <xs:element name="ActionType" type="tns:RetrievePNR.ActionTypes">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Defines the action the Radixx.ConnectPoint.consumer is wanting to take.  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ReservationInfo" nillable="true" type="q16:ReservationInfo">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Reservation Information must be populated.  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RetrievePNR" nillable="true" type="tns:RetrievePNR" />
+  <xs:simpleType name="RetrievePNR.ActionTypes">
+    <xs:annotation>
+      <xs:appinfo />
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="GetReservation">
+        <xs:annotation>
+          <xs:documentation>	&lt;summary&gt;Action to retreive PNR information&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GetReservationViewOnly">
+        <xs:annotation>
+          <xs:documentation>	&lt;summary&gt;Action to retreive PNR information Modify Functions will not be permitted&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GetReservationWithETicketInformation">
+        <xs:annotation>
+          <xs:documentation>	&lt;summary&gt;Action to retreive PNR information, inclusive of eticketing info&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GetReservationWithETicketInformationViewOnly">
+        <xs:annotation>
+          <xs:documentation>	&lt;summary&gt;Action to retreive PNR information, inclusive of eticketing info&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GetReservationFromSession">
+        <xs:annotation>
+          <xs:documentation>	&lt;summary&gt;Action to retreive PNR information from data in session, not from the system&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RetrievePNR.ActionTypes" nillable="true" type="tns:RetrievePNR.ActionTypes" />
+  <xs:complexType name="ImportPNR">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q17="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" base="q17:TransactionInfo">
+        <xs:sequence>
+          <xs:element name="ActionType" type="tns:ImportPNR.ActionTypes">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Action type to perform pnr import operations..  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ImportPNR" nillable="true" type="tns:ImportPNR.Reservation">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: PNR Information to Import..  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ImportPNR" nillable="true" type="tns:ImportPNR" />
+  <xs:simpleType name="ImportPNR.ActionTypes">
+    <xs:annotation>
+      <xs:appinfo />
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ImportPNR">
+        <xs:annotation>
+          <xs:documentation>	&lt;summary&gt;Action to perform global pnr import operation. This action handles Creation, Modification, and cancellations on PNR's&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ImportPNR.ActionTypes" nillable="true" type="tns:ImportPNR.ActionTypes" />
+  <xs:complexType name="ImportPNR.Reservation">
+    <xs:sequence>
+      <xs:element name="SeriesNumber" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The series number associated with the confirmation number current default should be 299.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 3.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ConfirmationNumber" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The confirmation number issued during initial booking.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 30.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" name="BookingAction" type="q18:Enumerations.ImportBookingAction">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: This is meant for possible future usage. the current default value 1 (SystemDetermined).  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="BookingCarrier" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The carrier code that the action will be performed for.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 3.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IATANumber" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The IataNumber that the action will be performed for.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 8.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumericCodeMixedDotDash.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ExternalAppID" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: This value is usually the same as the the IataNumber that the action will be performed for. If the IATA in the Radixx system is not standard then this value will be the True IATA Standard IATA.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 8.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ExternalBookingReference" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The value submitted here needs to be the linkage of the information being imported into the Radixx system and the external system. It should be unique per new booking and if Modification action is being performed it needs to match the original submitted externalbooking reference in order for the modification to work.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 12.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OriginalBookingDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The date the booking was created in the external system.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" name="ReservationCurrency" type="q19:Enumerations.CurrencyCodeTypes">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The currency that the booking is being submitted in.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="User" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The Radixx user id that the action will be performed for.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 15.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PromoCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: If a promotion code was used submit the value here.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 20.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="RecieptLanguageCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: This value is the ISO Standard language code that thte receipt and other emailed data will be displayed/submitted in..  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 6.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ReservationChannel" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: If the Radixx reservation Channel is known then the value should be submitted here otherwise the default should be 5(TPAPI).  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range 1 and 2147483647.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Segments" nillable="true" type="tns:ArrayOfImportPNR.Reservation.Segment">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The collection of Segments.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range 1 and 99.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Persons" nillable="true" type="tns:ArrayOfImportPNR.Reservation.Person">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The collection of Persons.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range 1 and 99.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Comments" nillable="true" type="tns:ArrayOfImportPNR.Reservation.Comment">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The collection of Comments.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range 0 and 99.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Errors" nillable="true" type="tns:ArrayOfImportPNR.Reservation.ImportError">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The collection of Errors.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range 0 and 99.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ImportPNR.Reservation" nillable="true" type="tns:ImportPNR.Reservation" />
+  <xs:complexType name="ArrayOfImportPNR.Reservation.Segment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ImportPNR.Reservation.Segment" nillable="true" type="tns:ImportPNR.Reservation.Segment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfImportPNR.Reservation.Segment" nillable="true" type="tns:ArrayOfImportPNR.Reservation.Segment" />
+  <xs:complexType name="ImportPNR.Reservation.Segment">
+    <xs:sequence>
+      <xs:element name="CarrierCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The IATA carrier code operating this physical flight.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 3.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FlightNumber" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The number for this flight.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 20.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DepartureDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The day the flight takes leave..  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Origin" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The origin airport code the final landing place..  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 3.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OriginName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The origin airport name the final landing place..  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 30.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Destination" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The destination airport code the final landing place..  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 3.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DestinationName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The destination airport name the final landing place..  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 30.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DepartureTime" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The specified time the logical flight departs in the time zone of the point of departure.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ArrivalTime" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The time that the logical flight arrives at its destination in the time zone of the destination.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AirlinePersons" nillable="true" type="tns:ArrayOfImportPNR.Reservation.Segment.AirlinePerson">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The collection of AirlinePersons.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range 1 and 99.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ImportPNR.Reservation.Segment" nillable="true" type="tns:ImportPNR.Reservation.Segment" />
+  <xs:complexType name="ArrayOfImportPNR.Reservation.Segment.AirlinePerson">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ImportPNR.Reservation.Segment.AirlinePerson" nillable="true" type="tns:ImportPNR.Reservation.Segment.AirlinePerson" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfImportPNR.Reservation.Segment.AirlinePerson" nillable="true" type="tns:ArrayOfImportPNR.Reservation.Segment.AirlinePerson" />
+  <xs:complexType name="ImportPNR.Reservation.Segment.AirlinePerson">
+    <xs:sequence>
+      <xs:element name="PersonOrgID" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The automatically system generated unique identifier for the passenger. Unless Performing a passenger Name Change then it will be the personOrgID rendered from the ViewPNR Response.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range -2147483648 and 2147483647.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TravelsWithPersonOrgID" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: If an infant is traveling with an adult then the infants person org id will be populated in this property.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range -2147483648 and 2147483647.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FareClass" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The fareclass that the segment was booked under..  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 3.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FareBasisCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The fareclass that the segment was booked under..  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 3.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="RecordLocator" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The gds record locator that the segment was booked under..  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 12.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Charges" nillable="true" type="tns:ArrayOfImportPNR.Reservation.Segment.AirlinePerson.Charge">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The collection of Charges.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range 0 and 99.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Seats" nillable="true" type="tns:ArrayOfImportPNR.Reservation.Segment.AirlinePerson.Seat">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The collection of Seats.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range 0 and 9.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ImportPNR.Reservation.Segment.AirlinePerson" nillable="true" type="tns:ImportPNR.Reservation.Segment.AirlinePerson" />
+  <xs:complexType name="ArrayOfImportPNR.Reservation.Segment.AirlinePerson.Charge">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ImportPNR.Reservation.Segment.AirlinePerson.Charge" nillable="true" type="tns:ImportPNR.Reservation.Segment.AirlinePerson.Charge" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfImportPNR.Reservation.Segment.AirlinePerson.Charge" nillable="true" type="tns:ArrayOfImportPNR.Reservation.Segment.AirlinePerson.Charge" />
+  <xs:complexType name="ImportPNR.Reservation.Segment.AirlinePerson.Charge">
+    <xs:sequence>
+      <xs:element name="CodeType" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The Code Type Represents the category for this charge.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 6.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Amount" type="xs:decimal">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Amount of the SSR.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" name="Currency" type="q20:Enumerations.CurrencyCodeTypes">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Currency of the reservation and the SSR charge.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ImportPNR.Reservation.Segment.AirlinePerson.Charge" nillable="true" type="tns:ImportPNR.Reservation.Segment.AirlinePerson.Charge" />
+  <xs:complexType name="ArrayOfImportPNR.Reservation.Segment.AirlinePerson.Seat">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ImportPNR.Reservation.Segment.AirlinePerson.Seat" nillable="true" type="tns:ImportPNR.Reservation.Segment.AirlinePerson.Seat" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfImportPNR.Reservation.Segment.AirlinePerson.Seat" nillable="true" type="tns:ArrayOfImportPNR.Reservation.Segment.AirlinePerson.Seat" />
+  <xs:complexType name="ImportPNR.Reservation.Segment.AirlinePerson.Seat">
+    <xs:sequence>
+      <xs:element name="Seat" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The Seat to assign for this person.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 2.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SeatRow" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The Seat Row number.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range 1 and 2.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ImportPNR.Reservation.Segment.AirlinePerson.Seat" nillable="true" type="tns:ImportPNR.Reservation.Segment.AirlinePerson.Seat" />
+  <xs:complexType name="ArrayOfImportPNR.Reservation.Person">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ImportPNR.Reservation.Person" nillable="true" type="tns:ImportPNR.Reservation.Person" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfImportPNR.Reservation.Person" nillable="true" type="tns:ArrayOfImportPNR.Reservation.Person" />
+  <xs:complexType name="ImportPNR.Reservation.Person">
+    <xs:sequence>
+      <xs:element name="PersonOrgID" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The unique identifier for the passenger..  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range -2147483648 and 2147483647.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PTCID" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The code representing the Passenger Type Code for the passenger segment..  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range -2147483648 and 2147483647.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PTC" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The iata standard code representing the Passenger Type Code for the passenger segment. (industry predefined Codes ADT, INF, CHD).  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Title" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The salutation for the passenger (e.g. Mr., Miss.)..  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 20.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LastName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The passenger's last name..  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 64.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FirstName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The passenger's first name..  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 64.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MiddleName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The passenger's middle name..  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 64.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DateOfBirth" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The passenger's date of birth..  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Gender" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The code specifying the gender of the passenger..  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Phone" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The contact phone number..  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 64.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Mobile" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The contact mobile number..  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 64.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Email" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The contact email address..  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 64.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Address" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The contact email address..  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 64.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="City" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The city for the person.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 50.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Postal" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The postal code for the person.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 10.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Province" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The province or state for the person.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 64.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Country" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The Country for the person.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 30.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DocumentID" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The passport information if available.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 30.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DocumentExpDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The passport expiration date information if available.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SecureFlightRedressNumber" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Secure Flight Information.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 30.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SecureFlightKnownTravellerNumber" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Secure Flight Information.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 30.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ApisInfos" nillable="true" type="tns:ArrayOfImportPNR.Reservation.Person.ApisInformation">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The collection of ApisInfos.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range 0 and 99.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ImportPNR.Reservation.Person" nillable="true" type="tns:ImportPNR.Reservation.Person" />
+  <xs:complexType name="ArrayOfImportPNR.Reservation.Person.ApisInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ImportPNR.Reservation.Person.ApisInformation" nillable="true" type="tns:ImportPNR.Reservation.Person.ApisInformation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfImportPNR.Reservation.Person.ApisInformation" nillable="true" type="tns:ArrayOfImportPNR.Reservation.Person.ApisInformation" />
+  <xs:complexType name="ImportPNR.Reservation.Person.ApisInformation">
+    <xs:sequence>
+      <xs:element name="ApisInfoIndex" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Apis Information.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range -2147483648 and 2147483647.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SeriesNumber" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Apis Information.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ConfirmationNumber" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Apis Information.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="RecordNumber" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Apis Information.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LastName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Apis Information.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 64.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FirstName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Apis Information.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 64.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MiddleName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Apis Information.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="BirthDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Apis Information.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Gender" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Apis Information.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 1.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Citizenship" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Apis Information.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ResidenceCountry" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Apis Information.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Status" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Apis Information.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CrewType" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Apis Information.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="HomeAddress" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Apis Information.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="HomeCity" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Apis Information.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="HomeState" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Apis Information.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="HomePostal" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Apis Information.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="HomeCountry" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Apis Information.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DestinationAddress" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Apis Information.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DestinationCity" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Apis Information.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DestinationState" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Apis Information.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DestinationPostal" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Apis Information.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DestinationCountry" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Apis Information.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Embarkation" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Apis Information.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="BirthCity" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Apis Information.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="BirthState" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Apis Information.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="BirthCountry" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Apis Information.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DocumentType1" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Apis Information.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DocumentNumber" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Apis Information.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IssueCountry1" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Apis Information.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ExpirationDate1" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Apis Information.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DocumentType2" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Apis Information.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DocumentNumber2" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Apis Information.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IssueCountry2" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Apis Information.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ExpirationDate2" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Apis Information.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ResultCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Apis Information.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ResultMessage" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Apis Information.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PhysicalFlightID" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Apis Information.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ActualDepartureDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Apis Information.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FlightNumber" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Apis Information.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Debarkation" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Apis Information.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Arrival" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Apis Information.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DocumentScanned1" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Apis Information.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DocumentScanned2" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Apis Information.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ImportPNR.Reservation.Person.ApisInformation" nillable="true" type="tns:ImportPNR.Reservation.Person.ApisInformation" />
+  <xs:complexType name="ArrayOfImportPNR.Reservation.Comment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ImportPNR.Reservation.Comment" nillable="true" type="tns:ImportPNR.Reservation.Comment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfImportPNR.Reservation.Comment" nillable="true" type="tns:ArrayOfImportPNR.Reservation.Comment" />
+  <xs:complexType name="ImportPNR.Reservation.Comment">
+    <xs:sequence>
+      <xs:element name="CommentDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Date the Comment was created.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CommentText" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The Comment entered.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ImportPNR.Reservation.Comment" nillable="true" type="tns:ImportPNR.Reservation.Comment" />
+  <xs:complexType name="ArrayOfImportPNR.Reservation.ImportError">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ImportPNR.Reservation.ImportError" nillable="true" type="tns:ImportPNR.Reservation.ImportError" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfImportPNR.Reservation.ImportError" nillable="true" type="tns:ArrayOfImportPNR.Reservation.ImportError" />
+  <xs:complexType name="ImportPNR.Reservation.ImportError">
+    <xs:sequence>
+      <xs:element name="ErrorCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Error Code.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="RadixxQueue" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Queue Information.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ErrorText" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Error Description.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Format: AlphaNumeric.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ImportPNR.Reservation.ImportError" nillable="true" type="tns:ImportPNR.Reservation.ImportError" />
+  <xs:complexType name="HistoryPNR">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q21="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" base="q21:TransactionInfo">
+        <xs:sequence>
+          <xs:element name="ActionType" type="tns:HistoryPNR.ActionTypes">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Action type indicating the Type of history being created.  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ReservationInfo" nillable="true" type="q21:ReservationInfo">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Reservation Information must be populated.  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ReservationsToInsertHistory" nillable="true" type="tns:ArrayOfReservationToInsertHistory">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Reservations Needing history insertion.  </xs:documentation>
+              <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+              <xs:documentation>Range: Value must be in the range 1 and 2147483647.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HistoryPNR" nillable="true" type="tns:HistoryPNR" />
+  <xs:simpleType name="HistoryPNR.ActionTypes">
+    <xs:annotation>
+      <xs:appinfo />
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="InsertExternalReservationEventHistory">
+        <xs:annotation>
+          <xs:documentation>	&lt;summary&gt;Action to Insert External Reservation Event History&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="HistoryPNR.ActionTypes" nillable="true" type="tns:HistoryPNR.ActionTypes" />
+  <xs:complexType name="ArrayOfReservationToInsertHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReservationToInsertHistory" nillable="true" type="tns:ReservationToInsertHistory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReservationToInsertHistory" nillable="true" type="tns:ArrayOfReservationToInsertHistory" />
+  <xs:complexType name="ReservationToInsertHistory">
+    <xs:sequence>
+      <xs:element name="Action" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: History Event.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 255.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="HistoryEventText" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: History Event Text.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 255.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Passenger" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Passenger for which history event is being performed against Name submitted i.e.. FIRSTNAME LASTNAME.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 129.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Segment" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Segment Information, If provided format example  RX 1942 ORD- MCO 01-Jan 01 Mon 18:00 00:00 Fri 27-Jun 14 ADT.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 512.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Description" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Description.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 2000.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="User" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: This will be the Radixx System user ID of person performing the history event..  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 32.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" name="ResChannel" type="q22:Enumerations.ReservationChannelTypes">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The value submitted here will override the Reservation channel that is associated with the CP/API user account..  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReservationToInsertHistory" nillable="true" type="tns:ReservationToInsertHistory" />
+  <xs:complexType name="EvaluateModificationOfPNR">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q23="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" base="q23:TransactionInfo">
+        <xs:sequence>
+          <xs:element name="ReservationInfo" nillable="true" type="q23:ReservationInfo">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Reservation Information must be populated.  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ActionType" type="tns:EvaluateModificationOfPNR.ActionTypes" />
+          <xs:element name="LogicalFlightKeyToRemove" nillable="true" type="xs:string" />
+          <xs:element name="PersonOrgIdentifierToRemove" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EvaluateModificationOfPNR" nillable="true" type="tns:EvaluateModificationOfPNR" />
+  <xs:simpleType name="EvaluateModificationOfPNR.ActionTypes">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="EvaluateRemoveFlightFromReservation" />
+      <xs:enumeration value="EvaluateRemovePassengerFromReservation" />
+      <xs:enumeration value="EvaluateCancelReservation" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EvaluateModificationOfPNR.ActionTypes" nillable="true" type="tns:EvaluateModificationOfPNR.ActionTypes" />
+</xs:schema>

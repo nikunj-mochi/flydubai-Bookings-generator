@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Pricing.Request" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Pricing.Request" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://fzstgtmp.internal.connectpoint.radixx.com/ConnectPoint.Pricing.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:simpleType name="Enums.InventoryFilterMethodType">
+    <xs:annotation>
+      <xs:appinfo />
+      <xs:documentation>	&lt;summary&gt;Availability filter options&lt;/summary&gt;
+	&lt;remarks&gt;&lt;/remarks&gt;</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Available">
+        <xs:annotation>
+          <xs:documentation>	&lt;summary&gt;Returns only available fares&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="All">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">100</EnumerationValue>
+          </xs:appinfo>
+          <xs:documentation>	&lt;summary&gt;Returns all fares (available and sold out fares)&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AvailablePreference">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">200</EnumerationValue>
+          </xs:appinfo>
+          <xs:documentation>	&lt;summary&gt;Returns all fares (available and sold out fares). When fare filters are applied, available fares take precendence over sold out fares&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Enums.InventoryFilterMethodType" nillable="true" type="tns:Enums.InventoryFilterMethodType" />
+  <xs:simpleType name="Enums.FareFilterGroupingsMethodType">
+    <xs:annotation>
+      <xs:appinfo />
+      <xs:documentation>	&lt;summary&gt;&lt;/summary&gt;
+	&lt;remarks&gt;&lt;/remarks&gt;</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LowestFarePerDay">
+        <xs:annotation>
+          <xs:documentation>	&lt;summary&gt;Lowest Fare Per Day&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LowestFarePerFlight">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">100</EnumerationValue>
+          </xs:appinfo>
+          <xs:documentation>	&lt;summary&gt;Lowest Fare Per Flight&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Enums.FareFilterGroupingsMethodType" nillable="true" type="tns:Enums.FareFilterGroupingsMethodType" />
+  <xs:simpleType name="Enums.FareGroupMethodType">
+    <xs:annotation>
+      <xs:appinfo />
+      <xs:documentation>	&lt;summary&gt;Changes grouping type for "PerFareType" (When FareFilterMethod = CombinabilityNestedRoundtripLowestFarePerFareType, CombinabilityNestedRoundtripOnlyLowestFarePerFareType, NoCombinabilityRoundtripLowestFarePerFareType, and NoCombinabilityRoundtripOnlyLowestFarePerFareType)&lt;/summary&gt;
+	&lt;remarks&gt;&lt;/remarks&gt;</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="WebFareTypes">
+        <xs:annotation>
+          <xs:documentation>	&lt;summary&gt;Group by Settings in table WebFareTypes&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FareClassFareBasis">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">100</EnumerationValue>
+          </xs:appinfo>
+          <xs:documentation>	&lt;summary&gt;Group by Fare Class and Fare Basis Code&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Enums.FareGroupMethodType" nillable="true" type="tns:Enums.FareGroupMethodType" />
+  <xs:simpleType name="Enums.DateSearchType">
+    <xs:annotation>
+      <xs:appinfo />
+      <xs:documentation>	&lt;summary&gt;Date Search Type for Fast Fare Search&lt;/summary&gt;
+	&lt;remarks&gt;&lt;/remarks&gt;</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Flexible">
+        <xs:annotation>
+          <xs:documentation>	&lt;summary&gt;Search 0 to (n) flight days before and after selected date&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DateRange">
+        <xs:annotation>
+          <xs:documentation>	&lt;summary&gt;Search by a specified date range&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Enums.DateSearchType" nillable="true" type="tns:Enums.DateSearchType" />
+  <xs:simpleType name="Enums.FareSelectionType">
+    <xs:annotation>
+      <xs:appinfo />
+      <xs:documentation>	&lt;summary&gt;Fare Selection Type for Fast Fare Search&lt;/summary&gt;
+	&lt;remarks&gt;&lt;/remarks&gt;</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="All">
+        <xs:annotation>
+          <xs:documentation>	&lt;summary&gt;Return Oneway, Rount Trip and Open Jaw Fares&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OneWayOnly">
+        <xs:annotation>
+          <xs:documentation>	&lt;summary&gt;Return only Oneway fares&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RoundTripOnly">
+        <xs:annotation>
+          <xs:documentation>	&lt;summary&gt;Return only Round Trip fares&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Enums.FareSelectionType" nillable="true" type="tns:Enums.FareSelectionType" />
+  <xs:simpleType name="Enums.FareFilterMethodType">
+    <xs:annotation>
+      <xs:appinfo />
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CombinabilityNestedRoundtripAllFares">
+        <xs:annotation>
+          <xs:documentation>	&lt;summary&gt;Combinability rules applied. Roundtrip fares are nested.  All fares are returned.&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CombinabilityNestedRoundtripLowestFarePerDay">
+        <xs:annotation>
+          <xs:documentation>	&lt;summary&gt;&amp;gt;Combinability rules applied. Roundtrip fares are nested.  Fares filtered to: Lowest fare per day.&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CombinabilityNestedRoundtripLowestFarePerFareType">
+        <xs:annotation>
+          <xs:documentation>	&lt;summary&gt;Combinability rules applied. Roundtrip fares are nested.  Fares filtered to: Lowest fare per fare type.&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CombinabilityNestedRoundtripLowestFarePerFlight">
+        <xs:annotation>
+          <xs:documentation>	&lt;summary&gt;Combinability rules applied. Roundtrip fares are nested.  Fares filtered to: Lowest fare per flight.&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CombinabilityNestedRoundtripOnlyAllFares">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">20</EnumerationValue>
+          </xs:appinfo>
+          <xs:documentation>	&lt;summary&gt;Combinability rules applied. Roundtrip fares are nested.  All roundtrip fares are returned. One way fares are excluded.&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CombinabilityNestedRoundtripOnlyLowestFarePerDay">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">21</EnumerationValue>
+          </xs:appinfo>
+          <xs:documentation>	&lt;summary&gt;&amp;gt;Combinability rules applied. Roundtrip fares are nested.  Fares filtered to: Lowest roundtrip fare per day. One way fares are excluded.&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CombinabilityNestedRoundtripOnlyLowestFarePerFareType">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">22</EnumerationValue>
+          </xs:appinfo>
+          <xs:documentation>	&lt;summary&gt;Combinability rules applied. Roundtrip fares are nested.  Fares filtered to: Lowest roundtrip fare per fare type. One way fares are excluded.&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CombinabilityNestedRoundtripOnlyLowestFarePerFlight">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">23</EnumerationValue>
+          </xs:appinfo>
+          <xs:documentation>	&lt;summary&gt;Combinability rules applied. Roundtrip fares are nested.  Fares filtered to: Lowest roundtrip fare per flight. One way fares are excluded.&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NoCombinabilityAllFares">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">100</EnumerationValue>
+          </xs:appinfo>
+          <xs:documentation>	&lt;summary&gt;No combinability rules applied. No fares are nested.  All fares are returned.&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NoCombinabilityRoundtripLowestFarePerDay">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">101</EnumerationValue>
+          </xs:appinfo>
+          <xs:documentation>	&lt;summary&gt;&amp;gt;No combinability rules applied. No fares are nested.  Fares filtered to: Lowest fare per day.&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NoCombinabilityRoundtripLowestFarePerFareType">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">102</EnumerationValue>
+          </xs:appinfo>
+          <xs:documentation>	&lt;summary&gt;No combinability rules applied. No fares are nested.  Fares filtered to: Lowest fare per fare type.&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NoCombinabilityRoundtripLowestFarePerFlight">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">103</EnumerationValue>
+          </xs:appinfo>
+          <xs:documentation>	&lt;summary&gt;No combinability rules applied. No fares are nested.  Fares filtered to: Lowest fare per flight.&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NoCombinabilityRoundtripOnlyAllFares">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">120</EnumerationValue>
+          </xs:appinfo>
+          <xs:documentation>	&lt;summary&gt;No combinability rules applied. No fares are nested.  All roundtrip fares are returned. One way fares are excluded.&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NoCombinabilityRoundtripOnlyLowestFarePerDay">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">121</EnumerationValue>
+          </xs:appinfo>
+          <xs:documentation>	&lt;summary&gt;&amp;gt;No combinability rules applied. No fares are nested.  Fares filtered to: Lowest roundtrip fare per day. One way fares are excluded.&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NoCombinabilityRoundtripOnlyLowestFarePerFareType">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">122</EnumerationValue>
+          </xs:appinfo>
+          <xs:documentation>	&lt;summary&gt;No combinability rules applied. No fares are nested.  Fares filtered to: Lowest roundtrip fare per fare type. One way fares are excluded.&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NoCombinabilityRoundtripOnlyLowestFarePerFlight">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">123</EnumerationValue>
+          </xs:appinfo>
+          <xs:documentation>	&lt;summary&gt;No combinability rules applied. No fares are nested.  Fares filtered to: Lowest roundtrip fare per flight. One way fares are excluded.&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Enums.FareFilterMethodType" nillable="true" type="tns:Enums.FareFilterMethodType" />
+</xs:schema>

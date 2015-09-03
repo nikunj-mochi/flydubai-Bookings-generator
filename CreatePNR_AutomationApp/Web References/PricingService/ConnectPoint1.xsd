@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Pricing.Request.FareQuote" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Pricing.Request.FareQuote" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://fzstgtmp.internal.connectpoint.radixx.com/ConnectPoint.Pricing.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" />
+  <xs:import schemaLocation="http://fzstgtmp.internal.connectpoint.radixx.com/ConnectPoint.Pricing.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Pricing.Request" />
+  <xs:complexType name="RetrieveFareQuote">
+    <xs:annotation>
+      <xs:appinfo />
+      <xs:documentation>	&lt;summary&gt;
+ Fare Pricing by a Date with +/- scheduled days.  
+ &lt;/summary&gt;
+	&lt;remarks&gt;&lt;/remarks&gt;</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" base="q1:TransactionInfo">
+        <xs:sequence>
+          <xs:element name="CurrencyOfFareQuote" type="q1:Enumerations.CurrencyCodeTypes">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: The currency to be used for pricing.  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+              <xs:documentation>Range: Value must be in the range 3 and 3.  </xs:documentation>
+              <xs:documentation>Format: AlphaUpper.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="PromotionalCode" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Promotional code to apply.  </xs:documentation>
+              <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+              <xs:documentation>Range: Length must be in the range 0 and 20.  </xs:documentation>
+              <xs:documentation>Format: AlphaNumericCode.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="IataNumberOfRequestor" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: IATA Number associated to fares.  </xs:documentation>
+              <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+              <xs:documentation>Range: Length must be in the range 0 and 8.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="CorporationID" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Corporation ID associated to fares.  </xs:documentation>
+              <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Pricing.Request" name="FareFilterMethod" type="q2:Enums.FareFilterMethodType">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Fare Filter Method applies different rules to the fare selection logic.  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Pricing.Request" name="FareGroupMethod" type="q3:Enums.FareGroupMethodType">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Fare Group Method applies different rules to the fare grouping logic.  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Pricing.Request" name="InventoryFilterMethod" type="q4:Enums.InventoryFilterMethodType">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Inventory Filter Method applies different rules regarding number of available seats.  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="FareQuoteDetails" nillable="true" type="tns:ArrayOfFareQuoteDetail">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: The legs to search.  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+              <xs:documentation>Range: Value must be in the range 1 and 20.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RetrieveFareQuote" nillable="true" type="tns:RetrieveFareQuote" />
+  <xs:complexType name="ArrayOfFareQuoteDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FareQuoteDetail" nillable="true" type="tns:FareQuoteDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFareQuoteDetail" nillable="true" type="tns:ArrayOfFareQuoteDetail" />
+  <xs:complexType name="FareQuoteDetail">
+    <xs:sequence>
+      <xs:element name="Origin" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Origin airport code.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 3 and 4.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumericUpper.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Destination" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Destination airport code.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 3 and 4.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumericUpper.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="UseAirportsNotMetroGroups" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: A value of True indicates that the Origin and Destination are airport codes.  False indicates they are metro groups..  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="UseAirportsNotMetroGroupsAsRule" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: This determines if the general rule of UseAirportsNotMetroGroups will be used, by  default the value is True .  False indicates the settings UseAirportsNotMetroGroupsForFrom and UseAirportsNotMetroGroupsForTo will be used..  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="UseAirportsNotMetroGroupsForFrom" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: A value of True indicates that the From code provided is either Airport code or metro group, also this value will only be evaluated if UseAirportsNotMetroGroupsAsRule is False (default is true) .  False indicates they are metro groups..  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="UseAirportsNotMetroGroupsForTo" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: A value of True indicates that the To code provided is either Airport code or metro group, also this value will only be evaluated if UseAirportsNotMetroGroupsAsRule is False (default is true) .  False indicates they are metro groups..  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DateOfDeparture" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The departure date to search for&lt;.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FareTypeCategory" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Limit the search results to this fare type category (alias: sub_web_fare_type).  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range 0 and 2147483647.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FareClass" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Limit the search results to this fare class..  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 2.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumericCode.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FareBasisCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Limit the search results to this fare basis code..  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 15.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumericCode.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Cabin" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Limit the search results to this cabin..  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 0 and 13.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumericCode.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LFID" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Limit the search results to this logical flight ID. (-1 for no filter).  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range -2147483648 and 2147483647.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OperatingCarrierCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Limit the search results to this operating carrier code&lt;.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 0 and 3.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumericUpper.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MarketingCarrierCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Limit the search results to this marketing carrier code&lt;.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 0 and 3.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumericUpper.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NumberOfDaysBefore" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Number of scheduled days before departure date to include in search&lt;.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range 0 and 364.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NumberOfDaysAfter" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Number of scheduled days after departure date to include in search&lt;.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range 0 and 364.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LanguageCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Language code - not currently in use.  Possible future use..  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 0 and 10.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumericCodeMixed.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TicketPackageID" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Ticket package ID - not currently in use.  Possible future use..  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 0 and 10.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumericCodeMixed.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FareQuoteRequestInfos" nillable="true" type="tns:ArrayOfFareQuoteRequestInfo">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: List of passenger types to include in the search.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range 1 and 20.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="OverrideEffectiveDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Optional Effective date of search - defaults to Current Date/Time. Only submit if plan is to override the effective date of the search.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FareQuoteDetail" nillable="true" type="tns:FareQuoteDetail" />
+  <xs:complexType name="ArrayOfFareQuoteRequestInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FareQuoteRequestInfo" nillable="true" type="tns:FareQuoteRequestInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFareQuoteRequestInfo" nillable="true" type="tns:ArrayOfFareQuoteRequestInfo" />
+  <xs:complexType name="FareQuoteRequestInfo">
+    <xs:sequence>
+      <xs:element name="PassengerTypeID" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Passenger type ID.  Standard types are: 1=Adult, 5=Infant, 6=Child. Others may exist per airline setup..  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range 0 and 99.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TotalSeatsRequired" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Number of seats requested for this passenger type..  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range 1 and 99.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FareQuoteRequestInfo" nillable="true" type="tns:FareQuoteRequestInfo" />
+  <xs:complexType name="RetrieveFareQuoteByDateRange">
+    <xs:annotation>
+      <xs:appinfo />
+      <xs:documentation>	&lt;summary&gt;Fare Pricing by Date Range&lt;/summary&gt;</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" base="q5:TransactionInfo">
+        <xs:sequence>
+          <xs:element name="CurrencyOfFareQuote" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: The currency to be used for pricing.  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+              <xs:documentation>Range: Length must be in the range 3 and 3.  </xs:documentation>
+              <xs:documentation>Format: AlphaUpper.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="PromotionalCode" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Promotional code to apply.  </xs:documentation>
+              <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+              <xs:documentation>Range: Length must be in the range 0 and 20.  </xs:documentation>
+              <xs:documentation>Format: AlphaNumericCode.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="IataNumberOfRequestor" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: IATA Number associated to fares.  </xs:documentation>
+              <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+              <xs:documentation>Range: Length must be in the range 0 and 8.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="CorporationID" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Corporation ID associated to fares.  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+              <xs:documentation>Range: Value must be in the range -2147483648 and 2147483647.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Pricing.Request" name="FareFilterMethod" type="q6:Enums.FareFilterMethodType">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Fare Filter Method applies different rules to the fare selection logic.  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Pricing.Request" name="FareGroupMethod" type="q7:Enums.FareGroupMethodType">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Fare Group Method applies different rules to the fare grouping logic.  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Pricing.Request" name="InventoryFilterMethod" type="q8:Enums.InventoryFilterMethodType">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Inventory Filter Method applies different rules regarding number of available seats.  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="FareQuoteDetails" nillable="true" type="tns:ArrayOfFareQuoteDetailDateRange">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: The legs to search.  </xs:documentation>
+              <xs:documentation>Constraints: Required.  </xs:documentation>
+              <xs:documentation>Range: Value must be in the range 1 and 20.  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RetrieveFareQuoteByDateRange" nillable="true" type="tns:RetrieveFareQuoteByDateRange" />
+  <xs:complexType name="ArrayOfFareQuoteDetailDateRange">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FareQuoteDetailDateRange" nillable="true" type="tns:FareQuoteDetailDateRange" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFareQuoteDetailDateRange" nillable="true" type="tns:ArrayOfFareQuoteDetailDateRange" />
+  <xs:complexType name="FareQuoteDetailDateRange">
+    <xs:annotation>
+      <xs:appinfo />
+      <xs:documentation>	&lt;summary&gt;Flight leg to search&lt;/summary&gt;</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Origin" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Origin airport code.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 3 and 4.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumericUpper.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Destination" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Destination airport code.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 3 and 4.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumericUpper.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="UseAirportsNotMetroGroups" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: A value of True indicates that the Origin and Destination are airport codes.  False indicates they are metro groups.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="UseAirportsNotMetroGroupsAsRule" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: This determines if the general rule of UseAirportsNotMetroGroups will be used, by  default the value is True .  False indicates the settings UseAirportsNotMetroGroupsForFrom and UseAirportsNotMetroGroupsForTo will be used..  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="UseAirportsNotMetroGroupsForFrom" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: A value of True indicates that the From code provided is either Airport code or metro group, also this value will only be evaluated if UseAirportsNotMetroGroupsAsRule is False (default is true) .  False indicates they are metro groups..  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="UseAirportsNotMetroGroupsForTo" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: A value of True indicates that the To code provided is either Airport code or metro group, also this value will only be evaluated if UseAirportsNotMetroGroupsAsRule is False (default is true) .  False indicates they are metro groups..  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DateOfDepartureStart" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The starting date of the departure date range.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DateOfDepartureEnd" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The ending date of the departure date range.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FareTypeCategory" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Limit the search results to this fare type category (alias: sub_web_fare_type.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range 0 and 2147483647.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FareClass" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Limit the search results to this fare class.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 2.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumericCode.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FareBasisCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Limit the search results to this fare basis code.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 15.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumericCode.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Cabin" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Limit the search results to this cabin.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 13.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumericCode.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LFID" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Limit the search results to this logical flight ID. (-1 for no filter.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range -2147483648 and 2147483647.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OperatingCarrierCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Limit the search results to this operating carrier code.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 0 and 3.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumericUpper.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MarketingCarrierCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Limit the search results to this marketing carrier code.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 0 and 3.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumericUpper.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LanguageCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Number of scheduled days before departure date to include in search.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TicketPackageID" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Number of scheduled days after departure date to include in search.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FareQuoteRequestInfos" nillable="true" type="tns:ArrayOfFareQuoteRequestInfo">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Language code - not currently in use.  Possible future use.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range 1 and 10.  </xs:documentation>
+          <xs:documentation>Format: AlphaNumericCodeMixed.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="OverrideEffectiveDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Optional Effective date of search - defaults to Current Date/Time. Only submit if plan is to override the effective date of the search.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FareQuoteDetailDateRange" nillable="true" type="tns:FareQuoteDetailDateRange" />
+  <xs:complexType name="RetrieveSystemFareQuote">
+    <xs:annotation>
+      <xs:appinfo />
+      <xs:documentation>	&lt;summary&gt;
+ Fare Pricing by a Date with +/- scheduled days.  
+ &lt;/summary&gt;
+	&lt;remarks&gt;&lt;/remarks&gt;</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RetrieveFareQuote">
+        <xs:sequence>
+          <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" name="ReservationChannel" type="q9:Enumerations.ReservationChannelTypes">
+            <xs:annotation>
+              <xs:appinfo />
+              <xs:documentation>Description: Standard, Web, TPAPI,....  </xs:documentation>
+              <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RetrieveSystemFareQuote" nillable="true" type="tns:RetrieveSystemFareQuote" />
+</xs:schema>

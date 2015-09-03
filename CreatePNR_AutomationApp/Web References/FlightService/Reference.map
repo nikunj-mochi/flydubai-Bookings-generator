@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://fzstgtmp.internal.connectpoint.radixx.com/connectpoint.Flight.svc?wsdl" filename="ConnectPoint_Flight.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://fzstgtmp.internal.connectpoint.radixx.com/ConnectPoint.Flight.svc?xsd=xsd0" filename="ConnectPoint.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://fzstgtmp.internal.connectpoint.radixx.com/ConnectPoint.Flight.svc?xsd=xsd1" filename="ConnectPoint0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://fzstgtmp.internal.connectpoint.radixx.com/ConnectPoint.Flight.svc?xsd=xsd2" filename="ConnectPoint1.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://fzstgtmp.internal.connectpoint.radixx.com/ConnectPoint.Flight.svc?xsd=xsd3" filename="ConnectPoint2.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://fzstgtmp.internal.connectpoint.radixx.com/ConnectPoint.Flight.svc?xsd=xsd4" filename="ConnectPoint3.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://fzstgtmp.internal.connectpoint.radixx.com/ConnectPoint.Flight.svc?xsd=xsd5" filename="ConnectPoint4.xsd" />
+  </Results>
+</DiscoveryClientResultsFile>

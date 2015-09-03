@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CreatePNR_AutomationApp.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="CreatePNR_AutomationApp_FlightService_ConnectPoint_Flight" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://qa.internalcp.flydubai.comConnectPoint.Flight.svc</Value>
+    </Setting>
+    <Setting Name="CreatePNR_AutomationApp_PricingService_ConnectPoint_Pricing" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://fzstgtmp.internal.connectpoint.radixx.com/ConnectPoint.Pricing.svc</Value>
+    </Setting>
+    <Setting Name="CreatePNR_AutomationApp_SecurityService_ConnectPoint_Security" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://qa.internalcp.flydubai.com/ConnectPoint.Security.svc</Value>
+    </Setting>
+    <Setting Name="CreatePNR_AutomationApp_ReservationService_ConnectPoint_Reservation" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://qa.internalcp.flydubai.com/ConnectPoint.Reservation.svc</Value>
+    </Setting>
+    <Setting Name="CreatePNR_AutomationApp_BookingTPAPIService_RadixxBooking" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://qa.internaltpapi.flydubai.com/RadixxBooking.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

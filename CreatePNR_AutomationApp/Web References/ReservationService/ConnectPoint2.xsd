@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://qa.internalcp.flydubai.com/ConnectPoint.Reservation.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="TransactionInfo">
+    <xs:sequence>
+      <xs:element name="SecurityGUID" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 2147483647.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CarrierCodes" nillable="true" type="tns:ArrayOfCarrierCode">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range 1 and 2147483647.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ClientIPAddress" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The value supplied in this property represent the Consumers IP address. The connect point integrator will need to capture this information from the browser object.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="HistoricUserName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The value supplied in this property the user name that will be associated to the history record, in the event that the object for the action being performed does not have a UserName property.  Note the property is option so that existing Data Contracts are still honored..  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 0 and 15.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TransactionInfo" nillable="true" type="tns:TransactionInfo" />
+  <xs:complexType name="ArrayOfCarrierCode">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CarrierCode" nillable="true" type="tns:CarrierCode" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCarrierCode" nillable="true" type="tns:ArrayOfCarrierCode" />
+  <xs:complexType name="CarrierCode">
+    <xs:sequence>
+      <xs:element name="AccessibleCarrierCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 4.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CarrierCode" nillable="true" type="tns:CarrierCode" />
+  <xs:complexType name="ReservationInfo">
+    <xs:sequence>
+      <xs:element name="SeriesNumber" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Value Required=C (If CreatePNR-SaveReservation (ActionType), RetrievePNR (All Actions), InsertExternalProcessedPayment, or ProcessPNRPayment methods are called).  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 3.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ConfirmationNumber" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Value Required=C (If CreatePNR-SaveReservation (ActionType), RetrievePNR (All Actions), InsertExternalProcessedPayment, or ProcessPNRPayment methods are called).  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+          <xs:documentation>Range: Length must be in the range 1 and 50.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReservationInfo" nillable="true" type="tns:ReservationInfo" />
+  <xs:simpleType name="Enumerations.CurrencyCodeTypes">
+    <xs:annotation>
+      <xs:appinfo />
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AED" />
+      <xs:enumeration value="AFN" />
+      <xs:enumeration value="ALL" />
+      <xs:enumeration value="AMD" />
+      <xs:enumeration value="ANG" />
+      <xs:enumeration value="AOA" />
+      <xs:enumeration value="ARS" />
+      <xs:enumeration value="AWG" />
+      <xs:enumeration value="AZN" />
+      <xs:enumeration value="BAM" />
+      <xs:enumeration value="BBD" />
+      <xs:enumeration value="BDT" />
+      <xs:enumeration value="BGN" />
+      <xs:enumeration value="BHD" />
+      <xs:enumeration value="BIF" />
+      <xs:enumeration value="BMD" />
+      <xs:enumeration value="BND" />
+      <xs:enumeration value="BOB" />
+      <xs:enumeration value="BRL" />
+      <xs:enumeration value="BSD" />
+      <xs:enumeration value="BTN" />
+      <xs:enumeration value="BWP" />
+      <xs:enumeration value="BYR" />
+      <xs:enumeration value="BZD" />
+      <xs:enumeration value="CAD" />
+      <xs:enumeration value="CDF" />
+      <xs:enumeration value="CHF" />
+      <xs:enumeration value="CLP" />
+      <xs:enumeration value="CNY" />
+      <xs:enumeration value="COP" />
+      <xs:enumeration value="CRC" />
+      <xs:enumeration value="CUP" />
+      <xs:enumeration value="CVE" />
+      <xs:enumeration value="CYP" />
+      <xs:enumeration value="CZK" />
+      <xs:enumeration value="DJF" />
+      <xs:enumeration value="DKK" />
+      <xs:enumeration value="DOP" />
+      <xs:enumeration value="DZD" />
+      <xs:enumeration value="EGP" />
+      <xs:enumeration value="ERN" />
+      <xs:enumeration value="ETB" />
+      <xs:enumeration value="EUR" />
+      <xs:enumeration value="FJD" />
+      <xs:enumeration value="FKP" />
+      <xs:enumeration value="GBP" />
+      <xs:enumeration value="GEL" />
+      <xs:enumeration value="GGP" />
+      <xs:enumeration value="GHS" />
+      <xs:enumeration value="GIP" />
+      <xs:enumeration value="GMD" />
+      <xs:enumeration value="GNF" />
+      <xs:enumeration value="GTQ" />
+      <xs:enumeration value="GYD" />
+      <xs:enumeration value="HKD" />
+      <xs:enumeration value="HNL" />
+      <xs:enumeration value="HRK" />
+      <xs:enumeration value="HTG" />
+      <xs:enumeration value="HUF" />
+      <xs:enumeration value="IDR" />
+      <xs:enumeration value="ILS" />
+      <xs:enumeration value="IMP" />
+      <xs:enumeration value="INR" />
+      <xs:enumeration value="IQD" />
+      <xs:enumeration value="IRR" />
+      <xs:enumeration value="ISK" />
+      <xs:enumeration value="JEP" />
+      <xs:enumeration value="JMD" />
+      <xs:enumeration value="JOD" />
+      <xs:enumeration value="JPY" />
+      <xs:enumeration value="KES" />
+      <xs:enumeration value="KGS" />
+      <xs:enumeration value="KHR" />
+      <xs:enumeration value="KMF" />
+      <xs:enumeration value="KPW" />
+      <xs:enumeration value="KWD" />
+      <xs:enumeration value="KYD" />
+      <xs:enumeration value="KZT" />
+      <xs:enumeration value="LAK" />
+      <xs:enumeration value="LBP" />
+      <xs:enumeration value="LKR" />
+      <xs:enumeration value="LRD" />
+      <xs:enumeration value="LSL" />
+      <xs:enumeration value="LTL" />
+      <xs:enumeration value="LVL" />
+      <xs:enumeration value="LYD" />
+      <xs:enumeration value="MAD" />
+      <xs:enumeration value="MDL" />
+      <xs:enumeration value="MGA" />
+      <xs:enumeration value="MKD" />
+      <xs:enumeration value="MMK" />
+      <xs:enumeration value="MNT" />
+      <xs:enumeration value="MOP" />
+      <xs:enumeration value="MRO" />
+      <xs:enumeration value="MTL" />
+      <xs:enumeration value="MUR" />
+      <xs:enumeration value="MVR" />
+      <xs:enumeration value="MWK" />
+      <xs:enumeration value="MXN" />
+      <xs:enumeration value="MYR" />
+      <xs:enumeration value="MZN" />
+      <xs:enumeration value="NAD" />
+      <xs:enumeration value="NGN" />
+      <xs:enumeration value="NIO" />
+      <xs:enumeration value="NOK" />
+      <xs:enumeration value="NPR" />
+      <xs:enumeration value="NZD" />
+      <xs:enumeration value="OMR" />
+      <xs:enumeration value="PAB" />
+      <xs:enumeration value="PEN" />
+      <xs:enumeration value="PGK" />
+      <xs:enumeration value="PHP" />
+      <xs:enumeration value="PKR" />
+      <xs:enumeration value="PLN" />
+      <xs:enumeration value="PYG" />
+      <xs:enumeration value="QAR" />
+      <xs:enumeration value="RON" />
+      <xs:enumeration value="RSD" />
+      <xs:enumeration value="RUB" />
+      <xs:enumeration value="RWF" />
+      <xs:enumeration value="SAR" />
+      <xs:enumeration value="SBD" />
+      <xs:enumeration value="SCR" />
+      <xs:enumeration value="SDG" />
+      <xs:enumeration value="SEK" />
+      <xs:enumeration value="SGD" />
+      <xs:enumeration value="SHP" />
+      <xs:enumeration value="SLL" />
+      <xs:enumeration value="SOS" />
+      <xs:enumeration value="SPL" />
+      <xs:enumeration value="SRD" />
+      <xs:enumeration value="STD" />
+      <xs:enumeration value="SVC" />
+      <xs:enumeration value="SYP" />
+      <xs:enumeration value="SZL" />
+      <xs:enumeration value="THB" />
+      <xs:enumeration value="TJS" />
+      <xs:enumeration value="TMM" />
+      <xs:enumeration value="TND" />
+      <xs:enumeration value="TOP" />
+      <xs:enumeration value="TRI" />
+      <xs:enumeration value="TTD" />
+      <xs:enumeration value="TVD" />
+      <xs:enumeration value="TWD" />
+      <xs:enumeration value="TZS" />
+      <xs:enumeration value="UAH" />
+      <xs:enumeration value="UGX" />
+      <xs:enumeration value="USD" />
+      <xs:enumeration value="UYU" />
+      <xs:enumeration value="UZS" />
+      <xs:enumeration value="VEB" />
+      <xs:enumeration value="VEF" />
+      <xs:enumeration value="VND" />
+      <xs:enumeration value="VUV" />
+      <xs:enumeration value="WST" />
+      <xs:enumeration value="XAF" />
+      <xs:enumeration value="XAG" />
+      <xs:enumeration value="XAU" />
+      <xs:enumeration value="XCD" />
+      <xs:enumeration value="XDR" />
+      <xs:enumeration value="XOF" />
+      <xs:enumeration value="XPD" />
+      <xs:enumeration value="XPF" />
+      <xs:enumeration value="XPT" />
+      <xs:enumeration value="YER" />
+      <xs:enumeration value="ZAR" />
+      <xs:enumeration value="ZMK" />
+      <xs:enumeration value="ZWD" />
+      <xs:enumeration value="SYS">
+        <xs:annotation>
+          <xs:documentation>	&lt;summary&gt;This is not a ISO Standard currency code. It is used as a we for the Consuming Radixx.ConnectPoint.interface to specify that it does not know the currency to pass for a particular request when getting fare information. The presence of this code allows Radixx internal business logic to determine appropriate currency to use.&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Enumerations.CurrencyCodeTypes" nillable="true" type="tns:Enumerations.CurrencyCodeTypes" />
+  <xs:simpleType name="Enumerations.ContactTypes">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="HomePhone" />
+      <xs:enumeration value="WorkPhone" />
+      <xs:enumeration value="MobilePhone" />
+      <xs:enumeration value="Pager" />
+      <xs:enumeration value="Email" />
+      <xs:enumeration value="Fax" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Enumerations.ContactTypes" nillable="true" type="tns:Enumerations.ContactTypes" />
+  <xs:simpleType name="Enumerations.GenderTypes">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Male" />
+      <xs:enumeration value="Female" />
+      <xs:enumeration value="Unknown" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Enumerations.GenderTypes" nillable="true" type="tns:Enumerations.GenderTypes" />
+  <xs:simpleType name="Enumerations.RelationshipTypes">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Self" />
+      <xs:enumeration value="Spouse" />
+      <xs:enumeration value="Father" />
+      <xs:enumeration value="Mother" />
+      <xs:enumeration value="Son" />
+      <xs:enumeration value="Daughter" />
+      <xs:enumeration value="GrandFather" />
+      <xs:enumeration value="GrandMother" />
+      <xs:enumeration value="Uncle" />
+      <xs:enumeration value="Aunt" />
+      <xs:enumeration value="Nephew" />
+      <xs:enumeration value="Niece" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Enumerations.RelationshipTypes" nillable="true" type="tns:Enumerations.RelationshipTypes" />
+  <xs:simpleType name="Enumerations.PaymentMethodTypes">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AMEX" />
+      <xs:enumeration value="DCLB" />
+      <xs:enumeration value="DSCV" />
+      <xs:enumeration value="MSCD" />
+      <xs:enumeration value="UATP" />
+      <xs:enumeration value="VISA" />
+      <xs:enumeration value="INVC" />
+      <xs:enumeration value="SAPI" />
+      <xs:enumeration value="TKNE" />
+      <xs:enumeration value="CASH" />
+      <xs:enumeration value="CHCK" />
+      <xs:enumeration value="TCHK" />
+      <xs:enumeration value="TCKT" />
+      <xs:enumeration value="VCHR" />
+      <xs:enumeration value="PL8R" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Enumerations.PaymentMethodTypes" nillable="true" type="tns:Enumerations.PaymentMethodTypes" />
+  <xs:simpleType name="Enumerations.ImportBookingAction">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SystemDetermined">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Enumerations.ImportBookingAction" nillable="true" type="tns:Enumerations.ImportBookingAction" />
+  <xs:simpleType name="Enumerations.ReservationChannelTypes">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="STANDARD">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WEB">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GDS">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TPAPI">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DCS">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EXT_WEB">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PNRIMPORT">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">11</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MOBILE">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">12</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ALL">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">999</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Enumerations.ReservationChannelTypes" nillable="true" type="tns:Enumerations.ReservationChannelTypes" />
+</xs:schema>

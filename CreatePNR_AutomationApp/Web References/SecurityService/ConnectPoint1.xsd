@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Security.Response" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Security.Response" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://qa.internalcp.flydubai.com/ConnectPoint.Security.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Exceptions" />
+  <xs:import schemaLocation="http://qa.internalcp.flydubai.com/ConnectPoint.Security.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" />
+  <xs:complexType name="ViewSecurityToken">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Exceptions" minOccurs="0" name="Exceptions" nillable="true" type="q1:ExceptionInformation.Exceptions" />
+      <xs:element minOccurs="0" name="SecurityToken" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ViewSecurityToken" nillable="true" type="tns:ViewSecurityToken" />
+  <xs:complexType name="ResponseGetGroupDataByUserid">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GroupDatas" nillable="true" type="tns:ArrayOfGroupData" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Exceptions" minOccurs="0" name="Exceptions" nillable="true" type="q2:ExceptionInformation.Exceptions" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseGetGroupDataByUserid" nillable="true" type="tns:ResponseGetGroupDataByUserid" />
+  <xs:complexType name="ArrayOfGroupData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GroupData" nillable="true" type="tns:GroupData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGroupData" nillable="true" type="tns:ArrayOfGroupData" />
+  <xs:complexType name="GroupData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GroupDataId" type="xs:int" />
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:int" />
+      <xs:element minOccurs="0" name="UseAirportSecurity" type="xs:int" />
+      <xs:element minOccurs="0" name="UseResChannelSecurity" type="xs:int" />
+      <xs:element minOccurs="0" name="Airports" nillable="true" type="tns:ArrayOfGroupDataAirport" />
+      <xs:element minOccurs="0" name="ReservationChannels" nillable="true" type="tns:ArrayOfGroupDataResChannel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GroupData" nillable="true" type="tns:GroupData" />
+  <xs:complexType name="ArrayOfGroupDataAirport">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GroupDataAirport" nillable="true" type="tns:GroupDataAirport" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGroupDataAirport" nillable="true" type="tns:ArrayOfGroupDataAirport" />
+  <xs:complexType name="GroupDataAirport">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AirportCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GroupDataAirport" nillable="true" type="tns:GroupDataAirport" />
+  <xs:complexType name="ArrayOfGroupDataResChannel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GroupDataResChannel" nillable="true" type="tns:GroupDataResChannel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGroupDataResChannel" nillable="true" type="tns:ArrayOfGroupDataResChannel" />
+  <xs:complexType name="GroupDataResChannel">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" minOccurs="0" name="ResChannel" type="q3:Enumerations.ReservationChannelTypes" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GroupDataResChannel" nillable="true" type="tns:GroupDataResChannel" />
+  <xs:complexType name="ViewValidatedSecurityToken">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Exceptions" minOccurs="0" name="Exceptions" nillable="true" type="q4:ExceptionInformation.Exceptions" />
+      <xs:element minOccurs="0" name="ValidationResult" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ViewValidatedSecurityToken" nillable="true" type="tns:ViewValidatedSecurityToken" />
+</xs:schema>

@@ -1,0 +1,26 @@
+<PNR><![CDATA[8/28/2015 3:18:51 PM : ====== Create PNR Started at : 8/28/2015 3:18:51 PM]]></data>
+<PNR><![CDATA[8/28/2015 3:18:54 PM : Origin DXB, Destination: GHJ not processed.]]></data>
+<PNR><![CDATA[8/28/2015 3:18:54 PM : Error message: Security servuce is not accessible,]]></data>
+<PNR><![CDATA[8/28/2015 3:18:56 PM : ====== Create PNR Process ended at : 8/28/2015 3:18:56 PM]]></data>
+<PNR><![CDATA[8/28/2015 3:26:49 PM : ====== Create PNR Started at : 8/28/2015 3:26:49 PM]]></data>
+<PNR><![CDATA[8/28/2015 3:26:53 PM : Origin DXB, Destination: 987 not processed.]]></data>
+<PNR><![CDATA[8/28/2015 3:26:53 PM : Error message: Security servuce is not accessible,]]></data>
+<PNR><![CDATA[8/28/2015 3:26:55 PM : ====== Create PNR Process ended at : 8/28/2015 3:26:55 PM]]></data>
+<PNR><![CDATA[8/28/2015 3:30:06 PM : ====== Create PNR Started at : 8/28/2015 3:30:06 PM]]></data>
+<PNR><![CDATA[8/28/2015 3:30:11 PM : Origin DXB, Destination: SDS not processed.]]></data>
+<PNR><![CDATA[8/28/2015 3:30:11 PM : Error message: Security servuce is not accessible,]]></data>
+<PNR><![CDATA[8/28/2015 3:30:13 PM : ====== Create PNR Process ended at : 8/28/2015 3:30:13 PM]]></data>
+<PNR><![CDATA[8/28/2015 3:32:47 PM : ====== Create PNR Started at : 8/28/2015 3:32:47 PM]]></data>
+<PNR><![CDATA[8/28/2015 3:32:52 PM : Origin DXB, Destination: HJL not processed.]]></data>
+<PNR><![CDATA[8/28/2015 3:32:52 PM : Error message: Security servuce is not accessible,]]></data>
+<PNR><![CDATA[8/28/2015 3:33:04 PM : ====== Create PNR Process ended at : 8/28/2015 3:33:04 PM]]></data>
+<PNR><![CDATA[8/28/2015 3:34:09 PM : ====== Create PNR Started at : 8/28/2015 3:34:09 PM]]></data>
+<PNR><![CDATA[8/28/2015 3:34:12 PM : Origin DXB, Destination: JKL not processed.]]></data>
+<PNR><![CDATA[8/28/2015 3:34:12 PM : Error message: Security servuce is not accessible,]]></data>
+<PNR><![CDATA[8/28/2015 3:34:16 PM : ====== Create PNR Process ended at : 8/28/2015 3:34:16 PM]]></data>
+<PNR><![CDATA[8/28/2015 3:34:19 PM : ====== Create PNR Started at : 8/28/2015 3:34:19 PM]]></data>
+<PNR><![CDATA[8/28/2015 3:34:24 PM : Origin DXB, Destination: JKL not processed.]]></data>
+<PNR><![CDATA[8/28/2015 3:34:24 PM : Error message: Security servuce is not accessible,]]></data>
+<PNR><![CDATA[8/28/2015 3:34:26 PM : ====== Create PNR Process ended at : 8/28/2015 3:34:26 PM]]></data>
+<DATA>8/28/2015 3:58:38 PM : ====== Create PNR Started at : 8/28/2015 3:58:38 PM</DATA>
+<DATA>8/28/2015 4:00:35 PM : ====== Create PNR Started at : 8/28/2015 4:00:35 PM</DATA>

@@ -1,0 +1,1029 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Pricing.Response" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Pricing.Response" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://fzstgtmp.internal.connectpoint.radixx.com/ConnectPoint.Pricing.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Exceptions" />
+  <xs:import schemaLocation="http://fzstgtmp.internal.connectpoint.radixx.com/ConnectPoint.Pricing.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" />
+  <xs:complexType name="ViewFastFareSearch">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Exceptions" minOccurs="0" name="Exceptions" nillable="true" type="q1:ExceptionInformation.Exceptions" />
+      <xs:element minOccurs="0" name="FareDetails" nillable="true" type="tns:ArrayOfFareDetail" />
+      <xs:element minOccurs="0" name="FlightDetails" nillable="true" type="tns:ArrayOfFlightDetail" />
+      <xs:element minOccurs="0" name="FlightLegDetails" nillable="true" type="tns:ArrayOfFlightLegDetailed" />
+      <xs:element minOccurs="0" name="TripInfos" nillable="true" type="tns:ArrayOfTripInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ViewFastFareSearch" nillable="true" type="tns:ViewFastFareSearch" />
+  <xs:complexType name="ArrayOfFareDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FareDetail" nillable="true" type="tns:FareDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFareDetail" nillable="true" type="tns:ArrayOfFareDetail" />
+  <xs:complexType name="FareDetail">
+    <xs:sequence>
+      <xs:element name="FareTypeIdentifier" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FCCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FBCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FareScheduleID" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PTCID" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FareTypeName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="BaseFareAmtInclTaxes" type="xs:decimal">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="BaseFareAmt" type="xs:decimal">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FareAmtNoTaxes" type="xs:decimal">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FareAmt" type="xs:decimal">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DiscountAmt" type="xs:decimal">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PrivateFare" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FareDetail" nillable="true" type="tns:FareDetail" />
+  <xs:complexType name="ArrayOfFlightDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FlightDetail" nillable="true" type="tns:FlightDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFlightDetail" nillable="true" type="tns:ArrayOfFlightDetail" />
+  <xs:complexType name="FlightDetail">
+    <xs:sequence>
+      <xs:element name="FlightDetailIdentifier" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OriginLocation" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DestinationLocation" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DepartureDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ArrivalDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TotalFlightDuration" type="xs:decimal">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SeatsAvailable" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LegDetailIdentifiers" nillable="true" type="tns:ArrayOfLegDetailIdentifier">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LogicalFlightID" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FlightDetail" nillable="true" type="tns:FlightDetail" />
+  <xs:complexType name="ArrayOfLegDetailIdentifier">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LegDetailIdentifier" nillable="true" type="tns:LegDetailIdentifier" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLegDetailIdentifier" nillable="true" type="tns:ArrayOfLegDetailIdentifier" />
+  <xs:complexType name="LegDetailIdentifier">
+    <xs:sequence>
+      <xs:element name="LegIdentifier" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LegDetailIdentifier" nillable="true" type="tns:LegDetailIdentifier" />
+  <xs:complexType name="ArrayOfFlightLegDetailed">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FlightLegDetailed" nillable="true" type="tns:FlightLegDetailed" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFlightLegDetailed" nillable="true" type="tns:ArrayOfFlightLegDetailed" />
+  <xs:complexType name="FlightLegDetailed">
+    <xs:sequence>
+      <xs:element name="LegIdentifier" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OriginLocation" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ArrivalLocation" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DepartureDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ArrivalDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FlightNumber" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FlightDuration" type="xs:decimal">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AirCraftType" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AirCraftDescription" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SellingCarrier" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OperatingCarrier" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FlightLegDetailed" nillable="true" type="tns:FlightLegDetailed" />
+  <xs:complexType name="ArrayOfTripInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TripInfo" nillable="true" type="tns:TripInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTripInfo" nillable="true" type="tns:ArrayOfTripInfo" />
+  <xs:complexType name="TripInfo">
+    <xs:sequence>
+      <xs:element name="FlightDetailIdentifier" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FareTypeInfos" nillable="true" type="tns:ArrayOfFareTypeInfo">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CombinedTripInfos" nillable="true" type="tns:ArrayOfCombinedTripInfo">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TripInfo" nillable="true" type="tns:TripInfo" />
+  <xs:complexType name="ArrayOfFareTypeInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FareTypeInfo" nillable="true" type="tns:FareTypeInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFareTypeInfo" nillable="true" type="tns:ArrayOfFareTypeInfo" />
+  <xs:complexType name="FareTypeInfo">
+    <xs:sequence>
+      <xs:element name="FareTypeIdentifier" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FareTypeName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ApplicableFareInfos" nillable="true" type="tns:ArrayOfApplicableFareInfo">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FareTypeInfo" nillable="true" type="tns:FareTypeInfo" />
+  <xs:complexType name="ArrayOfApplicableFareInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ApplicableFareInfo" nillable="true" type="tns:ApplicableFareInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfApplicableFareInfo" nillable="true" type="tns:ArrayOfApplicableFareInfo" />
+  <xs:complexType name="ApplicableFareInfo">
+    <xs:sequence>
+      <xs:element name="FareDetailIdentifier" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ApplicableFareInfo" nillable="true" type="tns:ApplicableFareInfo" />
+  <xs:complexType name="ArrayOfCombinedTripInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CombinedTripInfo" nillable="true" type="tns:CombinedTripInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCombinedTripInfo" nillable="true" type="tns:ArrayOfCombinedTripInfo" />
+  <xs:complexType name="CombinedTripInfo">
+    <xs:sequence>
+      <xs:element name="FlightDetailIdentifier" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FareTypeInfos" nillable="true" type="tns:ArrayOfFareTypeInfo">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CombinedTripInfo" nillable="true" type="tns:CombinedTripInfo" />
+  <xs:complexType name="ViewFareQuote">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CommissionIncluded" type="xs:boolean" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Exceptions" minOccurs="0" name="Exceptions" nillable="true" type="q2:ExceptionInformation.Exceptions" />
+      <xs:element minOccurs="0" name="FlightSegments" nillable="true" type="tns:ArrayOfFlightSegment" />
+      <xs:element minOccurs="0" name="LegDetails" nillable="true" type="tns:ArrayOfLegDetail" />
+      <xs:element minOccurs="0" name="RequestedCorporationID" type="xs:int" />
+      <xs:element minOccurs="0" name="RequestedCurrencyOfFareQuote" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RequestedFareFilterMethod" type="xs:int" />
+      <xs:element minOccurs="0" name="RequestedGroupMethod" type="xs:int" />
+      <xs:element minOccurs="0" name="RequestedIataNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RequestedInventoryFilterMethod" type="xs:int" />
+      <xs:element minOccurs="0" name="RequestedPromotionalCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RequestedReservationChannel" type="xs:int" />
+      <xs:element minOccurs="0" name="SegmentDetails" nillable="true" type="tns:ArrayOfSegmentDetail" />
+      <xs:element minOccurs="0" name="TaxDetails" nillable="true" type="tns:ArrayOfTaxDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ViewFareQuote" nillable="true" type="tns:ViewFareQuote" />
+  <xs:complexType name="ArrayOfFlightSegment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FlightSegment" nillable="true" type="tns:FlightSegment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFlightSegment" nillable="true" type="tns:ArrayOfFlightSegment" />
+  <xs:complexType name="FlightSegment">
+    <xs:sequence>
+      <xs:element name="LFID" type="xs:int" />
+      <xs:element name="DepartureDate" type="xs:dateTime" />
+      <xs:element name="ArrivalDate" type="xs:dateTime" />
+      <xs:element name="LegCount" type="xs:int" />
+      <xs:element name="International" type="xs:boolean" />
+      <xs:element name="FareTypes" nillable="true" type="tns:ArrayOfFareType" />
+      <xs:element name="FlightLegDetails" nillable="true" type="tns:ArrayOfFlightLegDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FlightSegment" nillable="true" type="tns:FlightSegment" />
+  <xs:complexType name="ArrayOfFareType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FareType" nillable="true" type="tns:FareType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFareType" nillable="true" type="tns:ArrayOfFareType" />
+  <xs:complexType name="FareType">
+    <xs:sequence>
+      <xs:element name="FareTypeID" type="xs:int" />
+      <xs:element name="FareTypeName" nillable="true" type="xs:string" />
+      <xs:element name="FilterRemove" type="xs:boolean" />
+      <xs:element name="FareInfos" nillable="true" type="tns:ArrayOfFareInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FareType" nillable="true" type="tns:FareType" />
+  <xs:complexType name="ArrayOfFareInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FareInfo" nillable="true" type="tns:FareInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFareInfo" nillable="true" type="tns:ArrayOfFareInfo" />
+  <xs:complexType name="FareInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseFareInfo">
+        <xs:sequence>
+          <xs:element name="ReturnFlightSegmentDetails" nillable="true" type="tns:ArrayOfReturnFlightSegmentDetail" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FareInfo" nillable="true" type="tns:FareInfo" />
+  <xs:complexType name="BaseFareInfo">
+    <xs:sequence>
+      <xs:element name="FareID" type="xs:int" />
+      <xs:element name="FCCode" nillable="true" type="xs:string" />
+      <xs:element name="FBCode" nillable="true" type="xs:string" />
+      <xs:element name="BaseFareAmtNoTaxes" type="xs:decimal" />
+      <xs:element name="BaseFareAmt" type="xs:decimal" />
+      <xs:element name="FareAmtNoTaxes" type="xs:decimal" />
+      <xs:element name="FareAmt" type="xs:decimal" />
+      <xs:element name="BaseFareAmtInclTax" type="xs:decimal" />
+      <xs:element name="FareAmtInclTax" type="xs:decimal" />
+      <xs:element name="PvtFare" type="xs:boolean" />
+      <xs:element name="PTCID" type="xs:int" />
+      <xs:element name="Cabin" nillable="true" type="xs:string" />
+      <xs:element name="SeatsAvailable" type="xs:int" />
+      <xs:element name="InfantSeatsAvailable" type="xs:int" />
+      <xs:element name="FareScheduleID" type="xs:int" />
+      <xs:element name="PromotionID" type="xs:int" />
+      <xs:element name="RoundTrip" type="xs:int" />
+      <xs:element name="DisplayFareAmt" type="xs:decimal">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: This amount if greater than zero is meant to represent the fare amount plus the taxes that are marked with the 'Bundled' column equaling 1 (True).  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DisplayTaxSum" type="xs:decimal">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: This amount if greater than zero is meant to represent the fare amount plus the taxes that are marked with the 'Bundled' column equaling 1 (True) minus any tax object that has the TaxType value of 2.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SpecialMarketed" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: This field is an indicator to the ConnetPoint consumer that the given fare is marked as a Special Marketed fare.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="WaitList" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: This field is an indicator to the ConnetPoint consumer that the given fare is marked as a Wait listed fare.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SpaceAvailable" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: This field is an indicator to the ConnetPoint consumer that the given fare is marked as a non revenue stand by fare.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PositiveSpace" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: This field is an indicator to the ConnetPoint consumer that the given fare is marked as a non revenue positive space fare.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PromotionCatID" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>	&lt;summary&gt;The promotion category ID&lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CommissionAmount" type="xs:decimal" />
+      <xs:element name="PromotionAmount" type="xs:decimal" />
+      <xs:element name="ApplicableTaxDetails" nillable="true" type="tns:ArrayOfApplicableTaxDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BaseFareInfo" nillable="true" type="tns:BaseFareInfo" />
+  <xs:complexType name="ArrayOfApplicableTaxDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ApplicableTaxDetail" nillable="true" type="tns:ApplicableTaxDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfApplicableTaxDetail" nillable="true" type="tns:ArrayOfApplicableTaxDetail" />
+  <xs:complexType name="ApplicableTaxDetail">
+    <xs:sequence>
+      <xs:element name="TaxID" type="xs:int" />
+      <xs:element name="Amt" type="xs:decimal" />
+      <xs:element name="InitiatingTaxID" type="xs:int" />
+      <xs:element name="CommissionAmount" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ApplicableTaxDetail" nillable="true" type="tns:ApplicableTaxDetail" />
+  <xs:complexType name="ArrayOfReturnFlightSegmentDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReturnFlightSegmentDetail" nillable="true" type="tns:ReturnFlightSegmentDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReturnFlightSegmentDetail" nillable="true" type="tns:ArrayOfReturnFlightSegmentDetail" />
+  <xs:complexType name="ReturnFlightSegmentDetail">
+    <xs:sequence>
+      <xs:element name="LFID" type="xs:int" />
+      <xs:element name="Origin" nillable="true" type="xs:string" />
+      <xs:element name="Destination" nillable="true" type="xs:string" />
+      <xs:element name="DepartureDate" type="xs:dateTime" />
+      <xs:element name="LegCount" type="xs:int" />
+      <xs:element name="FlightNum" nillable="true" type="xs:string" />
+      <xs:element name="FlightTime" type="xs:double" />
+      <xs:element name="CarrierCode" nillable="true" type="xs:string" />
+      <xs:element name="International" type="xs:boolean" />
+      <xs:element name="RoundTrip" type="xs:boolean" />
+      <xs:element name="FilterRemove" type="xs:boolean" />
+      <xs:element name="RetFareTypes" nillable="true" type="tns:ArrayOfRetFareType" />
+      <xs:element name="FlightLegDetails" nillable="true" type="tns:ArrayOfFlightLegDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReturnFlightSegmentDetail" nillable="true" type="tns:ReturnFlightSegmentDetail" />
+  <xs:complexType name="ArrayOfRetFareType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RetFareType" nillable="true" type="tns:RetFareType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRetFareType" nillable="true" type="tns:ArrayOfRetFareType" />
+  <xs:complexType name="RetFareType">
+    <xs:sequence>
+      <xs:element name="FareTypeID" type="xs:int" />
+      <xs:element name="FareTypeName" nillable="true" type="xs:string" />
+      <xs:element name="FilterRemove" type="xs:boolean" />
+      <xs:element name="RetFareInfos" nillable="true" type="tns:ArrayOfRetFareInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RetFareType" nillable="true" type="tns:RetFareType" />
+  <xs:complexType name="ArrayOfRetFareInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RetFareInfo" nillable="true" type="tns:RetFareInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRetFareInfo" nillable="true" type="tns:ArrayOfRetFareInfo" />
+  <xs:complexType name="RetFareInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseFareInfo">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RetFareInfo" nillable="true" type="tns:RetFareInfo" />
+  <xs:complexType name="ArrayOfFlightLegDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FlightLegDetail" nillable="true" type="tns:FlightLegDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFlightLegDetail" nillable="true" type="tns:ArrayOfFlightLegDetail" />
+  <xs:complexType name="FlightLegDetail">
+    <xs:sequence>
+      <xs:element name="PFID" type="xs:int" />
+      <xs:element name="DepartureDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FlightLegDetail" nillable="true" type="tns:FlightLegDetail" />
+  <xs:complexType name="ArrayOfLegDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LegDetail" nillable="true" type="tns:LegDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLegDetail" nillable="true" type="tns:ArrayOfLegDetail" />
+  <xs:complexType name="LegDetail">
+    <xs:sequence>
+      <xs:element name="PFID" type="xs:int" />
+      <xs:element name="DepartureDate" type="xs:dateTime" />
+      <xs:element name="Origin" nillable="true" type="xs:string" />
+      <xs:element name="Destination" nillable="true" type="xs:string" />
+      <xs:element name="FlightNum" nillable="true" type="xs:string" />
+      <xs:element name="International" type="xs:boolean" />
+      <xs:element name="ArrivalDate" type="xs:dateTime" />
+      <xs:element name="FlightTime" type="xs:double" />
+      <xs:element name="OperatingCarrier" nillable="true" type="xs:string" />
+      <xs:element name="FromTerminal" nillable="true" type="xs:string" />
+      <xs:element name="ToTerminal" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LegDetail" nillable="true" type="tns:LegDetail" />
+  <xs:complexType name="ArrayOfSegmentDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SegmentDetail" nillable="true" type="tns:SegmentDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSegmentDetail" nillable="true" type="tns:ArrayOfSegmentDetail" />
+  <xs:complexType name="SegmentDetail">
+    <xs:sequence>
+      <xs:element name="LFID" type="xs:int" />
+      <xs:element name="Origin" nillable="true" type="xs:string" />
+      <xs:element name="Destination" nillable="true" type="xs:string" />
+      <xs:element name="DepartureDate" type="xs:dateTime" />
+      <xs:element name="CarrierCode" nillable="true" type="xs:string" />
+      <xs:element name="ArrivalDate" type="xs:dateTime" />
+      <xs:element name="Stops" type="xs:int" />
+      <xs:element name="FlightTime" type="xs:double" />
+      <xs:element name="AircraftType" nillable="true" type="xs:string" />
+      <xs:element name="SellingCarrier" nillable="true" type="xs:string" />
+      <xs:element name="FlightNum" nillable="true" type="xs:string" />
+      <xs:element name="OperatingCarrier" nillable="true" type="xs:string" />
+      <xs:element name="OperatingFlightNum" nillable="true" type="xs:string" />
+      <xs:element name="FlyMonday" type="xs:boolean" />
+      <xs:element name="FlyTuesday" type="xs:boolean" />
+      <xs:element name="FlyWednesday" type="xs:boolean" />
+      <xs:element name="FlyThursday" type="xs:boolean" />
+      <xs:element name="FlyFriday" type="xs:boolean" />
+      <xs:element name="FlySaturday" type="xs:boolean" />
+      <xs:element name="FlySunday" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SegmentDetail" nillable="true" type="tns:SegmentDetail" />
+  <xs:complexType name="ArrayOfTaxDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TaxDetail" nillable="true" type="tns:TaxDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTaxDetail" nillable="true" type="tns:ArrayOfTaxDetail" />
+  <xs:complexType name="TaxDetail">
+    <xs:sequence>
+      <xs:element name="TaxID" type="xs:int" />
+      <xs:element name="TaxCode" nillable="true" type="xs:string" />
+      <xs:element name="CodeType" nillable="true" type="xs:string" />
+      <xs:element name="TaxCurr" nillable="true" type="xs:string" />
+      <xs:element name="TaxDesc" nillable="true" type="xs:string" />
+      <xs:element name="TaxType" type="xs:int" />
+      <xs:element name="IsVat" type="xs:boolean" />
+      <xs:element name="IncludedInFare" type="xs:boolean" />
+      <xs:element name="OriginalCurrency" nillable="true" type="xs:string" />
+      <xs:element name="ExchangeRate" type="xs:decimal" />
+      <xs:element name="ExchangeDate" type="xs:dateTime" />
+      <xs:element name="Commissionable" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TaxDetail" nillable="true" type="tns:TaxDetail" />
+  <xs:complexType name="ViewServiceQuotes">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Exceptions" name="Exceptions" nillable="true" type="q3:ExceptionInformation.Exceptions">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ServiceQuotes" nillable="true" type="tns:ArrayOfViewServiceQuote">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ViewServiceQuotes" nillable="true" type="tns:ViewServiceQuotes" />
+  <xs:complexType name="ArrayOfViewServiceQuote">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ViewServiceQuote" nillable="true" type="tns:ViewServiceQuote" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfViewServiceQuote" nillable="true" type="tns:ArrayOfViewServiceQuote" />
+  <xs:complexType name="ViewServiceQuote">
+    <xs:sequence>
+      <xs:element name="LogicalFlightID" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Logical flight ID that matches the request. The consuming client logic can use this value for gruoping response information.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ServiceID" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DepartureDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Departure Date that matches the request. The consuming client logic can use this value for gruoping response information.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OperatingCarrier" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MarketingCarrier" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CodeType" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Description" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CurrencyCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Amount" type="xs:decimal">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AmountActive" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AmountType" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CategoryID" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SSRCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Display" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MaxCountServiceLevel" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Refundable" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PNLActive" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CutoffHours" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Commissionable" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DisplayOrder" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="RevenueCategoryID" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IATAStandardCodeType" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ServiceActive" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MaxCountFlightLevel" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="QuantityAvailable" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="StartSalesDays" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The number of days before flight departure that the Special Service is allowed to be sold.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ApplicableTaxes" nillable="true" type="tns:ArrayOfApplicableTax">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ViewServiceQuote" nillable="true" type="tns:ViewServiceQuote" />
+  <xs:complexType name="ArrayOfApplicableTax">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ApplicableTax" nillable="true" type="tns:ApplicableTax" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfApplicableTax" nillable="true" type="tns:ArrayOfApplicableTax" />
+  <xs:complexType name="ApplicableTax">
+    <xs:sequence>
+      <xs:element name="TaxID" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CodeType" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TaxCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TaxDescription" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" name="TaxType" type="q4:Enumerations.TaxTypes">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TaxAmount" type="xs:decimal">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TaxCurrenyCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AmountToApply" type="xs:decimal">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TaxAmountType" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IsDefault" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TaxActive" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MinAmount" type="xs:decimal">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MaxAmount" type="xs:decimal">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: .  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ApplicableTax" nillable="true" type="tns:ApplicableTax" />
+  <xs:complexType name="ViewSystemFareQuote">
+    <xs:sequence>
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Exceptions" minOccurs="0" name="Exceptions" nillable="true" type="q5:ExceptionInformation.Exceptions" />
+      <xs:element minOccurs="0" name="SystemFareQuote" nillable="true" type="tns:ArrayOfViewFareQuote" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ViewSystemFareQuote" nillable="true" type="tns:ViewSystemFareQuote" />
+  <xs:complexType name="ArrayOfViewFareQuote">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ViewFareQuote" nillable="true" type="tns:ViewFareQuote" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfViewFareQuote" nillable="true" type="tns:ArrayOfViewFareQuote" />
+</xs:schema>

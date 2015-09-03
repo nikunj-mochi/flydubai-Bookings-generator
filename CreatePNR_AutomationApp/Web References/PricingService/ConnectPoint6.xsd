@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://fzstgtmp.internal.connectpoint.radixx.com/ConnectPoint.Pricing.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Pricing.Request.FastFareSearch" />
+  <xs:import schemaLocation="http://fzstgtmp.internal.connectpoint.radixx.com/ConnectPoint.Pricing.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Pricing.Response" />
+  <xs:import schemaLocation="http://fzstgtmp.internal.connectpoint.radixx.com/ConnectPoint.Pricing.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Pricing.Request.FareQuote" />
+  <xs:import schemaLocation="http://fzstgtmp.internal.connectpoint.radixx.com/ConnectPoint.Pricing.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Pricing.Request.Service" />
+  <xs:element name="RetrieveFastFareSearch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Pricing.Request.FastFareSearch" minOccurs="0" name="RetrieveFastFareSearchRequest" nillable="true" type="q1:RetrieveFastFareSearch" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveFastFareSearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Pricing.Response" minOccurs="0" name="RetrieveFastFareSearchResult" nillable="true" type="q2:ViewFastFareSearch" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveFareQuote">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Pricing.Request.FareQuote" minOccurs="0" name="RetrieveFareQuoteRequest" nillable="true" type="q3:RetrieveFareQuote" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveFareQuoteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Pricing.Response" minOccurs="0" name="RetrieveFareQuoteResult" nillable="true" type="q4:ViewFareQuote" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveFareQuoteDateRange">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Pricing.Request.FareQuote" minOccurs="0" name="RetrieveFareQuoteDateRangeRequest" nillable="true" type="q5:RetrieveFareQuoteByDateRange" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveFareQuoteDateRangeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Pricing.Response" minOccurs="0" name="RetrieveFareQuoteDateRangeResult" nillable="true" type="q6:ViewFareQuote" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveServiceQuote">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Pricing.Request.Service" minOccurs="0" name="RetrieveServiceQuoteRequest" nillable="true" type="q7:RetrieveServiceQuote" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveServiceQuoteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Pricing.Response" minOccurs="0" name="RetrieveServiceQuoteResult" nillable="true" type="q8:ViewServiceQuotes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveServiceQuotes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Pricing.Request.Service" minOccurs="0" name="RetrieveServiceQuotesRequest" nillable="true" type="q9:RetrieveServiceQuotes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveServiceQuotesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Pricing.Response" minOccurs="0" name="RetrieveServiceQuotesResult" nillable="true" type="q10:ViewServiceQuotes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveSystemFareQuote">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Pricing.Request.FareQuote" minOccurs="0" name="RetrieveSystemFareQuoteRequest" nillable="true" type="q11:RetrieveSystemFareQuote" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveSystemFareQuoteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Pricing.Response" minOccurs="0" name="RetrieveSystemFareQuoteResult" nillable="true" type="q12:ViewSystemFareQuote" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

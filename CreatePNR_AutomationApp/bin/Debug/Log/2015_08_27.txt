@@ -1,0 +1,206 @@
+<PNR><![CDATA[8/27/2015 8:30:23 AM : ====== Create PNR Started at : 8/27/2015 8:30:23 AM]]></data>
+<PNR><![CDATA[8/27/2015 8:30:34 AM : Origin DXB, Destination: AMM not processed.]]></data>
+<PNR><![CDATA[8/27/2015 8:30:34 AM : ====== Create PNR Started at : 8/27/2015 8:30:34 AM]]></data>
+<PNR><![CDATA[8/27/2015 8:30:36 AM : Origin DXB, Destination: AMM not processed.]]></data>
+<PNR><![CDATA[8/27/2015 8:30:36 AM : ====== Create PNR Started at : 8/27/2015 8:30:36 AM]]></data>
+<PNR><![CDATA[8/27/2015 8:30:37 AM : Origin DXB, Destination: AMM not processed.]]></data>
+<PNR><![CDATA[8/27/2015 8:30:37 AM : ====== Create PNR Started at : 8/27/2015 8:30:37 AM]]></data>
+<PNR><![CDATA[8/27/2015 8:30:39 AM : Origin DXB, Destination: AMM not processed.]]></data>
+<PNR><![CDATA[8/27/2015 8:30:39 AM : ====== Create PNR Started at : 8/27/2015 8:30:39 AM]]></data>
+<PNR><![CDATA[8/27/2015 8:30:40 AM : Origin DXB, Destination: AMM not processed.]]></data>
+<PNR><![CDATA[8/27/2015 8:30:40 AM : ======== Create PNR process ended at :8/27/2015 8:30:40 AM]]></data>
+<PNR><![CDATA[8/27/2015 8:31:38 AM : ====== Create PNR Started at : 8/27/2015 8:31:38 AM]]></data>
+<PNR><![CDATA[8/27/2015 8:38:59 AM : ====== Create PNR Started at : 8/27/2015 8:38:59 AM]]></data>
+<PNR><![CDATA[8/27/2015 8:39:13 AM : ====== Create PNR Started at : 8/27/2015 8:39:13 AM]]></data>
+<PNR><![CDATA[8/27/2015 8:40:14 AM : PNR KSIZVF created successfully.]]></data>
+<PNR><![CDATA[8/27/2015 8:40:14 AM : Origin DXB, Destination: AMM not processed.]]></data>
+<PNR><![CDATA[8/27/2015 8:40:14 AM : ======== Create PNR process ended at :8/27/2015 8:40:14 AM]]></data>
+<PNR><![CDATA[8/27/2015 8:40:21 AM : PNR W1G3L8 created successfully.]]></data>
+<PNR><![CDATA[8/27/2015 8:40:21 AM : Origin DXB, Destination: AMM not processed.]]></data>
+<PNR><![CDATA[8/27/2015 8:40:21 AM : ======== Create PNR process ended at :8/27/2015 8:40:21 AM]]></data>
+<PNR><![CDATA[8/27/2015 8:45:23 AM : ====== Create PNR Started at : 8/27/2015 8:45:23 AM]]></data>
+<PNR><![CDATA[8/27/2015 8:45:30 AM : PNR VF3S1D created successfully.]]></data>
+<PNR><![CDATA[8/27/2015 8:45:30 AM : Origin DXB, Destination: AMM not processed.]]></data>
+<PNR><![CDATA[8/27/2015 8:45:30 AM : ======== Create PNR process ended at :8/27/2015 8:45:30 AM]]></data>
+<PNR><![CDATA[8/27/2015 9:01:27 AM : ====== Create PNR Started at : 8/27/2015 9:01:27 AM]]></data>
+<PNR><![CDATA[8/27/2015 9:01:36 AM : PNR R5NA2T created successfully.]]></data>
+<PNR><![CDATA[8/27/2015 9:01:36 AM : ======== Create PNR process ended at :8/27/2015 9:01:36 AM]]></data>
+<PNR><![CDATA[8/27/2015 9:46:00 AM : ====== Create PNR Started at : 8/27/2015 9:46:00 AM]]></data>
+<PNR><![CDATA[8/27/2015 9:50:17 AM : Origin DXB, Destination: AMM not processed.]]></data>
+<PNR><![CDATA[8/27/2015 9:50:17 AM : Error message Server returned an invalid SOAP Fault.  Please see InnerException for more details.]]></data>
+<PNR><![CDATA[8/27/2015 9:50:17 AM : ======== Create PNR process ended at :8/27/2015 9:50:17 AM]]></data>
+<PNR><![CDATA[8/27/2015 9:51:53 AM : ====== Create PNR Started at : 8/27/2015 9:51:53 AM]]></data>
+<PNR><![CDATA[8/27/2015 9:52:52 AM : PNR M7KQZF created successfully.]]></data>
+<PNR><![CDATA[8/27/2015 9:52:58 AM : ======== Create PNR process ended at :8/27/2015 9:52:58 AM]]></data>
+<PNR><![CDATA[8/27/2015 10:22:48 AM : ====== Create PNR Started at : 8/27/2015 10:22:48 AM]]></data>
+<PNR><![CDATA[8/27/2015 10:22:48 AM : ======== Create PNR process ended at :8/27/2015 10:22:48 AM]]></data>
+<PNR><![CDATA[8/27/2015 10:26:55 AM : ====== Create PNR Started at : 8/27/2015 10:26:55 AM]]></data>
+<PNR><![CDATA[8/27/2015 10:27:17 AM : ======== Create PNR process ended at :8/27/2015 10:27:16 AM]]></data>
+<PNR><![CDATA[8/27/2015 10:32:20 AM : ====== Create PNR Started at : 8/27/2015 10:32:20 AM]]></data>
+<PNR><![CDATA[8/27/2015 10:32:41 AM : ======== Create PNR process ended at :8/27/2015 10:32:41 AM]]></data>
+<PNR><![CDATA[8/27/2015 10:34:36 AM : ====== Create PNR Started at : 8/27/2015 10:34:36 AM]]></data>
+<PNR><![CDATA[8/27/2015 10:34:53 AM : ======== Create PNR process ended at :8/27/2015 10:34:53 AM]]></data>
+<PNR><![CDATA[8/27/2015 10:36:24 AM : ====== Create PNR Started at : 8/27/2015 10:36:24 AM]]></data>
+<PNR><![CDATA[8/27/2015 10:36:29 AM : ======== Create PNR process ended at :8/27/2015 10:36:29 AM]]></data>
+<PNR><![CDATA[8/27/2015 10:43:47 AM : ====== Create PNR Started at : 8/27/2015 10:43:47 AM]]></data>
+<PNR><![CDATA[8/27/2015 10:44:12 AM : Origin DXB, Destination:  not processed.]]></data>
+<PNR><![CDATA[8/27/2015 10:44:12 AM : Error message : Fares not available]]></data>
+<PNR><![CDATA[8/27/2015 10:44:15 AM : Origin DXB, Destination:  not processed.]]></data>
+<PNR><![CDATA[8/27/2015 10:44:15 AM : Error message : Fares not available]]></data>
+<PNR><![CDATA[8/27/2015 10:44:15 AM : ======== Create PNR process ended at :8/27/2015 10:44:15 AM]]></data>
+<PNR><![CDATA[8/27/2015 10:53:09 AM : ====== Create PNR Started at : 8/27/2015 10:53:09 AM]]></data>
+<PNR><![CDATA[8/27/2015 10:54:03 AM : ====== Create PNR Started at : 8/27/2015 10:54:03 AM]]></data>
+<PNR><![CDATA[8/27/2015 10:54:59 AM : ====== Create PNR Started at : 8/27/2015 10:54:59 AM]]></data>
+<PNR><![CDATA[8/27/2015 10:55:18 AM : ====== Create PNR Started at : 8/27/2015 10:55:18 AM]]></data>
+<PNR><![CDATA[8/27/2015 10:55:30 AM : Origin DOH, Destination: DXB not processed.]]></data>
+<PNR><![CDATA[8/27/2015 10:55:30 AM : Error message : Fares not available]]></data>
+<PNR><![CDATA[8/27/2015 10:59:48 AM : ====== Create PNR Started at : 8/27/2015 10:59:48 AM]]></data>
+<PNR><![CDATA[8/27/2015 11:00:05 AM : ====== Create PNR Started at : 8/27/2015 11:00:05 AM]]></data>
+<PNR><![CDATA[8/27/2015 11:00:28 AM : ====== Create PNR Started at : 8/27/2015 11:00:28 AM]]></data>
+<PNR><![CDATA[8/27/2015 11:00:41 AM : Origin DXB, Destination: AMM not processed.]]></data>
+<PNR><![CDATA[8/27/2015 11:00:41 AM : Error message : Fares not available]]></data>
+<PNR><![CDATA[8/27/2015 11:00:42 AM : Origin DOH, Destination: DXB not processed.]]></data>
+<PNR><![CDATA[8/27/2015 11:00:42 AM : Error message : Fares not available]]></data>
+<PNR><![CDATA[8/27/2015 11:00:42 AM : ======== Create PNR process ended at :8/27/2015 11:00:42 AM]]></data>
+<PNR><![CDATA[8/27/2015 11:01:17 AM : ====== Create PNR Started at : 8/27/2015 11:01:17 AM]]></data>
+<PNR><![CDATA[8/27/2015 11:02:33 AM : ====== Create PNR Started at : 8/27/2015 11:02:33 AM]]></data>
+<PNR><![CDATA[8/27/2015 11:04:38 AM : ====== Create PNR Started at : 8/27/2015 11:04:38 AM]]></data>
+<PNR><![CDATA[8/27/2015 11:04:42 AM : Origin DOH, Destination: DXB not processed.]]></data>
+<PNR><![CDATA[8/27/2015 11:04:42 AM : Error message : Fares not available]]></data>
+<PNR><![CDATA[8/27/2015 11:04:42 AM : Origin DXB, Destination: AMM not processed.]]></data>
+<PNR><![CDATA[8/27/2015 11:04:42 AM : Error message : Fares not available]]></data>
+<PNR><![CDATA[8/27/2015 11:04:42 AM : ======== Create PNR process ended at :8/27/2015 11:04:42 AM]]></data>
+<PNR><![CDATA[8/27/2015 11:05:24 AM : ====== Create PNR Started at : 8/27/2015 11:05:24 AM]]></data>
+<PNR><![CDATA[8/27/2015 11:06:12 AM : ====== Create PNR Started at : 8/27/2015 11:06:12 AM]]></data>
+<PNR><![CDATA[8/27/2015 11:07:25 AM : ====== Create PNR Started at : 8/27/2015 11:07:25 AM]]></data>
+<PNR><![CDATA[8/27/2015 11:07:52 AM : Origin DXB, Destination: AMM not processed.]]></data>
+<PNR><![CDATA[8/27/2015 11:07:52 AM : Error message : Voucher no:  not valid or Balanced amount is 0 ,]]></data>
+<PNR><![CDATA[8/27/2015 11:08:00 AM : Origin DOH, Destination: DXB not processed.]]></data>
+<PNR><![CDATA[8/27/2015 11:08:00 AM : Error message : Voucher no:  not valid or Balanced amount is 0 ,]]></data>
+<PNR><![CDATA[8/27/2015 11:08:45 AM : ====== Create PNR Started at : 8/27/2015 11:08:45 AM]]></data>
+<PNR><![CDATA[8/27/2015 11:08:50 AM : Origin DXB, Destination: AMM not processed.]]></data>
+<PNR><![CDATA[8/27/2015 11:08:50 AM : Error message : Voucher no:  not valid or Balanced amount is 0 ,]]></data>
+<PNR><![CDATA[8/27/2015 11:08:56 AM : Origin DOH, Destination: DXB not processed.]]></data>
+<PNR><![CDATA[8/27/2015 11:08:56 AM : Error message : Voucher no:  not valid or Balanced amount is 0 ,]]></data>
+<PNR><![CDATA[8/27/2015 11:09:09 AM : ====== Create PNR Started at : 8/27/2015 11:09:09 AM]]></data>
+<PNR><![CDATA[8/27/2015 11:10:12 AM : ====== Create PNR Started at : 8/27/2015 11:10:12 AM]]></data>
+<PNR><![CDATA[8/27/2015 11:10:32 AM : PNR TE9CSW created successfully.]]></data>
+<PNR><![CDATA[8/27/2015 11:10:44 AM : PNR 13UIQC created successfully.]]></data>
+<PNR><![CDATA[8/27/2015 11:11:44 AM : ====== Create PNR Started at : 8/27/2015 11:11:44 AM]]></data>
+<PNR><![CDATA[8/27/2015 11:11:58 AM : Origin DXB, Destination: AMM not processed.]]></data>
+<PNR><![CDATA[8/27/2015 11:11:58 AM : Error message 
+Additional Source Information: ERR3021: Unknown error code ERR3021 in Rbo_SaveReservation. Error Details: Radixx.Reservation.ReservationBase.VerifyVoucherSession : 
+Voucher session Id check failed.
+Voucher # - 1087107 has been loaded in another session. Please reproccess voucher in order to verify funds are still available.
+
+]]></data>
+<PNR><![CDATA[8/27/2015 11:12:01 AM : PNR TVWUAV created successfully.]]></data>
+<PNR><![CDATA[8/27/2015 11:12:01 AM : ======== Create PNR process ended at :8/27/2015 11:12:01 AM]]></data>
+<PNR><![CDATA[8/27/2015 11:28:45 AM : ====== Create PNR Started at : 8/27/2015 11:28:45 AM]]></data>
+<PNR><![CDATA[8/27/2015 11:28:58 AM : PNR QHD17Y created successfully.]]></data>
+<PNR><![CDATA[8/27/2015 11:29:11 AM : PNR SCWU9B created successfully.]]></data>
+<PNR><![CDATA[8/27/2015 11:29:11 AM : ======== Create PNR process ended at :8/27/2015 11:29:11 AM]]></data>
+<PNR><![CDATA[8/27/2015 11:30:20 AM : ====== Create PNR Started at : 8/27/2015 11:30:20 AM]]></data>
+<PNR><![CDATA[8/27/2015 11:30:29 AM : PNR ST7P00 created successfully.]]></data>
+<PNR><![CDATA[8/27/2015 11:30:38 AM : PNR A05W4R created successfully.]]></data>
+<PNR><![CDATA[8/27/2015 11:30:46 AM : PNR 656S3S created successfully.]]></data>
+<PNR><![CDATA[8/27/2015 11:30:55 AM : PNR O3D1QD created successfully.]]></data>
+<PNR><![CDATA[8/27/2015 11:31:04 AM : PNR NYYDI3 created successfully.]]></data>
+<PNR><![CDATA[8/27/2015 11:35:49 AM : ====== Create PNR Started at : 8/27/2015 11:35:49 AM]]></data>
+<PNR><![CDATA[8/27/2015 11:36:12 AM : ====== Create PNR Started at : 8/27/2015 11:36:12 AM]]></data>
+<PNR><![CDATA[8/27/2015 11:36:24 AM : PNR 581LRR created successfully.]]></data>
+<PNR><![CDATA[8/27/2015 11:36:34 AM : PNR XAXE93 created successfully.]]></data>
+<PNR><![CDATA[8/27/2015 11:36:34 AM : ======== Create PNR process ended at :8/27/2015 11:36:34 AM]]></data>
+<PNR><![CDATA[8/27/2015 11:38:10 AM : ====== Create PNR Started at : 8/27/2015 11:38:10 AM]]></data>
+<PNR><![CDATA[8/27/2015 11:38:22 AM : PNR BRGQRG created successfully.]]></data>
+<PNR><![CDATA[8/27/2015 11:38:32 AM : PNR 5O8X2U created successfully.]]></data>
+<PNR><![CDATA[8/27/2015 11:38:32 AM : ======== Create PNR process ended at :8/27/2015 11:38:32 AM]]></data>
+<PNR><![CDATA[8/27/2015 12:21:04 PM : ====== Create PNR Started at : 8/27/2015 12:21:04 PM]]></data>
+<PNR><![CDATA[8/27/2015 12:23:21 PM : ====== Create PNR Started at : 8/27/2015 12:23:21 PM]]></data>
+<PNR><![CDATA[8/27/2015 12:23:45 PM : PNR 7G0R6R created successfully.]]></data>
+<PNR><![CDATA[8/27/2015 12:23:56 PM : PNR 8PC20I created successfully.]]></data>
+<PNR><![CDATA[8/27/2015 12:30:05 PM : ====== Create PNR Started at : 8/27/2015 12:30:05 PM]]></data>
+<PNR><![CDATA[8/27/2015 12:30:29 PM : PNR YX5P5R created successfully.]]></data>
+<PNR><![CDATA[8/27/2015 12:31:31 PM : Origin DOH, Destination: KWI not processed.]]></data>
+<PNR><![CDATA[8/27/2015 12:31:31 PM : Error message 
+Additional Source Information: ERR9999: Unexpected error in CreateReservation.Error Generation Source Location: FZWSUAT01 Session ID: a273849a-38ae-40b5-ae3c-126aa42088d7 Error Details: Booking rejected - Number of segments requested does not match number of availability segments.]]></data>
+<PNR><![CDATA[8/27/2015 12:31:31 PM : ======== Create PNR process ended at :8/27/2015 12:31:31 PM]]></data>
+<PNR><![CDATA[8/27/2015 12:35:12 PM : ====== Create PNR Started at : 8/27/2015 12:35:12 PM]]></data>
+<PNR><![CDATA[8/27/2015 12:36:25 PM : Origin DOH, Destination: KWI not processed.]]></data>
+<PNR><![CDATA[8/27/2015 12:36:25 PM : Error message 
+Additional Source Information: ERR9999: Unexpected error in CreateReservation.Error Generation Source Location: FZWSUAT02 Session ID: 9040ed17-8fd9-4807-ac04-c1b3e31ef9a4 Error Details: Booking rejected - Number of segments requested does not match number of availability segments.]]></data>
+<PNR><![CDATA[8/27/2015 12:36:25 PM : ======== Create PNR process ended at :8/27/2015 12:36:25 PM]]></data>
+<PNR><![CDATA[8/27/2015 12:36:45 PM : ====== Create PNR Started at : 8/27/2015 12:36:45 PM]]></data>
+<PNR><![CDATA[8/27/2015 1:01:22 PM : ====== Create PNR Started at : 8/27/2015 1:01:22 PM]]></data>
+<PNR><![CDATA[8/27/2015 1:07:08 PM : PNR D7O714 created successfully.]]></data>
+<PNR><![CDATA[8/27/2015 1:21:09 PM : ====== Create PNR Started at : 8/27/2015 1:21:09 PM]]></data>
+<PNR><![CDATA[8/27/2015 1:22:00 PM : ====== Create PNR Started at : 8/27/2015 1:22:00 PM]]></data>
+<PNR><![CDATA[8/27/2015 1:26:02 PM : Origin DXB, Destination: DOH not processed.]]></data>
+<PNR><![CDATA[8/27/2015 1:26:02 PM : Error message : Voucher no:  not valid or Balanced amount is 0 ,]]></data>
+<PNR><![CDATA[8/27/2015 1:31:33 PM : ====== Create PNR Started at : 8/27/2015 1:31:33 PM]]></data>
+<PNR><![CDATA[8/27/2015 1:42:59 PM : Origin DXB, Destination: DOH not processed.]]></data>
+<PNR><![CDATA[8/27/2015 1:44:01 PM : ====== Create PNR Started at : 8/27/2015 1:44:01 PM]]></data>
+<PNR><![CDATA[8/27/2015 1:44:19 PM : PNR SHVU9E created successfully.]]></data>
+<PNR><![CDATA[8/27/2015 2:44:54 PM : ====== Create PNR Started at : 8/27/2015 2:44:54 PM]]></data>
+<PNR><![CDATA[8/27/2015 2:45:22 PM : PNR CT66ZE created successfully.]]></data>
+<PNR><![CDATA[8/27/2015 2:54:03 PM : ====== Create PNR Started at : 8/27/2015 2:54:03 PM]]></data>
+<PNR><![CDATA[8/27/2015 2:54:29 PM : PNR DU4LJQ created successfully.]]></data>
+<PNR><![CDATA[8/27/2015 3:19:40 PM : ====== Create PNR Started at : 8/27/2015 3:19:40 PM]]></data>
+<PNR><![CDATA[8/27/2015 3:20:11 PM : PNR VLRIRZ created successfully.]]></data>
+<PNR><![CDATA[8/27/2015 3:23:39 PM : ====== Create PNR Started at : 8/27/2015 3:23:39 PM]]></data>
+<PNR><![CDATA[8/27/2015 3:24:04 PM : PNR DCTNHU created successfully.]]></data>
+<PNR><![CDATA[8/27/2015 3:34:35 PM : ====== Create PNR Started at : 8/27/2015 3:34:35 PM]]></data>
+<PNR><![CDATA[8/27/2015 3:35:01 PM : PNR 7UKNQ0 created successfully.]]></data>
+<PNR><![CDATA[8/27/2015 3:35:10 PM : PNR EPPQJO created successfully.]]></data>
+<PNR><![CDATA[8/27/2015 3:35:26 PM : PNR L2C8WR created successfully.]]></data>
+<PNR><![CDATA[8/27/2015 4:08:37 PM : ====== Create PNR Started at : 8/27/2015 4:08:37 PM]]></data>
+<PNR><![CDATA[8/27/2015 4:08:51 PM : PNR 0TDYDP created successfully.]]></data>
+<PNR><![CDATA[8/27/2015 4:08:59 PM : PNR JJVH86 created successfully.]]></data>
+<PNR><![CDATA[8/27/2015 4:09:08 PM : PNR R4AUAT created successfully.]]></data>
+<PNR><![CDATA[8/27/2015 4:24:30 PM : ====== Create PNR Started at : 8/27/2015 4:24:30 PM]]></data>
+<PNR><![CDATA[8/27/2015 4:25:37 PM : PNR D1I9HN created successfully.]]></data>
+<PNR><![CDATA[8/27/2015 4:27:11 PM : ====== Create PNR Process ended at : 8/27/2015 4:27:11 PM]]></data>
+<PNR><![CDATA[8/27/2015 4:27:11 PM : ======== Create PNR process ended at :8/27/2015 4:27:11 PM]]></data>
+<PNR><![CDATA[8/27/2015 4:31:07 PM : ====== Create PNR Started at : 8/27/2015 4:31:07 PM]]></data>
+<PNR><![CDATA[8/27/2015 4:31:16 PM : PNR X3VC80 created successfully.]]></data>
+<PNR><![CDATA[8/27/2015 4:31:28 PM : ====== Create PNR Process ended at : 8/27/2015 4:31:28 PM]]></data>
+<PNR><![CDATA[8/27/2015 4:32:10 PM : ====== Create PNR Started at : 8/27/2015 4:32:10 PM]]></data>
+<PNR><![CDATA[8/27/2015 4:32:21 PM : PNR J26KL3 created successfully.]]></data>
+<PNR><![CDATA[8/27/2015 4:32:28 PM : ====== Create PNR Process ended at : 8/27/2015 4:32:28 PM]]></data>
+<PNR><![CDATA[8/27/2015 4:35:22 PM : ====== Create PNR Started at : 8/27/2015 4:35:22 PM]]></data>
+<PNR><![CDATA[8/27/2015 4:35:43 PM : PNR TNWJ4L created successfully.]]></data>
+<PNR><![CDATA[8/27/2015 4:35:57 PM : PNR UG6GQH created successfully.]]></data>
+<PNR><![CDATA[8/27/2015 4:36:10 PM : PNR R116MH created successfully.]]></data>
+<PNR><![CDATA[8/27/2015 4:37:49 PM : ====== Create PNR Process ended at : 8/27/2015 4:37:49 PM]]></data>
+<PNR><![CDATA[8/27/2015 4:42:46 PM : ====== Create PNR Started at : 8/27/2015 4:42:46 PM]]></data>
+<PNR><![CDATA[8/27/2015 4:42:51 PM : ====== Create PNR Process ended at : 8/27/2015 4:42:51 PM]]></data>
+<PNR><![CDATA[8/27/2015 5:01:22 PM : ====== Create PNR Started at : 8/27/2015 5:01:22 PM]]></data>
+<PNR><![CDATA[8/27/2015 5:01:30 PM : Origin DXB, Destination: MCT not processed.]]></data>
+<PNR><![CDATA[8/27/2015 5:01:30 PM : Error message : Fares not available]]></data>
+<PNR><![CDATA[8/27/2015 5:01:35 PM : ====== Create PNR Process ended at : 8/27/2015 5:01:35 PM]]></data>
+<PNR><![CDATA[8/27/2015 5:02:24 PM : ====== Create PNR Started at : 8/27/2015 5:02:24 PM]]></data>
+<PNR><![CDATA[8/27/2015 5:02:31 PM : Origin DXB, Destination: MCT not processed.]]></data>
+<PNR><![CDATA[8/27/2015 5:02:31 PM : Error message : Fares not available]]></data>
+<PNR><![CDATA[8/27/2015 5:02:47 PM : ====== Create PNR Process ended at : 8/27/2015 5:02:47 PM]]></data>
+<PNR><![CDATA[8/27/2015 5:03:10 PM : ====== Create PNR Started at : 8/27/2015 5:03:10 PM]]></data>
+<PNR><![CDATA[8/27/2015 5:05:38 PM : Origin DXB, Destination: MCT not processed.]]></data>
+<PNR><![CDATA[8/27/2015 5:05:38 PM : Error message : Fares not available]]></data>
+<PNR><![CDATA[8/27/2015 5:14:01 PM : ====== Create PNR Started at : 8/27/2015 5:14:01 PM]]></data>
+<PNR><![CDATA[8/27/2015 5:17:15 PM : ====== Create PNR Started at : 8/27/2015 5:17:15 PM]]></data>
+<PNR><![CDATA[8/27/2015 5:18:09 PM : PNR 5HR5PJ created successfully.]]></data>
+<PNR><![CDATA[8/27/2015 5:18:13 PM : ====== Create PNR Process ended at : 8/27/2015 5:18:13 PM]]></data>
+<PNR><![CDATA[8/27/2015 5:19:05 PM : ====== Create PNR Started at : 8/27/2015 5:19:05 PM]]></data>
+<PNR><![CDATA[8/27/2015 5:20:12 PM : PNR FFVW6T created successfully.]]></data>
+<PNR><![CDATA[8/27/2015 5:20:23 PM : PNR R9VQVP created successfully.]]></data>
+<PNR><![CDATA[8/27/2015 5:20:32 PM : PNR RSV5Y1 created successfully.]]></data>
+<PNR><![CDATA[8/27/2015 5:20:42 PM : PNR 7GT2LL created successfully.]]></data>
+<PNR><![CDATA[8/27/2015 5:20:51 PM : PNR 8164B8 created successfully.]]></data>
+<PNR><![CDATA[8/27/2015 5:29:38 PM : ====== Create PNR Started at : 8/27/2015 5:29:38 PM]]></data>
+<PNR><![CDATA[8/27/2015 5:31:00 PM : Origin DOH, Destination: KWI not processed.]]></data>
+<PNR><![CDATA[8/27/2015 5:31:00 PM : Error message : Voucher no: YZC4NT not valid or Balanced amount is 0 ,]]></data>
+<PNR><![CDATA[8/27/2015 5:31:11 PM : Origin DXB, Destination: DOH not processed.]]></data>
+<PNR><![CDATA[8/27/2015 5:31:11 PM : Error message : Voucher no: YZC4NT not valid or Balanced amount is 0 ,]]></data>
+<PNR><![CDATA[8/27/2015 5:31:14 PM : Origin DXB, Destination: DOH not processed.]]></data>
+<PNR><![CDATA[8/27/2015 5:31:14 PM : Error message : Voucher no: YZC4NT not valid or Balanced amount is 0 ,]]></data>
+<PNR><![CDATA[8/27/2015 5:31:26 PM : ====== Create PNR Process ended at : 8/27/2015 5:31:26 PM]]></data>
+<PNR><![CDATA[8/27/2015 5:31:26 PM : ======== Create PNR process ended at :8/27/2015 5:31:26 PM]]></data>

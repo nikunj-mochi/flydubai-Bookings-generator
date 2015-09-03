@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Security.Request" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Security.Request" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://qa.internalcp.flydubai.com/ConnectPoint.Security.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" />
+  <xs:complexType name="RetrieveSecurityToken">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" base="q1:CarrierInfo">
+        <xs:sequence>
+          <xs:element name="LogonID" nillable="true" type="xs:string" />
+          <xs:element name="Password" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RetrieveSecurityToken" nillable="true" type="tns:RetrieveSecurityToken" />
+  <xs:complexType name="RequestGetGroupDataByUserid">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" base="q2:TransactionInfo">
+        <xs:sequence>
+          <xs:element name="UserId" nillable="true" type="xs:string" />
+          <xs:element name="ActiveOnly" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RequestGetGroupDataByUserid" nillable="true" type="tns:RequestGetGroupDataByUserid" />
+  <xs:complexType name="ValidateSecurityToken">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" base="q3:CarrierInfo">
+        <xs:sequence>
+          <xs:element name="SecurityToken" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ValidateSecurityToken" nillable="true" type="tns:ValidateSecurityToken" />
+</xs:schema>

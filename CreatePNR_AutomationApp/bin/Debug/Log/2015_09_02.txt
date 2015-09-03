@@ -1,0 +1,72 @@
+<DATA>9/2/2015 12:49:35 PM : ====== Create PNR Started at : 9/2/2015 12:49:35 PM</DATA>
+<DATA>9/2/2015 12:50:13 PM : PNR: KCE9E4, Lastname: EEHUZ created successfully.</DATA>
+<DATA>9/2/2015 12:50:27 PM : ====== Create PNR Process ended at : 9/2/2015 12:50:27 PM</DATA>
+<DATA>9/2/2015 2:09:07 PM : ====== Create PNR Started at : 9/2/2015 2:09:07 PM</DATA>
+<DATA>9/2/2015 4:20:22 PM : ====== Create PNR Started at : 9/2/2015 4:20:22 PM</DATA>
+<DATA>9/2/2015 4:20:23 PM : Origin: DXB, Destination: AMM not processed.</DATA>
+<DATA>9/2/2015 4:20:23 PM : Error message: Index was outside the bounds of the array.</DATA>
+<DATA>9/2/2015 4:20:25 PM : ====== Create PNR Process ended at : 9/2/2015 4:20:25 PM</DATA>
+<DATA>9/2/2015 4:20:54 PM : ====== Create PNR Started at : 9/2/2015 4:20:54 PM</DATA>
+<DATA>9/2/2015 4:20:54 PM : Origin: DXB, Destination: AMM not processed.</DATA>
+<DATA>9/2/2015 4:20:54 PM : Error message: Index was outside the bounds of the array.</DATA>
+<DATA>9/2/2015 4:20:56 PM : ====== Create PNR Process ended at : 9/2/2015 4:20:56 PM</DATA>
+<DATA>9/2/2015 4:21:03 PM : ====== Create PNR Started at : 9/2/2015 4:21:03 PM</DATA>
+<DATA>9/2/2015 4:21:36 PM : ====== Create PNR Started at : 9/2/2015 4:21:36 PM</DATA>
+<DATA>9/2/2015 4:21:42 PM : Origin: DXB, Destination: AMM not processed.</DATA>
+<DATA>9/2/2015 4:21:42 PM : Error message: Fares not available</DATA>
+<DATA>9/2/2015 4:21:44 PM : ====== Create PNR Process ended at : 9/2/2015 4:21:44 PM</DATA>
+<DATA>9/2/2015 4:21:46 PM : ====== Create PNR Started at : 9/2/2015 4:21:46 PM</DATA>
+<DATA>9/2/2015 4:22:09 PM : Origin: DXB, Destination: AMM not processed.</DATA>
+<DATA>9/2/2015 4:22:09 PM : Error message: Fares not available</DATA>
+<DATA>9/2/2015 4:22:12 PM : ====== Create PNR Process ended at : 9/2/2015 4:22:12 PM</DATA>
+<DATA>9/2/2015 4:22:18 PM : ====== Create PNR Started at : 9/2/2015 4:22:18 PM</DATA>
+<DATA>9/2/2015 4:22:20 PM : Origin: DXB, Destination: AMM not processed.</DATA>
+<DATA>9/2/2015 4:22:20 PM : Error message: Fares not available</DATA>
+<DATA>9/2/2015 4:22:22 PM : ====== Create PNR Process ended at : 9/2/2015 4:22:22 PM</DATA>
+<DATA>9/2/2015 4:23:23 PM : ====== Create PNR Started at : 9/2/2015 4:23:23 PM</DATA>
+<DATA>9/2/2015 4:23:59 PM : PNR: 315DAB, Lastname: LAXMV created successfully.</DATA>
+<DATA>9/2/2015 4:24:01 PM : ====== Create PNR Process ended at : 9/2/2015 4:24:01 PM</DATA>
+<DATA>9/2/2015 4:24:16 PM : ====== Create PNR Started at : 9/2/2015 4:24:16 PM</DATA>
+<DATA>9/2/2015 4:24:26 PM : Origin: DXB, Destination: AMM not processed.</DATA>
+<DATA>9/2/2015 4:24:26 PM : Error message: 
+Additional Source Information: ERR3021: Unknown error code ERR3021 in Rbo_SaveReservation. Error Details: 
+Date - 9/2/2015 Time - 4:24:27 PM
+Message details from  Reservation_Data_Facade
+Procedure executing: CreateReservation
+The message details follow: 
+Oracle.DataAccess.Client.OracleException ORA-20001: { ERROR : CREATE_PNR_RRFO_XML_REFORA-20001: Error: CREATE_RES_CHARGE_NET ORA-02291: integrity constraint (P_FZ.FK_RESCHG2SERV) violated - parent key not found }\n { DBMS_UTILITY.FORMAT_ERROR_STACK ==+ > ORA-20001: Error: CREATE_RES_CHARGE_NET ORA-02291: integrity constraint (P_FZ.FK_RESCHG2SERV) violated - parent key not found
+ORA-06512: at "P_FZ.PKG_RRFO_HYBRID", line 9066
+ORA-06512: at "P_FZ.PKG_RRFO_HYBRID", line 1770
+ } \n { DBMS_UTILITY.FORMAT_CALL_STACK ===> ----- PL/SQL Call Stack -----
+  object      line  object
+  handle    number  name
+0x1c87aef98      2227  package body P_FZ.PKG_RRFO_HYBRID
+0x1dd5df790         1  anonymous block
+ }\n
+ORA-06512: at "P_FZ.PKG_RRFO_HYBRID", line 2227
+ORA-06512: at line 1    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at Radixx.Data.DataLayer.DataLayer.ProcessCommand(BaseDataMessage Request, OracleCommand OracleCommand, Command DataMessageCommand)
+System.Exception: Could not Process Oracle command. 
+
+   at Radixx.Data.DataLayer.DataLayer.CreateCommands(BaseDataMessage Request, OracleConnection& OracleConnection)
+
+
+</DATA>
+<DATA>9/2/2015 4:24:50 PM : ====== Create PNR Process ended at : 9/2/2015 4:24:50 PM</DATA>
+<DATA>9/2/2015 4:25:09 PM : ====== Create PNR Started at : 9/2/2015 4:25:09 PM</DATA>
+<DATA>9/2/2015 4:25:28 PM : PNR: SDSL6C, Lastname: GFGGD created successfully.</DATA>
+<DATA>9/2/2015 4:25:36 PM : ====== Create PNR Process ended at : 9/2/2015 4:25:36 PM</DATA>
+<DATA>9/2/2015 4:25:41 PM : ====== Create PNR Started at : 9/2/2015 4:25:41 PM</DATA>
+<DATA>9/2/2015 4:25:52 PM : PNR: 2LBGJU, Lastname: OHTYS created successfully.</DATA>
+<DATA>9/2/2015 4:25:56 PM : ====== Create PNR Process ended at : 9/2/2015 4:25:56 PM</DATA>
+<DATA>9/2/2015 4:26:12 PM : ====== Create PNR Started at : 9/2/2015 4:26:12 PM</DATA>
+<DATA>9/2/2015 4:26:27 PM : PNR: C34ZVS, Lastname: ZZJQJ created successfully.</DATA>
+<DATA>9/2/2015 4:26:30 PM : ====== Create PNR Process ended at : 9/2/2015 4:26:30 PM</DATA>
+<DATA>9/2/2015 4:26:38 PM : ====== Create PNR Started at : 9/2/2015 4:26:38 PM</DATA>
+<DATA>9/2/2015 4:26:52 PM : PNR: OV12P7, Lastname: IBKQF created successfully.</DATA>
+<DATA>9/2/2015 4:26:54 PM : ====== Create PNR Process ended at : 9/2/2015 4:26:54 PM</DATA>
+<DATA>9/2/2015 4:27:06 PM : ====== Create PNR Started at : 9/2/2015 4:27:06 PM</DATA>
+<DATA>9/2/2015 4:27:22 PM : PNR: XPLTZ4, Lastname: ESULP created successfully.</DATA>
+<DATA>9/2/2015 4:28:01 PM : ====== Create PNR Process ended at : 9/2/2015 4:28:01 PM</DATA>

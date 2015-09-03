@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ConnectPoint_Pricing" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://fzstgtmp.internal.connectpoint.radixx.com/ConnectPoint.Pricing.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://fzstgtmp.internal.connectpoint.radixx.com/ConnectPoint.Pricing.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://fzstgtmp.internal.connectpoint.radixx.com/ConnectPoint.Pricing.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Pricing.Request.FastFareSearch" />
+      <xsd:import schemaLocation="http://fzstgtmp.internal.connectpoint.radixx.com/ConnectPoint.Pricing.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Request" />
+      <xsd:import schemaLocation="http://fzstgtmp.internal.connectpoint.radixx.com/ConnectPoint.Pricing.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Pricing.Request" />
+      <xsd:import schemaLocation="http://fzstgtmp.internal.connectpoint.radixx.com/ConnectPoint.Pricing.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Pricing.Response" />
+      <xsd:import schemaLocation="http://fzstgtmp.internal.connectpoint.radixx.com/ConnectPoint.Pricing.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Exceptions" />
+      <xsd:import schemaLocation="http://fzstgtmp.internal.connectpoint.radixx.com/ConnectPoint.Pricing.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Pricing.Request.FareQuote" />
+      <xsd:import schemaLocation="http://fzstgtmp.internal.connectpoint.radixx.com/ConnectPoint.Pricing.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Pricing.Request.Service" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IConnectPoint_Pricing_RetrieveFastFareSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveFastFareSearch" />
+  </wsdl:message>
+  <wsdl:message name="IConnectPoint_Pricing_RetrieveFastFareSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveFastFareSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConnectPoint_Pricing_RetrieveFareQuote_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveFareQuote" />
+  </wsdl:message>
+  <wsdl:message name="IConnectPoint_Pricing_RetrieveFareQuote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveFareQuoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConnectPoint_Pricing_RetrieveFareQuoteDateRange_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveFareQuoteDateRange" />
+  </wsdl:message>
+  <wsdl:message name="IConnectPoint_Pricing_RetrieveFareQuoteDateRange_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveFareQuoteDateRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConnectPoint_Pricing_RetrieveServiceQuote_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveServiceQuote" />
+  </wsdl:message>
+  <wsdl:message name="IConnectPoint_Pricing_RetrieveServiceQuote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveServiceQuoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConnectPoint_Pricing_RetrieveServiceQuotes_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveServiceQuotes" />
+  </wsdl:message>
+  <wsdl:message name="IConnectPoint_Pricing_RetrieveServiceQuotes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveServiceQuotesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConnectPoint_Pricing_RetrieveSystemFareQuote_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveSystemFareQuote" />
+  </wsdl:message>
+  <wsdl:message name="IConnectPoint_Pricing_RetrieveSystemFareQuote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveSystemFareQuoteResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IConnectPoint_Pricing">
+    <wsdl:operation name="RetrieveFastFareSearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConnectPoint_Pricing/RetrieveFastFareSearch" message="tns:IConnectPoint_Pricing_RetrieveFastFareSearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConnectPoint_Pricing/RetrieveFastFareSearchResponse" message="tns:IConnectPoint_Pricing_RetrieveFastFareSearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveFareQuote">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConnectPoint_Pricing/RetrieveFareQuote" message="tns:IConnectPoint_Pricing_RetrieveFareQuote_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConnectPoint_Pricing/RetrieveFareQuoteResponse" message="tns:IConnectPoint_Pricing_RetrieveFareQuote_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveFareQuoteDateRange">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConnectPoint_Pricing/RetrieveFareQuoteDateRange" message="tns:IConnectPoint_Pricing_RetrieveFareQuoteDateRange_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConnectPoint_Pricing/RetrieveFareQuoteDateRangeResponse" message="tns:IConnectPoint_Pricing_RetrieveFareQuoteDateRange_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveServiceQuote">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConnectPoint_Pricing/RetrieveServiceQuote" message="tns:IConnectPoint_Pricing_RetrieveServiceQuote_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConnectPoint_Pricing/RetrieveServiceQuoteResponse" message="tns:IConnectPoint_Pricing_RetrieveServiceQuote_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveServiceQuotes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConnectPoint_Pricing/RetrieveServiceQuotes" message="tns:IConnectPoint_Pricing_RetrieveServiceQuotes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConnectPoint_Pricing/RetrieveServiceQuotesResponse" message="tns:IConnectPoint_Pricing_RetrieveServiceQuotes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveSystemFareQuote">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConnectPoint_Pricing/RetrieveSystemFareQuote" message="tns:IConnectPoint_Pricing_RetrieveSystemFareQuote_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConnectPoint_Pricing/RetrieveSystemFareQuoteResponse" message="tns:IConnectPoint_Pricing_RetrieveSystemFareQuote_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IConnectPoint_Pricing" type="tns:IConnectPoint_Pricing">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RetrieveFastFareSearch">
+      <soap:operation soapAction="http://tempuri.org/IConnectPoint_Pricing/RetrieveFastFareSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveFareQuote">
+      <soap:operation soapAction="http://tempuri.org/IConnectPoint_Pricing/RetrieveFareQuote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveFareQuoteDateRange">
+      <soap:operation soapAction="http://tempuri.org/IConnectPoint_Pricing/RetrieveFareQuoteDateRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveServiceQuote">
+      <soap:operation soapAction="http://tempuri.org/IConnectPoint_Pricing/RetrieveServiceQuote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveServiceQuotes">
+      <soap:operation soapAction="http://tempuri.org/IConnectPoint_Pricing/RetrieveServiceQuotes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveSystemFareQuote">
+      <soap:operation soapAction="http://tempuri.org/IConnectPoint_Pricing/RetrieveSystemFareQuote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ConnectPoint_Pricing">
+    <wsdl:port name="BasicHttpBinding_IConnectPoint_Pricing" binding="tns:BasicHttpBinding_IConnectPoint_Pricing">
+      <soap:address location="http://fzstgtmp.internal.connectpoint.radixx.com/ConnectPoint.Pricing.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

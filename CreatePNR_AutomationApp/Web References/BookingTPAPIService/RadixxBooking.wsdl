@@ -1,0 +1,3700 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://radixx.com/WSRadixx/RadixxBooking" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://radixx.com/WSRadixx/RadixxBooking" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://radixx.com/WSRadixx/RadixxBooking">
+      <s:element name="GetReservationWithETicketInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SeriesNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReservationWithETicketInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetReservationWithETicketInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReservationWithETicketInfoViewOnly">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SeriesNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReservationWithETicketInfoViewOnlyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetReservationWithETicketInfoViewOnlyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReservationBookingAgent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SeriesNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReservationBookingAgentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetReservationBookingAgentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReservation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SeriesNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReservationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetReservationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetreiveReservation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SeriesNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientIPAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HistoricalUserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetreiveReservationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetreiveReservationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReservationViewOnly">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SeriesNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReservationViewOnlyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetReservationViewOnlyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUnpaidReservations">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUnpaidReservationsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUnpaidReservationsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResFromSession">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SeriesNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResFromSessionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetResFromSessionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResRemovePassenger">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SeriesNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNum" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PersonOrgID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResRemovePassengerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ResRemovePassengerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemovePassengerFromReservation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SeriesNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNum" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PersonOrgID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientIPAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HistoricUserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemovePassengerFromReservationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RemovePassengerFromReservationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResRemoveFlight">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SeriesNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LFKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResRemoveFlightResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ResRemoveFlightResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveFlightFromReservation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SeriesNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LFKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientIPAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HistoricUserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveFlightFromReservationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RemoveFlightFromReservationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResCancel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SeriesNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResCancelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ResCancelResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelReservation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SeriesNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientIPAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HistoricUserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelReservationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CancelReservationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePassengersNoFee">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="objPassengersToUpdate" type="tns:UpdatePassengerInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UpdatePassengerInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PassengersToUpdate" type="tns:ArrayOfUpdatePassenger" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfUpdatePassenger">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="UpdatePassenger" nillable="true" type="tns:UpdatePassenger" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="UpdatePassenger">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Person">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="RedressNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="KnownTravelerNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ClientIPAddress" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Person">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PersonOrgID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MiddleName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Age" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DOB" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Gender" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NationalityLaguageID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="RelationType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="WBCID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PTCID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PTC" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="UseInventory" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address" type="tns:Address" />
+          <s:element minOccurs="0" maxOccurs="1" name="Company" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comments" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Passport" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nationality" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProfileId" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Address">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Address1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Postal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CountryCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AreaCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Display" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdatePassengersNoFeeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdatePassengersNoFeeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePassengerSegmentRecordLocator">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="objPassengerSegmentsToUpdateRecordLocator" type="tns:UpdatePassengerRecordLocatorInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UpdatePassengerRecordLocatorInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PassengerRecordLocatorToUpdate" type="tns:ArrayOfUpdatePassengerRecordLocator" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfUpdatePassengerRecordLocator">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="UpdatePassengerRecordLocator" nillable="true" type="tns:UpdatePassengerRecordLocator" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="UpdatePassengerRecordLocator">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RecordLocator" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReservationKey" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LogicalFlightKey" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PhysicalFlightKey" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerKey" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AirlinePersonKey" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClientIpAddress" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdatePassengerSegmentRecordLocatorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdatePassengerSegmentRecordLocatorResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateContactInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="objContactInfosToUpdate" type="tns:UpdateContactInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UpdateContactInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ContactToUpdate" type="tns:ArrayOfUpdateContact" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfUpdateContact">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="UpdateContact" nillable="true" type="tns:UpdateContact" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="UpdateContact">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="mClientIPAddress" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ContactID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PersonOrgID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactField" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ContactType" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Extension" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CountryCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AreaCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Display" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PreferredContactMethod" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClientIPAddress" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateContactInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateContactInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddContactInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="objContactInfosToAdd" type="tns:UpdateContactInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddContactInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddContactInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateTicketingTimeLimit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="seriesNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="confirmationNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ticketingTimeLimit" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="payLaterOptionSelected" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateTicketingTimeLimitResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateTicketingTimeLimitResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResAddPassenger">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SeriesNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AirPerson" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResAddPassengerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ResAddPassengerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResAddEmergencyContact">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SeriesNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmergencyContacts" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResAddEmergencyContactResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ResAddEmergencyContactResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResAddFrequentFlyerInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SeriesNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FrequentFlyerInfos" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResAddFrequentFlyerInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ResAddFrequentFlyerInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResReplaceFlight">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SeriesNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OldLFKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="NewFareInformationID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResReplaceFlightResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ResReplaceFlightResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReplaceFlightOnReservation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SeriesNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OldLFKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="NewFareInformationID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientIPAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HistoricUserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReplaceFlightOnReservationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReplaceFlightOnReservationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResAddFlight">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SeriesNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNum" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="NewFareInformationID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResAddFlightResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ResAddFlightResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddFlightToReservation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SeriesNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNum" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="NewFareInformationID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientIPAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HistoricUserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddFlightToReservationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddFlightToReservationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResAddPayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SeriesNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Payment" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResAddPaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ResAddPaymentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AssessAgencyTransactionFees">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="objAssessAgencyFees" type="tns:AgencyTransactionFeesToAssess" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AgencyTransactionFeesToAssess">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PaymentMethod" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgencyCurrency" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClientIPAddress" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AssessAgencyTransactionFeesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AssessAgencyTransactionFeesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AssessPaymentFees">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="objPaymentsToAssessFees" type="tns:AssessPaymentMethodFees" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AssessPaymentMethodFees">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PaymentsToAssessFees" type="tns:ArrayOfPaymentToAssessFee" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPaymentToAssessFee">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PaymentToAssessFee" nillable="true" type="tns:PaymentToAssessFee" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PaymentToAssessFee">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PaymentMethod" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PaymentAmount" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClientIPAddress" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AssessPaymentFeesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AssessPaymentFeesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveInSessionPaymentFees">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveInSessionPaymentFeesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RemoveInSessionPaymentFeesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveInSessionAgencyTransactionFees">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveInSessionAgencyTransactionFeesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RemoveInSessionAgencyTransactionFeesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResAddExtProcessedPayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SeriesNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ExtProcessedPayment" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResAddExtProcessedPaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ResAddExtProcessedPaymentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResCreateVoucher">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SeriesNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNum" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PersonOrgID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResCreateVoucherResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ResCreateVoucherResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResAddVoucher">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VoucherNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResAddVoucherResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ResAddVoucherResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddVoucherToReservation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VoucherNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientIPAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HistoricUserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddVoucherToReservationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddVoucherToReservationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddCommentToReservation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SeriesNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Comment" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientIPAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HistoricUserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddCommentToReservationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddCommentToReservationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResRemoveVoucher">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VoucherNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResRemoveVoucherResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ResRemoveVoucherResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVoucherInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VoucherRequest" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVoucherInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVoucherInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResRevert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SeriesNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResRevertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ResRevertResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResSave">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SeriesNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResSaveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ResSaveResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveReservation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SeriesNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientIPAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HistoricalUserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveReservationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveReservationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BookReservation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BookingRequestXML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BookReservationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BookReservationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetApplicableTransactionFeesXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReservationCurrency" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetApplicableTransactionFeesXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetApplicableTransactionFeesXMLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetApplicableTransactionFeesExtendedXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReservationCurrency" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetApplicableTransactionFeesExtendedXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetApplicableTransactionFeesExtendedXMLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPromotionalCodeInfoXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PromotionCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DepartureDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="ReturnDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="Origin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Destination" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPromotionalCodeInfoXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPromotionalCodeInfoXMLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResAddSSR">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SeriesNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AddSsrRequestXML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResAddSSRResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ResAddSSRResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResRemoveSSR">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SeriesNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RemoveSsrInfo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResRemoveSSRResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ResRemoveSSRResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReservationByNameConf">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SeriesNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FirstLegDepartureAirport" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReservationByNameConfResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetReservationByNameConfResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVoucher">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="VoucherNumber" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="DisplayCurrency" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVoucherResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVoucherResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProfileVouchers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProfileID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="DisplayCurrency" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProfileVouchersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProfileVouchersResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRawReceiptXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SeriesNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRawReceiptXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRawReceiptXMLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHtmlReceipt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SeriesNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Culture" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHtmlReceiptResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetHtmlReceiptResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetreiveHtmlReceipt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SeriesNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Culture" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="customerType" type="tns:ReceiptCustomerDisplayMode" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="ReceiptCustomerDisplayMode">
+        <s:restriction base="s:string">
+          <s:enumeration value="Consumer" />
+          <s:enumeration value="TravelAgent" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="RetreiveHtmlReceiptResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetreiveHtmlReceiptResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsFareClassDiscountable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FareClass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsFareClassDiscountableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IsFareClassDiscountableResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFareClassInfoXml">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FareClass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFareClassInfoXmlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFareClassInfoXmlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BookReservationWithSSR">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BookingRequestXML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BookReservationWithSSRResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BookReservationWithSSRResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSummary">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BookingRequestXML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSummaryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSummaryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetreiveReservationSummary">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BookingRequestXML" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HistoricalUserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetreiveReservationSummaryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetreiveReservationSummaryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommitSummary">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommitSummaryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CommitSummaryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommitReservationSummary">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientIPAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HistoricalUserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommitReservationSummaryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CommitReservationSummaryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchBookings">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IATAnum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BookingAgent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ExternalAppID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FlightNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FlightDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="Origin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Destination" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PaxEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PaxPhone" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProfileID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="TravelAgencyEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TravelAgencyPhone" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IncludeActiveBookings" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="IncludePastBookings" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="IncludeCancelledBookings" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchBookingsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchBookingsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetApisInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SeriesNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNum" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="OmitCancelled" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetApisInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetApisInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetApisInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SeriesNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApisInfoXML" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckinAgent" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetApisInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetApisInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetNotYetProcessedPaymentsToRejected">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SeriesNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetNotYetProcessedPaymentsToRejectedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetNotYetProcessedPaymentsToRejectedResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PostIvrPayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sPostIvrPaymentRequest" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PostIvrPaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PostIvrPaymentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HistoryPNR">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Request" type="tns:HistoryPNR" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="HistoryPNR">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ActionType" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReservationInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReservationsToInsertHistory" type="tns:ArrayOfReservationToInsertHistory" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfReservationToInsertHistory">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ReservationToInsertHistory" nillable="true" type="tns:ReservationToInsertHistory" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ReservationToInsertHistory">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Action" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HistoryEventText" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Passenger" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Segment" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="User" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ResChannel" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="HistoryPNRList">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="List" type="tns:ArrayOfReservationToInsertHistoryInfo" />
+          <s:element minOccurs="1" maxOccurs="1" name="Success" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusDescription" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfReservationToInsertHistoryInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ReservationToInsertHistoryInfo" nillable="true" type="tns:ReservationToInsertHistoryInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ReservationToInsertHistoryInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="UpdatedPNRHistory" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="UpdateDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Action" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HistoryEventText" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Passenger" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Segment" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="User" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ResChannel" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="HistoryPNRResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HistoryPNRResult" type="tns:HistoryPNRList" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EvaluateModificationOfPNR_RemoveFlightFromReservation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Request" type="tns:EvaluateModificationOfPNR" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="EvaluateModificationOfPNR">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ActionType" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReservationInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="LogicalFlightKeyToRemove" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PersonOrgIdentifierToRemove" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClientIPAddress" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EvaluateModificationOfPNRList">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="List" type="tns:ArrayOfEvaluateModificationOfPNRInfo" />
+          <s:element minOccurs="1" maxOccurs="1" name="Success" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusDescription" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfEvaluateModificationOfPNRInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="EvaluateModificationOfPNRInfo" nillable="true" type="tns:EvaluateModificationOfPNRInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EvaluateModificationOfPNRInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RefundType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Currency" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RefundAmount" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="RefundCurrency" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExchangeRate" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="ChargeKey" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ChargeCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PaymentID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RefundTo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="EvaluateModificationOfPNR_RemoveFlightFromReservationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EvaluateModificationOfPNR_RemoveFlightFromReservationResult" type="tns:EvaluateModificationOfPNRList" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EvaluateModificationOfPNR_RemovePassengerFromReservation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Request" type="tns:EvaluateModificationOfPNR" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EvaluateModificationOfPNR_RemovePassengerFromReservationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EvaluateModificationOfPNR_RemovePassengerFromReservationResult" type="tns:EvaluateModificationOfPNRList" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EvaluateModificationOfPNR_CancelReservation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Request" type="tns:EvaluateModificationOfPNR" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EvaluateModificationOfPNR_CancelReservationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EvaluateModificationOfPNR_CancelReservationResult" type="tns:EvaluateModificationOfPNRList" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Format3DSecureInformation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="seriesNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="confirmationNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="reservationPaymentId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="returnUrl" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Format3DSecureInformationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Format3DSecureInformationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateExternalProcessedPayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="seriesNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="confirmationNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="responseFrom3DSecure" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateExternalProcessedPaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateExternalProcessedPaymentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendReceiptViaEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LanguageCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SeriesNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendReceiptViaEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendReceiptViaEmailResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendReceiptToSpecifiedEmailAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="securityGuid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sendReceiptRequest" type="tns:SendReceipt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SendReceipt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="SeriesNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmailAddresses" type="tns:ArrayOfEmailAddress" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfEmailAddress">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="EmailAddress" nillable="true" type="tns:EmailAddress" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EmailAddress">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SendReceiptToSpecifiedEmailAddressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendReceiptToSpecifiedEmailAddressResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendBookingConfirmationEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="securityGuid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sendReceiptRequest" type="tns:SendReceiptEmailSms" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SendReceiptEmailSms">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="SeriesNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmailAddresses" type="tns:ArrayOfEmailAddresses" />
+          <s:element minOccurs="0" maxOccurs="1" name="SmsNumbers" type="tns:ArrayOfSmsNumbers" />
+          <s:element minOccurs="0" maxOccurs="1" name="OverrideLanguage" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BookingActionType" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="BookingSourceType" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfEmailAddresses">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="EmailAddresses" nillable="true" type="tns:EmailAddresses" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EmailAddresses">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfSmsNumbers">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SmsNumbers" nillable="true" type="tns:SmsNumbers" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SmsNumbers">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Sms" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SendBookingConfirmationEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendBookingConfirmationEmailResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendBookingConfirmationSms">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="securityGuid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sendReceiptRequest" type="tns:SendReceiptEmailSms" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendBookingConfirmationSmsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendBookingConfirmationSmsResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OverrideReservationCharges">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="objOverrideReservationCharges" type="tns:OverrideReservationChargesList" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="OverrideReservationChargesList">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ActionType" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="List" type="tns:ArrayOfOverrideReservationChargesInfo" />
+          <s:element minOccurs="1" maxOccurs="1" name="Success" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusDescription" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfOverrideReservationChargesInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="OverrideReservationChargesInfo" nillable="true" type="tns:OverrideReservationChargesInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OverrideReservationChargesInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ActionType" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="LogicalFlightKey" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PhysicalFlightKey" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerKey" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AirLinePersonKey" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ChargeKey" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="OverrideAmount" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="OverrideOriginalAmount" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="OverrideExchangeRate" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="OverrideReason" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HistoricalUserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClientIPAddress" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="OverrideReservationChargesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OverrideReservationChargesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetReservationWithETicketInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetReservationWithETicketInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetReservationWithETicketInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetReservationWithETicketInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetReservationWithETicketInfoViewOnlySoapIn">
+    <wsdl:part name="parameters" element="tns:GetReservationWithETicketInfoViewOnly" />
+  </wsdl:message>
+  <wsdl:message name="GetReservationWithETicketInfoViewOnlySoapOut">
+    <wsdl:part name="parameters" element="tns:GetReservationWithETicketInfoViewOnlyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetReservationBookingAgentSoapIn">
+    <wsdl:part name="parameters" element="tns:GetReservationBookingAgent" />
+  </wsdl:message>
+  <wsdl:message name="GetReservationBookingAgentSoapOut">
+    <wsdl:part name="parameters" element="tns:GetReservationBookingAgentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetReservationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetReservation" />
+  </wsdl:message>
+  <wsdl:message name="GetReservationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetReservationResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetreiveReservationSoapIn">
+    <wsdl:part name="parameters" element="tns:RetreiveReservation" />
+  </wsdl:message>
+  <wsdl:message name="RetreiveReservationSoapOut">
+    <wsdl:part name="parameters" element="tns:RetreiveReservationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetReservationViewOnlySoapIn">
+    <wsdl:part name="parameters" element="tns:GetReservationViewOnly" />
+  </wsdl:message>
+  <wsdl:message name="GetReservationViewOnlySoapOut">
+    <wsdl:part name="parameters" element="tns:GetReservationViewOnlyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUnpaidReservationsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUnpaidReservations" />
+  </wsdl:message>
+  <wsdl:message name="GetUnpaidReservationsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUnpaidReservationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetResFromSessionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetResFromSession" />
+  </wsdl:message>
+  <wsdl:message name="GetResFromSessionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetResFromSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResRemovePassengerSoapIn">
+    <wsdl:part name="parameters" element="tns:ResRemovePassenger" />
+  </wsdl:message>
+  <wsdl:message name="ResRemovePassengerSoapOut">
+    <wsdl:part name="parameters" element="tns:ResRemovePassengerResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemovePassengerFromReservationSoapIn">
+    <wsdl:part name="parameters" element="tns:RemovePassengerFromReservation" />
+  </wsdl:message>
+  <wsdl:message name="RemovePassengerFromReservationSoapOut">
+    <wsdl:part name="parameters" element="tns:RemovePassengerFromReservationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResRemoveFlightSoapIn">
+    <wsdl:part name="parameters" element="tns:ResRemoveFlight" />
+  </wsdl:message>
+  <wsdl:message name="ResRemoveFlightSoapOut">
+    <wsdl:part name="parameters" element="tns:ResRemoveFlightResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveFlightFromReservationSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveFlightFromReservation" />
+  </wsdl:message>
+  <wsdl:message name="RemoveFlightFromReservationSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveFlightFromReservationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResCancelSoapIn">
+    <wsdl:part name="parameters" element="tns:ResCancel" />
+  </wsdl:message>
+  <wsdl:message name="ResCancelSoapOut">
+    <wsdl:part name="parameters" element="tns:ResCancelResponse" />
+  </wsdl:message>
+  <wsdl:message name="CancelReservationSoapIn">
+    <wsdl:part name="parameters" element="tns:CancelReservation" />
+  </wsdl:message>
+  <wsdl:message name="CancelReservationSoapOut">
+    <wsdl:part name="parameters" element="tns:CancelReservationResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePassengersNoFeeSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePassengersNoFee" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePassengersNoFeeSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePassengersNoFeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePassengerSegmentRecordLocatorSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePassengerSegmentRecordLocator" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePassengerSegmentRecordLocatorSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePassengerSegmentRecordLocatorResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateContactInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateContactInfo" />
+  </wsdl:message>
+  <wsdl:message name="UpdateContactInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateContactInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddContactInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:AddContactInfo" />
+  </wsdl:message>
+  <wsdl:message name="AddContactInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:AddContactInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTicketingTimeLimitSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateTicketingTimeLimit" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTicketingTimeLimitSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateTicketingTimeLimitResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResAddPassengerSoapIn">
+    <wsdl:part name="parameters" element="tns:ResAddPassenger" />
+  </wsdl:message>
+  <wsdl:message name="ResAddPassengerSoapOut">
+    <wsdl:part name="parameters" element="tns:ResAddPassengerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResAddEmergencyContactSoapIn">
+    <wsdl:part name="parameters" element="tns:ResAddEmergencyContact" />
+  </wsdl:message>
+  <wsdl:message name="ResAddEmergencyContactSoapOut">
+    <wsdl:part name="parameters" element="tns:ResAddEmergencyContactResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResAddFrequentFlyerInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:ResAddFrequentFlyerInfo" />
+  </wsdl:message>
+  <wsdl:message name="ResAddFrequentFlyerInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:ResAddFrequentFlyerInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResReplaceFlightSoapIn">
+    <wsdl:part name="parameters" element="tns:ResReplaceFlight" />
+  </wsdl:message>
+  <wsdl:message name="ResReplaceFlightSoapOut">
+    <wsdl:part name="parameters" element="tns:ResReplaceFlightResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReplaceFlightOnReservationSoapIn">
+    <wsdl:part name="parameters" element="tns:ReplaceFlightOnReservation" />
+  </wsdl:message>
+  <wsdl:message name="ReplaceFlightOnReservationSoapOut">
+    <wsdl:part name="parameters" element="tns:ReplaceFlightOnReservationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResAddFlightSoapIn">
+    <wsdl:part name="parameters" element="tns:ResAddFlight" />
+  </wsdl:message>
+  <wsdl:message name="ResAddFlightSoapOut">
+    <wsdl:part name="parameters" element="tns:ResAddFlightResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddFlightToReservationSoapIn">
+    <wsdl:part name="parameters" element="tns:AddFlightToReservation" />
+  </wsdl:message>
+  <wsdl:message name="AddFlightToReservationSoapOut">
+    <wsdl:part name="parameters" element="tns:AddFlightToReservationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResAddPaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:ResAddPayment" />
+  </wsdl:message>
+  <wsdl:message name="ResAddPaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:ResAddPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="AssessAgencyTransactionFeesSoapIn">
+    <wsdl:part name="parameters" element="tns:AssessAgencyTransactionFees" />
+  </wsdl:message>
+  <wsdl:message name="AssessAgencyTransactionFeesSoapOut">
+    <wsdl:part name="parameters" element="tns:AssessAgencyTransactionFeesResponse" />
+  </wsdl:message>
+  <wsdl:message name="AssessPaymentFeesSoapIn">
+    <wsdl:part name="parameters" element="tns:AssessPaymentFees" />
+  </wsdl:message>
+  <wsdl:message name="AssessPaymentFeesSoapOut">
+    <wsdl:part name="parameters" element="tns:AssessPaymentFeesResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveInSessionPaymentFeesSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveInSessionPaymentFees" />
+  </wsdl:message>
+  <wsdl:message name="RemoveInSessionPaymentFeesSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveInSessionPaymentFeesResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveInSessionAgencyTransactionFeesSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveInSessionAgencyTransactionFees" />
+  </wsdl:message>
+  <wsdl:message name="RemoveInSessionAgencyTransactionFeesSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveInSessionAgencyTransactionFeesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResAddExtProcessedPaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:ResAddExtProcessedPayment" />
+  </wsdl:message>
+  <wsdl:message name="ResAddExtProcessedPaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:ResAddExtProcessedPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResCreateVoucherSoapIn">
+    <wsdl:part name="parameters" element="tns:ResCreateVoucher" />
+  </wsdl:message>
+  <wsdl:message name="ResCreateVoucherSoapOut">
+    <wsdl:part name="parameters" element="tns:ResCreateVoucherResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResAddVoucherSoapIn">
+    <wsdl:part name="parameters" element="tns:ResAddVoucher" />
+  </wsdl:message>
+  <wsdl:message name="ResAddVoucherSoapOut">
+    <wsdl:part name="parameters" element="tns:ResAddVoucherResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddVoucherToReservationSoapIn">
+    <wsdl:part name="parameters" element="tns:AddVoucherToReservation" />
+  </wsdl:message>
+  <wsdl:message name="AddVoucherToReservationSoapOut">
+    <wsdl:part name="parameters" element="tns:AddVoucherToReservationResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddCommentToReservationSoapIn">
+    <wsdl:part name="parameters" element="tns:AddCommentToReservation" />
+  </wsdl:message>
+  <wsdl:message name="AddCommentToReservationSoapOut">
+    <wsdl:part name="parameters" element="tns:AddCommentToReservationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResRemoveVoucherSoapIn">
+    <wsdl:part name="parameters" element="tns:ResRemoveVoucher" />
+  </wsdl:message>
+  <wsdl:message name="ResRemoveVoucherSoapOut">
+    <wsdl:part name="parameters" element="tns:ResRemoveVoucherResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVoucherInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVoucherInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetVoucherInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVoucherInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResRevertSoapIn">
+    <wsdl:part name="parameters" element="tns:ResRevert" />
+  </wsdl:message>
+  <wsdl:message name="ResRevertSoapOut">
+    <wsdl:part name="parameters" element="tns:ResRevertResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResSaveSoapIn">
+    <wsdl:part name="parameters" element="tns:ResSave" />
+  </wsdl:message>
+  <wsdl:message name="ResSaveSoapOut">
+    <wsdl:part name="parameters" element="tns:ResSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveReservationSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveReservation" />
+  </wsdl:message>
+  <wsdl:message name="SaveReservationSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveReservationResponse" />
+  </wsdl:message>
+  <wsdl:message name="BookReservationSoapIn">
+    <wsdl:part name="parameters" element="tns:BookReservation" />
+  </wsdl:message>
+  <wsdl:message name="BookReservationSoapOut">
+    <wsdl:part name="parameters" element="tns:BookReservationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicableTransactionFeesXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetApplicableTransactionFeesXML" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicableTransactionFeesXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetApplicableTransactionFeesXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicableTransactionFeesExtendedXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetApplicableTransactionFeesExtendedXML" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicableTransactionFeesExtendedXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetApplicableTransactionFeesExtendedXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPromotionalCodeInfoXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPromotionalCodeInfoXML" />
+  </wsdl:message>
+  <wsdl:message name="GetPromotionalCodeInfoXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPromotionalCodeInfoXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResAddSSRSoapIn">
+    <wsdl:part name="parameters" element="tns:ResAddSSR" />
+  </wsdl:message>
+  <wsdl:message name="ResAddSSRSoapOut">
+    <wsdl:part name="parameters" element="tns:ResAddSSRResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResRemoveSSRSoapIn">
+    <wsdl:part name="parameters" element="tns:ResRemoveSSR" />
+  </wsdl:message>
+  <wsdl:message name="ResRemoveSSRSoapOut">
+    <wsdl:part name="parameters" element="tns:ResRemoveSSRResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetReservationByNameConfSoapIn">
+    <wsdl:part name="parameters" element="tns:GetReservationByNameConf" />
+  </wsdl:message>
+  <wsdl:message name="GetReservationByNameConfSoapOut">
+    <wsdl:part name="parameters" element="tns:GetReservationByNameConfResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVoucherSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVoucher" />
+  </wsdl:message>
+  <wsdl:message name="GetVoucherSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVoucherResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileVouchersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProfileVouchers" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileVouchersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProfileVouchersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRawReceiptXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRawReceiptXML" />
+  </wsdl:message>
+  <wsdl:message name="GetRawReceiptXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRawReceiptXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetHtmlReceiptSoapIn">
+    <wsdl:part name="parameters" element="tns:GetHtmlReceipt" />
+  </wsdl:message>
+  <wsdl:message name="GetHtmlReceiptSoapOut">
+    <wsdl:part name="parameters" element="tns:GetHtmlReceiptResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetreiveHtmlReceiptSoapIn">
+    <wsdl:part name="parameters" element="tns:RetreiveHtmlReceipt" />
+  </wsdl:message>
+  <wsdl:message name="RetreiveHtmlReceiptSoapOut">
+    <wsdl:part name="parameters" element="tns:RetreiveHtmlReceiptResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsFareClassDiscountableSoapIn">
+    <wsdl:part name="parameters" element="tns:IsFareClassDiscountable" />
+  </wsdl:message>
+  <wsdl:message name="IsFareClassDiscountableSoapOut">
+    <wsdl:part name="parameters" element="tns:IsFareClassDiscountableResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFareClassInfoXmlSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFareClassInfoXml" />
+  </wsdl:message>
+  <wsdl:message name="GetFareClassInfoXmlSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFareClassInfoXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="BookReservationWithSSRSoapIn">
+    <wsdl:part name="parameters" element="tns:BookReservationWithSSR" />
+  </wsdl:message>
+  <wsdl:message name="BookReservationWithSSRSoapOut">
+    <wsdl:part name="parameters" element="tns:BookReservationWithSSRResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSummarySoapIn">
+    <wsdl:part name="parameters" element="tns:GetSummary" />
+  </wsdl:message>
+  <wsdl:message name="GetSummarySoapOut">
+    <wsdl:part name="parameters" element="tns:GetSummaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetreiveReservationSummarySoapIn">
+    <wsdl:part name="parameters" element="tns:RetreiveReservationSummary" />
+  </wsdl:message>
+  <wsdl:message name="RetreiveReservationSummarySoapOut">
+    <wsdl:part name="parameters" element="tns:RetreiveReservationSummaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="CommitSummarySoapIn">
+    <wsdl:part name="parameters" element="tns:CommitSummary" />
+  </wsdl:message>
+  <wsdl:message name="CommitSummarySoapOut">
+    <wsdl:part name="parameters" element="tns:CommitSummaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="CommitReservationSummarySoapIn">
+    <wsdl:part name="parameters" element="tns:CommitReservationSummary" />
+  </wsdl:message>
+  <wsdl:message name="CommitReservationSummarySoapOut">
+    <wsdl:part name="parameters" element="tns:CommitReservationSummaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchBookingsSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchBookings" />
+  </wsdl:message>
+  <wsdl:message name="SearchBookingsSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchBookingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetApisInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetApisInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetApisInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetApisInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetApisInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:SetApisInfo" />
+  </wsdl:message>
+  <wsdl:message name="SetApisInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:SetApisInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetNotYetProcessedPaymentsToRejectedSoapIn">
+    <wsdl:part name="parameters" element="tns:SetNotYetProcessedPaymentsToRejected" />
+  </wsdl:message>
+  <wsdl:message name="SetNotYetProcessedPaymentsToRejectedSoapOut">
+    <wsdl:part name="parameters" element="tns:SetNotYetProcessedPaymentsToRejectedResponse" />
+  </wsdl:message>
+  <wsdl:message name="PostIvrPaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:PostIvrPayment" />
+  </wsdl:message>
+  <wsdl:message name="PostIvrPaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:PostIvrPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="HistoryPNRSoapIn">
+    <wsdl:part name="parameters" element="tns:HistoryPNR" />
+  </wsdl:message>
+  <wsdl:message name="HistoryPNRSoapOut">
+    <wsdl:part name="parameters" element="tns:HistoryPNRResponse" />
+  </wsdl:message>
+  <wsdl:message name="EvaluateModificationOfPNR_RemoveFlightFromReservationSoapIn">
+    <wsdl:part name="parameters" element="tns:EvaluateModificationOfPNR_RemoveFlightFromReservation" />
+  </wsdl:message>
+  <wsdl:message name="EvaluateModificationOfPNR_RemoveFlightFromReservationSoapOut">
+    <wsdl:part name="parameters" element="tns:EvaluateModificationOfPNR_RemoveFlightFromReservationResponse" />
+  </wsdl:message>
+  <wsdl:message name="EvaluateModificationOfPNR_RemovePassengerFromReservationSoapIn">
+    <wsdl:part name="parameters" element="tns:EvaluateModificationOfPNR_RemovePassengerFromReservation" />
+  </wsdl:message>
+  <wsdl:message name="EvaluateModificationOfPNR_RemovePassengerFromReservationSoapOut">
+    <wsdl:part name="parameters" element="tns:EvaluateModificationOfPNR_RemovePassengerFromReservationResponse" />
+  </wsdl:message>
+  <wsdl:message name="EvaluateModificationOfPNR_CancelReservationSoapIn">
+    <wsdl:part name="parameters" element="tns:EvaluateModificationOfPNR_CancelReservation" />
+  </wsdl:message>
+  <wsdl:message name="EvaluateModificationOfPNR_CancelReservationSoapOut">
+    <wsdl:part name="parameters" element="tns:EvaluateModificationOfPNR_CancelReservationResponse" />
+  </wsdl:message>
+  <wsdl:message name="Format3DSecureInformationSoapIn">
+    <wsdl:part name="parameters" element="tns:Format3DSecureInformation" />
+  </wsdl:message>
+  <wsdl:message name="Format3DSecureInformationSoapOut">
+    <wsdl:part name="parameters" element="tns:Format3DSecureInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateExternalProcessedPaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateExternalProcessedPayment" />
+  </wsdl:message>
+  <wsdl:message name="UpdateExternalProcessedPaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateExternalProcessedPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendReceiptViaEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:SendReceiptViaEmail" />
+  </wsdl:message>
+  <wsdl:message name="SendReceiptViaEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:SendReceiptViaEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendReceiptToSpecifiedEmailAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:SendReceiptToSpecifiedEmailAddress" />
+  </wsdl:message>
+  <wsdl:message name="SendReceiptToSpecifiedEmailAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:SendReceiptToSpecifiedEmailAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendBookingConfirmationEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:SendBookingConfirmationEmail" />
+  </wsdl:message>
+  <wsdl:message name="SendBookingConfirmationEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:SendBookingConfirmationEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendBookingConfirmationSmsSoapIn">
+    <wsdl:part name="parameters" element="tns:SendBookingConfirmationSms" />
+  </wsdl:message>
+  <wsdl:message name="SendBookingConfirmationSmsSoapOut">
+    <wsdl:part name="parameters" element="tns:SendBookingConfirmationSmsResponse" />
+  </wsdl:message>
+  <wsdl:message name="OverrideReservationChargesSoapIn">
+    <wsdl:part name="parameters" element="tns:OverrideReservationCharges" />
+  </wsdl:message>
+  <wsdl:message name="OverrideReservationChargesSoapOut">
+    <wsdl:part name="parameters" element="tns:OverrideReservationChargesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="RadixxBookingSoap">
+    <wsdl:operation name="GetReservationWithETicketInfo">
+      <wsdl:input message="tns:GetReservationWithETicketInfoSoapIn" />
+      <wsdl:output message="tns:GetReservationWithETicketInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReservationWithETicketInfoViewOnly">
+      <wsdl:input message="tns:GetReservationWithETicketInfoViewOnlySoapIn" />
+      <wsdl:output message="tns:GetReservationWithETicketInfoViewOnlySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReservationBookingAgent">
+      <wsdl:input message="tns:GetReservationBookingAgentSoapIn" />
+      <wsdl:output message="tns:GetReservationBookingAgentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReservation">
+      <wsdl:input message="tns:GetReservationSoapIn" />
+      <wsdl:output message="tns:GetReservationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetreiveReservation">
+      <wsdl:input message="tns:RetreiveReservationSoapIn" />
+      <wsdl:output message="tns:RetreiveReservationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReservationViewOnly">
+      <wsdl:input message="tns:GetReservationViewOnlySoapIn" />
+      <wsdl:output message="tns:GetReservationViewOnlySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUnpaidReservations">
+      <wsdl:input message="tns:GetUnpaidReservationsSoapIn" />
+      <wsdl:output message="tns:GetUnpaidReservationsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResFromSession">
+      <wsdl:input message="tns:GetResFromSessionSoapIn" />
+      <wsdl:output message="tns:GetResFromSessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResRemovePassenger">
+      <wsdl:input message="tns:ResRemovePassengerSoapIn" />
+      <wsdl:output message="tns:ResRemovePassengerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemovePassengerFromReservation">
+      <wsdl:input message="tns:RemovePassengerFromReservationSoapIn" />
+      <wsdl:output message="tns:RemovePassengerFromReservationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResRemoveFlight">
+      <wsdl:input message="tns:ResRemoveFlightSoapIn" />
+      <wsdl:output message="tns:ResRemoveFlightSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveFlightFromReservation">
+      <wsdl:input message="tns:RemoveFlightFromReservationSoapIn" />
+      <wsdl:output message="tns:RemoveFlightFromReservationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResCancel">
+      <wsdl:input message="tns:ResCancelSoapIn" />
+      <wsdl:output message="tns:ResCancelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelReservation">
+      <wsdl:input message="tns:CancelReservationSoapIn" />
+      <wsdl:output message="tns:CancelReservationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePassengersNoFee">
+      <wsdl:input message="tns:UpdatePassengersNoFeeSoapIn" />
+      <wsdl:output message="tns:UpdatePassengersNoFeeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePassengerSegmentRecordLocator">
+      <wsdl:input message="tns:UpdatePassengerSegmentRecordLocatorSoapIn" />
+      <wsdl:output message="tns:UpdatePassengerSegmentRecordLocatorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContactInfo">
+      <wsdl:input message="tns:UpdateContactInfoSoapIn" />
+      <wsdl:output message="tns:UpdateContactInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddContactInfo">
+      <wsdl:input message="tns:AddContactInfoSoapIn" />
+      <wsdl:output message="tns:AddContactInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTicketingTimeLimit">
+      <wsdl:input message="tns:UpdateTicketingTimeLimitSoapIn" />
+      <wsdl:output message="tns:UpdateTicketingTimeLimitSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResAddPassenger">
+      <wsdl:input message="tns:ResAddPassengerSoapIn" />
+      <wsdl:output message="tns:ResAddPassengerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResAddEmergencyContact">
+      <wsdl:input message="tns:ResAddEmergencyContactSoapIn" />
+      <wsdl:output message="tns:ResAddEmergencyContactSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResAddFrequentFlyerInfo">
+      <wsdl:input message="tns:ResAddFrequentFlyerInfoSoapIn" />
+      <wsdl:output message="tns:ResAddFrequentFlyerInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResReplaceFlight">
+      <wsdl:input message="tns:ResReplaceFlightSoapIn" />
+      <wsdl:output message="tns:ResReplaceFlightSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReplaceFlightOnReservation">
+      <wsdl:input message="tns:ReplaceFlightOnReservationSoapIn" />
+      <wsdl:output message="tns:ReplaceFlightOnReservationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResAddFlight">
+      <wsdl:input message="tns:ResAddFlightSoapIn" />
+      <wsdl:output message="tns:ResAddFlightSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFlightToReservation">
+      <wsdl:input message="tns:AddFlightToReservationSoapIn" />
+      <wsdl:output message="tns:AddFlightToReservationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResAddPayment">
+      <wsdl:input message="tns:ResAddPaymentSoapIn" />
+      <wsdl:output message="tns:ResAddPaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AssessAgencyTransactionFees">
+      <wsdl:input message="tns:AssessAgencyTransactionFeesSoapIn" />
+      <wsdl:output message="tns:AssessAgencyTransactionFeesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AssessPaymentFees">
+      <wsdl:input message="tns:AssessPaymentFeesSoapIn" />
+      <wsdl:output message="tns:AssessPaymentFeesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveInSessionPaymentFees">
+      <wsdl:input message="tns:RemoveInSessionPaymentFeesSoapIn" />
+      <wsdl:output message="tns:RemoveInSessionPaymentFeesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveInSessionAgencyTransactionFees">
+      <wsdl:input message="tns:RemoveInSessionAgencyTransactionFeesSoapIn" />
+      <wsdl:output message="tns:RemoveInSessionAgencyTransactionFeesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResAddExtProcessedPayment">
+      <wsdl:input message="tns:ResAddExtProcessedPaymentSoapIn" />
+      <wsdl:output message="tns:ResAddExtProcessedPaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResCreateVoucher">
+      <wsdl:input message="tns:ResCreateVoucherSoapIn" />
+      <wsdl:output message="tns:ResCreateVoucherSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResAddVoucher">
+      <wsdl:input message="tns:ResAddVoucherSoapIn" />
+      <wsdl:output message="tns:ResAddVoucherSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddVoucherToReservation">
+      <wsdl:input message="tns:AddVoucherToReservationSoapIn" />
+      <wsdl:output message="tns:AddVoucherToReservationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCommentToReservation">
+      <wsdl:input message="tns:AddCommentToReservationSoapIn" />
+      <wsdl:output message="tns:AddCommentToReservationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResRemoveVoucher">
+      <wsdl:input message="tns:ResRemoveVoucherSoapIn" />
+      <wsdl:output message="tns:ResRemoveVoucherSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVoucherInfo">
+      <wsdl:input message="tns:GetVoucherInfoSoapIn" />
+      <wsdl:output message="tns:GetVoucherInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResRevert">
+      <wsdl:input message="tns:ResRevertSoapIn" />
+      <wsdl:output message="tns:ResRevertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResSave">
+      <wsdl:input message="tns:ResSaveSoapIn" />
+      <wsdl:output message="tns:ResSaveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveReservation">
+      <wsdl:input message="tns:SaveReservationSoapIn" />
+      <wsdl:output message="tns:SaveReservationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BookReservation">
+      <wsdl:input message="tns:BookReservationSoapIn" />
+      <wsdl:output message="tns:BookReservationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicableTransactionFeesXML">
+      <wsdl:input message="tns:GetApplicableTransactionFeesXMLSoapIn" />
+      <wsdl:output message="tns:GetApplicableTransactionFeesXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicableTransactionFeesExtendedXML">
+      <wsdl:input message="tns:GetApplicableTransactionFeesExtendedXMLSoapIn" />
+      <wsdl:output message="tns:GetApplicableTransactionFeesExtendedXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPromotionalCodeInfoXML">
+      <wsdl:input message="tns:GetPromotionalCodeInfoXMLSoapIn" />
+      <wsdl:output message="tns:GetPromotionalCodeInfoXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResAddSSR">
+      <wsdl:input message="tns:ResAddSSRSoapIn" />
+      <wsdl:output message="tns:ResAddSSRSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResRemoveSSR">
+      <wsdl:input message="tns:ResRemoveSSRSoapIn" />
+      <wsdl:output message="tns:ResRemoveSSRSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReservationByNameConf">
+      <wsdl:input message="tns:GetReservationByNameConfSoapIn" />
+      <wsdl:output message="tns:GetReservationByNameConfSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVoucher">
+      <wsdl:input message="tns:GetVoucherSoapIn" />
+      <wsdl:output message="tns:GetVoucherSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileVouchers">
+      <wsdl:input message="tns:GetProfileVouchersSoapIn" />
+      <wsdl:output message="tns:GetProfileVouchersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRawReceiptXML">
+      <wsdl:input message="tns:GetRawReceiptXMLSoapIn" />
+      <wsdl:output message="tns:GetRawReceiptXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHtmlReceipt">
+      <wsdl:input message="tns:GetHtmlReceiptSoapIn" />
+      <wsdl:output message="tns:GetHtmlReceiptSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetreiveHtmlReceipt">
+      <wsdl:input message="tns:RetreiveHtmlReceiptSoapIn" />
+      <wsdl:output message="tns:RetreiveHtmlReceiptSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsFareClassDiscountable">
+      <wsdl:input message="tns:IsFareClassDiscountableSoapIn" />
+      <wsdl:output message="tns:IsFareClassDiscountableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFareClassInfoXml">
+      <wsdl:input message="tns:GetFareClassInfoXmlSoapIn" />
+      <wsdl:output message="tns:GetFareClassInfoXmlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BookReservationWithSSR">
+      <wsdl:input message="tns:BookReservationWithSSRSoapIn" />
+      <wsdl:output message="tns:BookReservationWithSSRSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSummary">
+      <wsdl:input message="tns:GetSummarySoapIn" />
+      <wsdl:output message="tns:GetSummarySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetreiveReservationSummary">
+      <wsdl:input message="tns:RetreiveReservationSummarySoapIn" />
+      <wsdl:output message="tns:RetreiveReservationSummarySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CommitSummary">
+      <wsdl:input message="tns:CommitSummarySoapIn" />
+      <wsdl:output message="tns:CommitSummarySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CommitReservationSummary">
+      <wsdl:input message="tns:CommitReservationSummarySoapIn" />
+      <wsdl:output message="tns:CommitReservationSummarySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchBookings">
+      <wsdl:input message="tns:SearchBookingsSoapIn" />
+      <wsdl:output message="tns:SearchBookingsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApisInfo">
+      <wsdl:input message="tns:GetApisInfoSoapIn" />
+      <wsdl:output message="tns:GetApisInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetApisInfo">
+      <wsdl:input message="tns:SetApisInfoSoapIn" />
+      <wsdl:output message="tns:SetApisInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetNotYetProcessedPaymentsToRejected">
+      <wsdl:input message="tns:SetNotYetProcessedPaymentsToRejectedSoapIn" />
+      <wsdl:output message="tns:SetNotYetProcessedPaymentsToRejectedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PostIvrPayment">
+      <wsdl:input message="tns:PostIvrPaymentSoapIn" />
+      <wsdl:output message="tns:PostIvrPaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HistoryPNR">
+      <wsdl:input message="tns:HistoryPNRSoapIn" />
+      <wsdl:output message="tns:HistoryPNRSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EvaluateModificationOfPNR_RemoveFlightFromReservation">
+      <wsdl:input message="tns:EvaluateModificationOfPNR_RemoveFlightFromReservationSoapIn" />
+      <wsdl:output message="tns:EvaluateModificationOfPNR_RemoveFlightFromReservationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EvaluateModificationOfPNR_RemovePassengerFromReservation">
+      <wsdl:input message="tns:EvaluateModificationOfPNR_RemovePassengerFromReservationSoapIn" />
+      <wsdl:output message="tns:EvaluateModificationOfPNR_RemovePassengerFromReservationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EvaluateModificationOfPNR_CancelReservation">
+      <wsdl:input message="tns:EvaluateModificationOfPNR_CancelReservationSoapIn" />
+      <wsdl:output message="tns:EvaluateModificationOfPNR_CancelReservationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Format3DSecureInformation">
+      <wsdl:input message="tns:Format3DSecureInformationSoapIn" />
+      <wsdl:output message="tns:Format3DSecureInformationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateExternalProcessedPayment">
+      <wsdl:input message="tns:UpdateExternalProcessedPaymentSoapIn" />
+      <wsdl:output message="tns:UpdateExternalProcessedPaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendReceiptViaEmail">
+      <wsdl:input message="tns:SendReceiptViaEmailSoapIn" />
+      <wsdl:output message="tns:SendReceiptViaEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendReceiptToSpecifiedEmailAddress">
+      <wsdl:input message="tns:SendReceiptToSpecifiedEmailAddressSoapIn" />
+      <wsdl:output message="tns:SendReceiptToSpecifiedEmailAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendBookingConfirmationEmail">
+      <wsdl:input message="tns:SendBookingConfirmationEmailSoapIn" />
+      <wsdl:output message="tns:SendBookingConfirmationEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendBookingConfirmationSms">
+      <wsdl:input message="tns:SendBookingConfirmationSmsSoapIn" />
+      <wsdl:output message="tns:SendBookingConfirmationSmsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OverrideReservationCharges">
+      <wsdl:input message="tns:OverrideReservationChargesSoapIn" />
+      <wsdl:output message="tns:OverrideReservationChargesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RadixxBookingSoap" type="tns:RadixxBookingSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetReservationWithETicketInfo">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/GetReservationWithETicketInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReservationWithETicketInfoViewOnly">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/GetReservationWithETicketInfoViewOnly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReservationBookingAgent">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/GetReservationBookingAgent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReservation">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/GetReservation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetreiveReservation">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/RetreiveReservation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReservationViewOnly">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/GetReservationViewOnly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnpaidReservations">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/GetUnpaidReservations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResFromSession">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/GetResFromSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResRemovePassenger">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/ResRemovePassenger" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemovePassengerFromReservation">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/RemovePassengerFromReservation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResRemoveFlight">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/ResRemoveFlight" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveFlightFromReservation">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/RemoveFlightFromReservation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResCancel">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/ResCancel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelReservation">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/CancelReservation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePassengersNoFee">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/UpdatePassengersNoFee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePassengerSegmentRecordLocator">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/UpdatePassengerSegmentRecordLocator" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContactInfo">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/UpdateContactInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddContactInfo">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/AddContactInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTicketingTimeLimit">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/UpdateTicketingTimeLimit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResAddPassenger">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/ResAddPassenger" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResAddEmergencyContact">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/ResAddEmergencyContact" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResAddFrequentFlyerInfo">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/ResAddFrequentFlyerInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResReplaceFlight">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/ResReplaceFlight" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReplaceFlightOnReservation">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/ReplaceFlightOnReservation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResAddFlight">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/ResAddFlight" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFlightToReservation">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/AddFlightToReservation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResAddPayment">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/ResAddPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssessAgencyTransactionFees">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/AssessAgencyTransactionFees" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssessPaymentFees">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/AssessPaymentFees" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveInSessionPaymentFees">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/RemoveInSessionPaymentFees" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveInSessionAgencyTransactionFees">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/RemoveInSessionAgencyTransactionFees" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResAddExtProcessedPayment">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/ResAddExtProcessedPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResCreateVoucher">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/ResCreateVoucher" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResAddVoucher">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/ResAddVoucher" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddVoucherToReservation">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/AddVoucherToReservation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCommentToReservation">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/AddCommentToReservation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResRemoveVoucher">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/ResRemoveVoucher" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVoucherInfo">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/GetVoucherInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResRevert">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/ResRevert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResSave">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/ResSave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveReservation">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/SaveReservation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookReservation">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/BookReservation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicableTransactionFeesXML">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/GetApplicableTransactionFeesXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicableTransactionFeesExtendedXML">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/GetApplicableTransactionFeesExtendedXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPromotionalCodeInfoXML">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/GetPromotionalCodeInfoXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResAddSSR">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/ResAddSSR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResRemoveSSR">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/ResRemoveSSR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReservationByNameConf">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/GetReservationByNameConf" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVoucher">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/GetVoucher" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileVouchers">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/GetProfileVouchers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRawReceiptXML">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/GetRawReceiptXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHtmlReceipt">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/GetHtmlReceipt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetreiveHtmlReceipt">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/RetreiveHtmlReceipt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsFareClassDiscountable">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/IsFareClassDiscountable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFareClassInfoXml">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/GetFareClassInfoXml" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookReservationWithSSR">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/BookReservationWithSSR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSummary">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/GetSummary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetreiveReservationSummary">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/RetreiveReservationSummary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommitSummary">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/CommitSummary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommitReservationSummary">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/CommitReservationSummary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchBookings">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/SearchBookings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApisInfo">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/GetApisInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetApisInfo">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/SetApisInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetNotYetProcessedPaymentsToRejected">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/SetNotYetProcessedPaymentsToRejected" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostIvrPayment">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/PostIvrPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HistoryPNR">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/HistoryPNR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EvaluateModificationOfPNR_RemoveFlightFromReservation">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/EvaluateModificationOfPNR_RemoveFlightFromReservation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EvaluateModificationOfPNR_RemovePassengerFromReservation">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/EvaluateModificationOfPNR_RemovePassengerFromReservation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EvaluateModificationOfPNR_CancelReservation">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/EvaluateModificationOfPNR_CancelReservation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Format3DSecureInformation">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/Format3DSecureInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateExternalProcessedPayment">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/UpdateExternalProcessedPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendReceiptViaEmail">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/SendReceiptViaEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendReceiptToSpecifiedEmailAddress">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/SendReceiptToSpecifiedEmailAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendBookingConfirmationEmail">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/SendBookingConfirmationEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendBookingConfirmationSms">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/SendBookingConfirmationSms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OverrideReservationCharges">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/OverrideReservationCharges" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RadixxBookingSoap12" type="tns:RadixxBookingSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetReservationWithETicketInfo">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/GetReservationWithETicketInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReservationWithETicketInfoViewOnly">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/GetReservationWithETicketInfoViewOnly" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReservationBookingAgent">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/GetReservationBookingAgent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReservation">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/GetReservation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetreiveReservation">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/RetreiveReservation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReservationViewOnly">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/GetReservationViewOnly" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnpaidReservations">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/GetUnpaidReservations" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResFromSession">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/GetResFromSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResRemovePassenger">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/ResRemovePassenger" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemovePassengerFromReservation">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/RemovePassengerFromReservation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResRemoveFlight">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/ResRemoveFlight" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveFlightFromReservation">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/RemoveFlightFromReservation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResCancel">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/ResCancel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelReservation">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/CancelReservation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePassengersNoFee">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/UpdatePassengersNoFee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePassengerSegmentRecordLocator">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/UpdatePassengerSegmentRecordLocator" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContactInfo">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/UpdateContactInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddContactInfo">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/AddContactInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTicketingTimeLimit">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/UpdateTicketingTimeLimit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResAddPassenger">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/ResAddPassenger" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResAddEmergencyContact">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/ResAddEmergencyContact" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResAddFrequentFlyerInfo">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/ResAddFrequentFlyerInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResReplaceFlight">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/ResReplaceFlight" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReplaceFlightOnReservation">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/ReplaceFlightOnReservation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResAddFlight">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/ResAddFlight" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFlightToReservation">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/AddFlightToReservation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResAddPayment">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/ResAddPayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssessAgencyTransactionFees">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/AssessAgencyTransactionFees" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssessPaymentFees">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/AssessPaymentFees" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveInSessionPaymentFees">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/RemoveInSessionPaymentFees" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveInSessionAgencyTransactionFees">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/RemoveInSessionAgencyTransactionFees" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResAddExtProcessedPayment">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/ResAddExtProcessedPayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResCreateVoucher">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/ResCreateVoucher" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResAddVoucher">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/ResAddVoucher" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddVoucherToReservation">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/AddVoucherToReservation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCommentToReservation">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/AddCommentToReservation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResRemoveVoucher">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/ResRemoveVoucher" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVoucherInfo">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/GetVoucherInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResRevert">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/ResRevert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResSave">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/ResSave" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveReservation">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/SaveReservation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookReservation">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/BookReservation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicableTransactionFeesXML">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/GetApplicableTransactionFeesXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicableTransactionFeesExtendedXML">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/GetApplicableTransactionFeesExtendedXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPromotionalCodeInfoXML">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/GetPromotionalCodeInfoXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResAddSSR">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/ResAddSSR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResRemoveSSR">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/ResRemoveSSR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReservationByNameConf">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/GetReservationByNameConf" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVoucher">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/GetVoucher" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileVouchers">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/GetProfileVouchers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRawReceiptXML">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/GetRawReceiptXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHtmlReceipt">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/GetHtmlReceipt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetreiveHtmlReceipt">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/RetreiveHtmlReceipt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsFareClassDiscountable">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/IsFareClassDiscountable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFareClassInfoXml">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/GetFareClassInfoXml" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookReservationWithSSR">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/BookReservationWithSSR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSummary">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/GetSummary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetreiveReservationSummary">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/RetreiveReservationSummary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommitSummary">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/CommitSummary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommitReservationSummary">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/CommitReservationSummary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchBookings">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/SearchBookings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApisInfo">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/GetApisInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetApisInfo">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/SetApisInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetNotYetProcessedPaymentsToRejected">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/SetNotYetProcessedPaymentsToRejected" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostIvrPayment">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/PostIvrPayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HistoryPNR">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/HistoryPNR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EvaluateModificationOfPNR_RemoveFlightFromReservation">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/EvaluateModificationOfPNR_RemoveFlightFromReservation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EvaluateModificationOfPNR_RemovePassengerFromReservation">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/EvaluateModificationOfPNR_RemovePassengerFromReservation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EvaluateModificationOfPNR_CancelReservation">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/EvaluateModificationOfPNR_CancelReservation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Format3DSecureInformation">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/Format3DSecureInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateExternalProcessedPayment">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/UpdateExternalProcessedPayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendReceiptViaEmail">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/SendReceiptViaEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendReceiptToSpecifiedEmailAddress">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/SendReceiptToSpecifiedEmailAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendBookingConfirmationEmail">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/SendBookingConfirmationEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendBookingConfirmationSms">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/SendBookingConfirmationSms" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OverrideReservationCharges">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxBooking/OverrideReservationCharges" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RadixxBooking">
+    <wsdl:port name="RadixxBookingSoap" binding="tns:RadixxBookingSoap">
+      <soap:address location="http://qa.internaltpapi.flydubai.com/RadixxBooking.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RadixxBookingSoap12" binding="tns:RadixxBookingSoap12">
+      <soap12:address location="http://qa.internaltpapi.flydubai.com/RadixxBooking.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

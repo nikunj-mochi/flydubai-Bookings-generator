@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Flight.Response" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Flight.Response" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://fzstgtmp.internal.connectpoint.radixx.com/ConnectPoint.Flight.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Exceptions" />
+  <xs:complexType name="ViewSeatAvailability">
+    <xs:annotation>
+      <xs:appinfo />
+      <xs:documentation>	&lt;summary&gt;
+	&lt;/summary&gt;</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="PhysicalFlights" nillable="true" type="tns:ArrayOfPhysicalFlight">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The collection of physical flights that match the requested values.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range 0 and 2147483647.  </xs:documentation>
+          <xs:documentation>Format: Number.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Exceptions" name="Exceptions" nillable="true" type="q1:ExceptionInformation.Exceptions">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The collection of returned exceptions or results.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ViewSeatAvailability" nillable="true" type="tns:ViewSeatAvailability" />
+  <xs:complexType name="ArrayOfPhysicalFlight">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PhysicalFlight" nillable="true" type="tns:PhysicalFlight" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPhysicalFlight" nillable="true" type="tns:ArrayOfPhysicalFlight" />
+  <xs:complexType name="PhysicalFlight">
+    <xs:annotation>
+      <xs:appinfo />
+      <xs:documentation>	&lt;summary&gt;
+	&lt;/summary&gt;</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="PhysicalFlightID" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The unique identifier representing this physical flight.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Format: Number.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DepartureDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The date which this flight departs of the point of origin in the time zone of the origin airport.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Origin" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The name for the point of departure.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Destination" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The code identifying the final landing place.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OriginName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The name for the point of departure.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DestinationName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The Name identifying the final landing place.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TailNum" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The tailnumber of the aircraft.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FlightNum" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The Flight number of the flight.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IsCircularFlight" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Indication if this is a circular flight.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LegOrder" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The order of the physical Flight Legs.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Format: Number.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DisplayLegOnSeatmap" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: If the flight is of circular nature then the UI can use this flag to know whether it needs to display the given leg on a seating object.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SeatCodes" nillable="true" type="tns:ArrayOfSeatCode">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The collection of seat codes.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Cabins" nillable="true" type="tns:ArrayOfCabin">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The collection of cabins.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PhysicalFlight" nillable="true" type="tns:PhysicalFlight" />
+  <xs:complexType name="ArrayOfSeatCode">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SeatCode" nillable="true" type="tns:SeatCode" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSeatCode" nillable="true" type="tns:ArrayOfSeatCode" />
+  <xs:complexType name="SeatCode">
+    <xs:annotation>
+      <xs:appinfo />
+      <xs:documentation>	&lt;summary&gt;
+	&lt;/summary&gt;</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ServiceCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Seat code for this physical flight.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Description" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Description of the seat code for this physical flight.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="QuantityAvailable" type="xs:long">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The number of available seats for this seat code on this physical flight.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SeatCode" nillable="true" type="tns:SeatCode" />
+  <xs:complexType name="ArrayOfCabin">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Cabin" nillable="true" type="tns:Cabin" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCabin" nillable="true" type="tns:ArrayOfCabin" />
+  <xs:complexType name="Cabin">
+    <xs:annotation>
+      <xs:appinfo />
+      <xs:documentation>	&lt;summary&gt;
+	&lt;/summary&gt;</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="CabinName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The name of the cabin for this physical flight, ex: ECONOMY.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SeatMaps" nillable="true" type="tns:ArrayOfSeatMap">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The seat map collection for this cabin on this physical flight.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SeatAssignments" nillable="true" type="tns:ArrayOfSeatAssignment">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The seat assignements for this cabin on this physical flight.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SeatExceptions" nillable="true" type="tns:ArrayOfSeatException">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The seat exceptions for this cabin on this physical flight.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SeatCharges" nillable="true" type="tns:ArrayOfSeatCharge">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The seat charges for this cabin on this physical flight.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Cabin" nillable="true" type="tns:Cabin" />
+  <xs:complexType name="ArrayOfSeatMap">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SeatMap" nillable="true" type="tns:SeatMap" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSeatMap" nillable="true" type="tns:ArrayOfSeatMap" />
+  <xs:complexType name="SeatMap">
+    <xs:annotation>
+      <xs:appinfo />
+      <xs:documentation>	&lt;summary&gt;
+	&lt;/summary&gt;</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="RowNumber" type="xs:long">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The row assigned to this passenger on this physical flight.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Seats" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The seats assigned to this row.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="WingSeats" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The wing seats assigned to this row.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ExitSeats" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The exit seats assigned to this row.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="BlockedSeats" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The blocked seats assigned to this row.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PreBlockedSeats" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The pre blocked seats assigned to this row.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SeatMap" nillable="true" type="tns:SeatMap" />
+  <xs:complexType name="ArrayOfSeatAssignment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SeatAssignment" nillable="true" type="tns:SeatAssignment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSeatAssignment" nillable="true" type="tns:ArrayOfSeatAssignment" />
+  <xs:complexType name="SeatAssignment">
+    <xs:annotation>
+      <xs:appinfo />
+      <xs:documentation>	&lt;summary&gt;
+	&lt;/summary&gt;</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="RowNumber" type="xs:long">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The row assigned to a passenger on this physical flight.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Seat" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The seat assigned to a passenger on this physical flight.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PassengerTypeCode" type="xs:long">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The passenger type code assigned to this seat on this physical flight.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SeatAssignment" nillable="true" type="tns:SeatAssignment" />
+  <xs:complexType name="ArrayOfSeatException">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SeatException" nillable="true" type="tns:SeatException" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSeatException" nillable="true" type="tns:ArrayOfSeatException" />
+  <xs:complexType name="SeatException">
+    <xs:annotation>
+      <xs:appinfo />
+      <xs:documentation>	&lt;summary&gt;
+	&lt;/summary&gt;</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="RowNumber" type="xs:long">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The row number of the seat exception on this physical flight.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Seat" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The seat of the seat exception on this physical flight.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Status" type="xs:long">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The status of the seat exception on this physical flight.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SeatException" nillable="true" type="tns:SeatException" />
+  <xs:complexType name="ArrayOfSeatCharge">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SeatCharge" nillable="true" type="tns:SeatCharge" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSeatCharge" nillable="true" type="tns:ArrayOfSeatCharge" />
+  <xs:complexType name="SeatCharge">
+    <xs:annotation>
+      <xs:appinfo />
+      <xs:documentation>	&lt;summary&gt;
+	&lt;/summary&gt;</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="RowNumber" type="xs:long">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The row number of the seat charge on this physical flight.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Seat" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The seat of the seat charge on this physical flight.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ServiceCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The service code for the seat charge on this physical flight.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Amount" type="xs:decimal">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The amount of the seat charge on this physical flight.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Currency" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The currency type for the seat charge on this physical flight.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SeatCharge" nillable="true" type="tns:SeatCharge" />
+  <xs:complexType name="ViewAirportRoutes">
+    <xs:sequence>
+      <xs:element name="Routes" nillable="true" type="tns:ArrayOfRoute">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The collection of available routes.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+          <xs:documentation>Range: Value must be in the range 0 and 2147483647.  </xs:documentation>
+          <xs:documentation>Format: Number.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Exceptions" name="Exceptions" nillable="true" type="q2:ExceptionInformation.Exceptions" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ViewAirportRoutes" nillable="true" type="tns:ViewAirportRoutes" />
+  <xs:complexType name="ArrayOfRoute">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Route" nillable="true" type="tns:Route" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRoute" nillable="true" type="tns:ArrayOfRoute" />
+  <xs:complexType name="Route">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="OriginAirportCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The originating Airport Code.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="OriginAirportDescription" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Client definition of the originating airport.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="OriginAirportMetroGroup" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The metro group of the originating airport.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="OriginAirportCurrency" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The currency of the originating airport.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="DestinationAirportCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The destination Airport Code.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="DestinationAirportDescription" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Client definition of the destination airport.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="DestinationAirportMetroGroup" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The metro group of the destination airport.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="DestinationAirportCurrency" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The currency of the destination airport.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ApproximateRouteDuration" type="xs:decimal">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The approximate duration of the route in a Non stop scenario.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="AdvPaxInfoCollectionReq" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: An indication of whether Advance Passenger Information Collection is required or not.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="OriginAirportOffsetFromGMT" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The Origin Airports Offset from UTC/GMT.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="OriginAirportISOCountryCode3" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The Origin Airports - 3 letter Country Code.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="DestinationAirportISOCountryCode3" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The Destination Airports - 3 letter Country Code.  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Route" nillable="true" type="tns:Route" />
+  <xs:complexType name="ViewUpdateLidAircraftCollection">
+    <xs:sequence>
+      <xs:element name="UpdateLidAircraftList" nillable="true" type="tns:ArrayOfViewUpdateLidAircraft" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Radixx.ConnectPoint.Exceptions" name="Exceptions" nillable="true" type="q3:ExceptionInformation.Exceptions">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: The collection of returned exceptions or results.  </xs:documentation>
+          <xs:documentation>Constraints: Required.  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ViewUpdateLidAircraftCollection" nillable="true" type="tns:ViewUpdateLidAircraftCollection" />
+  <xs:complexType name="ArrayOfViewUpdateLidAircraft">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ViewUpdateLidAircraft" nillable="true" type="tns:ViewUpdateLidAircraft" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfViewUpdateLidAircraft" nillable="true" type="tns:ArrayOfViewUpdateLidAircraft" />
+  <xs:complexType name="ViewUpdateLidAircraft">
+    <xs:sequence>
+      <xs:element name="Status" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo />
+          <xs:documentation>Description: Status..  </xs:documentation>
+          <xs:documentation>Constraints: Optional (Not Required).  </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ViewUpdateLidAircraft" nillable="true" type="tns:ViewUpdateLidAircraft" />
+</xs:schema>
