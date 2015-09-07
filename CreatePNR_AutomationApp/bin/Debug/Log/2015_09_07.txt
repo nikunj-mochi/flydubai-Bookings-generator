@@ -1,0 +1,4 @@
+<DATA>9/7/2015 12:02:53 PM : ====== Create PNR Started at : 9/7/2015 12:02:53 PM</DATA>
+<DATA>9/7/2015 12:09:45 PM : ====== Create PNR Started at : 9/7/2015 12:09:45 PM</DATA>
+<DATA>9/7/2015 12:10:02 PM : PNR: 5CZ2J6, Lastname: ELFUS created successfully.</DATA>
+<DATA>9/7/2015 12:10:24 PM : ====== Create PNR Process ended at : 9/7/2015 12:10:24 PM</DATA>

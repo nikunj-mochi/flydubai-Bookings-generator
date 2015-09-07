@@ -17,6 +17,7 @@ using System.Xml;
 using System.Net;
 using System.IO;
 using System.Deployment.Application;
+using System.Reflection;
 
 namespace CreatePNR_AutomationApp
 {
@@ -80,8 +81,14 @@ namespace CreatePNR_AutomationApp
             FailedCount = 0;
             ProcessedCount = 0;
             SuccessCount = 0;
-            //Version version = ApplicationDeployment.CurrentDeployment.CurrentVersion;
-            //lblApplicationVersion.Text = version.Major + "." + version.Minor + "." + version.Build + "." + version.Revision; //change form title
+            try
+            {
+                Version version = (ApplicationDeployment.IsNetworkDeployed) ? ApplicationDeployment.CurrentDeployment.CurrentVersion : Assembly.GetExecutingAssembly().GetName().Version;
+                lblApplicationVersion.Text = "Version: " + version.Major + "." + version.Minor + "." + version.Build + "." + version.Revision; //change form title
+            }
+            catch  {
+                lblApplicationVersion.Visible = false;
+            }
         }
 
 
@@ -294,7 +301,7 @@ namespace CreatePNR_AutomationApp
                                                     Destination = objFlightRequest.Destination,
                                                     PNR = PNR.ConfirmationNumber,
                                                     LastName = lastName,
-                                                    FlightNo = objFlightRequest.OutboundFlightNo + (string.IsNullOrEmpty(objFlightRequest.InboundFlightNo) ? " - " + objFlightRequest.InboundFlightNo : string.Empty)
+                                                    FlightNo = objFlightRequest.OutboundFlightNo + (!string.IsNullOrEmpty(objFlightRequest.InboundFlightNo) ? " - " + objFlightRequest.InboundFlightNo : string.Empty)
                                                 });
                                                 SuccessCount++;
                                                 Logger.LogToFile("PNR: " + PNR.ConfirmationNumber + ", Lastname: " + lastName + " created successfully.");
@@ -373,7 +380,7 @@ namespace CreatePNR_AutomationApp
         /// <returns></returns>
         public string GetToken()
         {
-            SecurityService.CarrierCode [] carrierLst = new SecurityService.CarrierCode[1];
+            SecurityService.CarrierCode[] carrierLst = new SecurityService.CarrierCode[1];
             carrierLst[0] = (new SecurityService.CarrierCode() { AccessibleCarrierCode = "FZ" });
             try
             {
@@ -451,7 +458,7 @@ namespace CreatePNR_AutomationApp
                     });
 
 
-                    if (ViewFareQuoteResult != null && !string.IsNullOrEmpty(OBflightNo) && !string.IsNullOrEmpty(IBflightNo))
+                    if (ViewFareQuoteResult != null && (!string.IsNullOrEmpty(OBflightNo) && !chkRT.Checked) || (!string.IsNullOrEmpty(OBflightNo) && !string.IsNullOrEmpty(IBflightNo)))
                     {
 
                         if (ViewFareQuoteResult.SegmentDetails != null && ViewFareQuoteResult.SegmentDetails.Count() > 0)
@@ -462,12 +469,12 @@ namespace CreatePNR_AutomationApp
                             //select fare id for ADT
 
                             FareType[] fareTypes = (from p in ViewFareQuoteResult.FlightSegments
-                                                        where p.LFID == OBdetail.LFID
-                                                        select p.FareTypes
+                                                    where p.LFID == OBdetail.LFID
+                                                    select p.FareTypes
                                                  ).FirstOrDefault();
                             FareInfo[] lstFareInfo = (from p in fareTypes
-                                                          where p.FareTypeName == OBFareType
-                                                          select p.FareInfos
+                                                      where p.FareTypeName == OBFareType
+                                                      select p.FareInfos
                                                        ).FirstOrDefault();
                             objPaxWiseFareId.LFID = OBdetail.LFID;
                             objPaxWiseFareId.origin = originAirportCode;
@@ -498,12 +505,12 @@ namespace CreatePNR_AutomationApp
                                 //select fare id for ADT
 
                                 FareType[] fareTypesRT = (from p in ViewFareQuoteResult.FlightSegments
-                                                              where p.LFID == RTdetail.LFID
-                                                              select p.FareTypes
+                                                          where p.LFID == RTdetail.LFID
+                                                          select p.FareTypes
                                                      ).FirstOrDefault();
                                 FareInfo[] lstFareInfoRT = (from p in fareTypesRT
-                                                                where p.FareTypeName == IBFareType
-                                                                select p.FareInfos
+                                                            where p.FareTypeName == IBFareType
+                                                            select p.FareInfos
                                                            ).FirstOrDefault();
                                 objPaxWiseFareId.LFID = RTdetail.LFID;
                                 objPaxWiseFareId.origin = destAirportCode;
@@ -538,12 +545,12 @@ namespace CreatePNR_AutomationApp
                                             where p.Origin == originAirportCode && p.Destination == destAirportCode
                                             select new { p.LFID, p.DepartureDate }).FirstOrDefault();
                             FareType[] fareTypes = (from p in ViewFareQuoteResult.FlightSegments
-                                                        where p.LFID == OBDetail.LFID
-                                                        select p.FareTypes
+                                                    where p.LFID == OBDetail.LFID
+                                                    select p.FareTypes
                                                  ).FirstOrDefault();
                             FareInfo[] lstFareInfo = (from p in fareTypes
-                                                          where p.FareTypeName == OBFareType
-                                                          select p.FareInfos
+                                                      where p.FareTypeName == OBFareType
+                                                      select p.FareInfos
                                                        ).FirstOrDefault();
                             objPaxWiseFareId.LFID = OBDetail.LFID;
                             objPaxWiseFareId.origin = originAirportCode;
@@ -572,12 +579,12 @@ namespace CreatePNR_AutomationApp
                                                 where p.Origin == destAirportCode && p.Destination == originAirportCode
                                                 select new { p.LFID, p.DepartureDate }).FirstOrDefault();
                                 FareType[] fareTypesRT = (from p in ViewFareQuoteResult.FlightSegments
-                                                              where p.LFID == RTDetail.LFID
-                                                              select p.FareTypes
+                                                          where p.LFID == RTDetail.LFID
+                                                          select p.FareTypes
                                                      ).FirstOrDefault();
                                 FareInfo[] lstFareInfoRT = (from p in fareTypesRT
-                                                                where p.FareTypeName == IBFareType
-                                                                select p.FareInfos
+                                                            where p.FareTypeName == IBFareType
+                                                            select p.FareInfos
                                                            ).FirstOrDefault();
 
                                 objPaxWiseFareId.LFID = RTDetail.LFID;
@@ -1044,7 +1051,7 @@ namespace CreatePNR_AutomationApp
                         seatassigned = new List<Seat>();
                         foreach (var service in colSpecialService)
                         {
-                            
+
                             if (service.Special_Service.CodeType != string.Empty)
                             {
                                 var serviceList = segment.SpecialServices == null ? new List<SpecialService>() : segment.SpecialServices.ToList();
@@ -1449,8 +1456,15 @@ namespace CreatePNR_AutomationApp
 
         private void chkRT_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkRT.Checked) { dtArrivalDate.Enabled = true; } else dtArrivalDate.Enabled = false;
-        }
+            if (chkRT.Checked) { 
+                dtArrivalDate.Enabled = true;
+                txtIBFlightNo.Enabled = true;
+            }
+            else
+            {
+                dtArrivalDate.Enabled = false;
+                txtIBFlightNo.Enabled = false;
+            }}
 
 
         private void FinalWork(Task[] tasks)
@@ -1476,7 +1490,14 @@ namespace CreatePNR_AutomationApp
 
         private void lnkOpenLog_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(Environment.CurrentDirectory + @"\Log\");
+            try
+            {
+                Logger.LogToFile(Environment.CurrentDirectory.ToString());
+                Process.Start(Environment.CurrentDirectory + @"\Log\");
+            }
+            catch {
+                Logger.LogToFile("There is some issue in opening log file, either open it by locating createPNR_AutomationApp.exe process from task manager or re-install the Application again.");
+            }
 
         }
         #endregion

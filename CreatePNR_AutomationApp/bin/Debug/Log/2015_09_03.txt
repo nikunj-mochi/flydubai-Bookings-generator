@@ -1,0 +1,171 @@
+<DATA>9/3/2015 10:12:04 AM : ====== Create PNR Started at : 9/3/2015 10:12:04 AM</DATA>
+<DATA>9/3/2015 10:12:51 AM : PNR: 6DY4WF, Lastname: JSNYL created successfully.</DATA>
+<DATA>9/3/2015 11:13:24 AM : ====== Create PNR Started at : 9/3/2015 11:13:24 AM</DATA>
+<DATA>9/3/2015 11:19:38 AM : Origin: DOH, Destination: DXB not processed.</DATA>
+<DATA>9/3/2015 11:19:38 AM : Error message: 
+Additional Source Information: ERR3021: Unknown error code ERR3021 in Rbo_SaveReservation. Error Details: 
+Date - 9/3/2015 Time - 7:19:23 AM
+Message details from  Reservation_Data_Facade
+Procedure executing: CreateReservation
+The message details follow: 
+Oracle.DataAccess.Client.OracleException ORA-20001: { ERROR : CREATE_PNR_RRFO_XML_REFORA-20001: Error: CREATE_RES_CHARGE_NET ORA-02291: integrity constraint (RAFZSTG1.FK_RESCHG2SERV) violated - parent key not found }\n { DBMS_UTILITY.FORMAT_ERROR_STACK ==+ > ORA-20001: Error: CREATE_RES_CHARGE_NET ORA-02291: integrity constraint (RAFZSTG1.FK_RESCHG2SERV) violated - parent key not found
+ORA-06512: at "RAFZSTG1.PKG_RRFO_HYBRID", line 9066
+ORA-06512: at "RAFZSTG1.PKG_RRFO_HYBRID", line 1770
+ } \n { DBMS_UTILITY.FORMAT_CALL_STACK ===> ----- PL/SQL Call Stack -----
+  object      line  object
+  handle    number  name
+0x66f7ed1e8      2227  package body RAFZSTG1.PKG_RRFO_HYBRID
+0x66f51abd8         1  anonymous block
+ }\n
+ORA-06512: at "RAFZSTG1.PKG_RRFO_HYBRID", line 2227
+ORA-06512: at line 1    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at Radixx.Data.DataLayer.DataLayer.ProcessCommand(BaseDataMessage Request, OracleCommand OracleCommand, Command DataMessageCommand)
+System.Exception: Could not Process Oracle command. 
+
+   at Radixx.Data.DataLayer.DataLayer.CreateCommands(BaseDataMessage Request, OracleConnection& OracleConnection)
+
+
+</DATA>
+<DATA>9/3/2015 11:19:41 AM : ====== Create PNR Process ended at : 9/3/2015 11:19:41 AM</DATA>
+<DATA>9/3/2015 11:21:43 AM : ====== Create PNR Started at : 9/3/2015 11:21:43 AM</DATA>
+<DATA>9/3/2015 11:22:20 AM : Origin: DOH, Destination: DXB not processed.</DATA>
+<DATA>9/3/2015 11:22:20 AM : Error message: 
+Additional Source Information: ERR3021: Unknown error code ERR3021 in Rbo_SaveReservation. Error Details: 
+Date - 9/3/2015 Time - 7:22:12 AM
+Message details from  Reservation_Data_Facade
+Procedure executing: CreateReservation
+The message details follow: 
+Oracle.DataAccess.Client.OracleException ORA-20001: { ERROR : CREATE_PNR_RRFO_XML_REFORA-20001: Error: CREATE_RES_CHARGE_NET ORA-02291: integrity constraint (RAFZSTG1.FK_RESCHG2SERV) violated - parent key not found }\n { DBMS_UTILITY.FORMAT_ERROR_STACK ==+ > ORA-20001: Error: CREATE_RES_CHARGE_NET ORA-02291: integrity constraint (RAFZSTG1.FK_RESCHG2SERV) violated - parent key not found
+ORA-06512: at "RAFZSTG1.PKG_RRFO_HYBRID", line 9066
+ORA-06512: at "RAFZSTG1.PKG_RRFO_HYBRID", line 1770
+ } \n { DBMS_UTILITY.FORMAT_CALL_STACK ===> ----- PL/SQL Call Stack -----
+  object      line  object
+  handle    number  name
+0x66f7ed1e8      2227  package body RAFZSTG1.PKG_RRFO_HYBRID
+0x66f51abd8         1  anonymous block
+ }\n
+ORA-06512: at "RAFZSTG1.PKG_RRFO_HYBRID", line 2227
+ORA-06512: at line 1    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at Radixx.Data.DataLayer.DataLayer.ProcessCommand(BaseDataMessage Request, OracleCommand OracleCommand, Command DataMessageCommand)
+System.Exception: Could not Process Oracle command. 
+
+   at Radixx.Data.DataLayer.DataLayer.CreateCommands(BaseDataMessage Request, OracleConnection& OracleConnection)
+
+
+</DATA>
+<DATA>9/3/2015 11:22:30 AM : ====== Create PNR Process ended at : 9/3/2015 11:22:30 AM</DATA>
+<DATA>9/3/2015 11:22:43 AM : ====== Create PNR Started at : 9/3/2015 11:22:43 AM</DATA>
+<DATA>9/3/2015 11:22:56 AM : Origin: DOH, Destination: DXB not processed.</DATA>
+<DATA>9/3/2015 11:22:56 AM : Error message: 
+Additional Source Information: ERR3021: Unknown error code ERR3021 in Rbo_SaveReservation. Error Details: 
+Date - 9/3/2015 Time - 7:22:49 AM
+Message details from  Reservation_Data_Facade
+Procedure executing: CreateReservation
+The message details follow: 
+Oracle.DataAccess.Client.OracleException ORA-20001: { ERROR : CREATE_PNR_RRFO_XML_REFORA-20001: Error: CREATE_RES_CHARGE_NET ORA-02291: integrity constraint (RAFZSTG1.FK_RESCHG2SERV) violated - parent key not found }\n { DBMS_UTILITY.FORMAT_ERROR_STACK ==+ > ORA-20001: Error: CREATE_RES_CHARGE_NET ORA-02291: integrity constraint (RAFZSTG1.FK_RESCHG2SERV) violated - parent key not found
+ORA-06512: at "RAFZSTG1.PKG_RRFO_HYBRID", line 9066
+ORA-06512: at "RAFZSTG1.PKG_RRFO_HYBRID", line 1770
+ } \n { DBMS_UTILITY.FORMAT_CALL_STACK ===> ----- PL/SQL Call Stack -----
+  object      line  object
+  handle    number  name
+0x66f7ed1e8      2227  package body RAFZSTG1.PKG_RRFO_HYBRID
+0x66f51abd8         1  anonymous block
+ }\n
+ORA-06512: at "RAFZSTG1.PKG_RRFO_HYBRID", line 2227
+ORA-06512: at line 1    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at Radixx.Data.DataLayer.DataLayer.ProcessCommand(BaseDataMessage Request, OracleCommand OracleCommand, Command DataMessageCommand)
+System.Exception: Could not Process Oracle command. 
+
+   at Radixx.Data.DataLayer.DataLayer.CreateCommands(BaseDataMessage Request, OracleConnection& OracleConnection)
+
+
+</DATA>
+<DATA>9/3/2015 11:23:10 AM : ====== Create PNR Process ended at : 9/3/2015 11:23:10 AM</DATA>
+<DATA>9/3/2015 11:23:15 AM : ====== Create PNR Started at : 9/3/2015 11:23:15 AM</DATA>
+<DATA>9/3/2015 11:23:33 AM : Origin: DOH, Destination: DXB not processed.</DATA>
+<DATA>9/3/2015 11:23:33 AM : Error message: 
+Additional Source Information: ERR3021: Unknown error code ERR3021 in Rbo_SaveReservation. Error Details: 
+Date - 9/3/2015 Time - 7:23:26 AM
+Message details from  Reservation_Data_Facade
+Procedure executing: CreateReservation
+The message details follow: 
+Oracle.DataAccess.Client.OracleException ORA-20001: { ERROR : CREATE_PNR_RRFO_XML_REFORA-20001: Error: CREATE_RES_CHARGE_NET ORA-02291: integrity constraint (RAFZSTG1.FK_RESCHG2SERV) violated - parent key not found }\n { DBMS_UTILITY.FORMAT_ERROR_STACK ==+ > ORA-20001: Error: CREATE_RES_CHARGE_NET ORA-02291: integrity constraint (RAFZSTG1.FK_RESCHG2SERV) violated - parent key not found
+ORA-06512: at "RAFZSTG1.PKG_RRFO_HYBRID", line 9066
+ORA-06512: at "RAFZSTG1.PKG_RRFO_HYBRID", line 1770
+ } \n { DBMS_UTILITY.FORMAT_CALL_STACK ===> ----- PL/SQL Call Stack -----
+  object      line  object
+  handle    number  name
+0x66f7ed1e8      2227  package body RAFZSTG1.PKG_RRFO_HYBRID
+0x66f51abd8         1  anonymous block
+ }\n
+ORA-06512: at "RAFZSTG1.PKG_RRFO_HYBRID", line 2227
+ORA-06512: at line 1    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at Radixx.Data.DataLayer.DataLayer.ProcessCommand(BaseDataMessage Request, OracleCommand OracleCommand, Command DataMessageCommand)
+System.Exception: Could not Process Oracle command. 
+
+   at Radixx.Data.DataLayer.DataLayer.CreateCommands(BaseDataMessage Request, OracleConnection& OracleConnection)
+
+
+</DATA>
+<DATA>9/3/2015 11:23:35 AM : ====== Create PNR Process ended at : 9/3/2015 11:23:35 AM</DATA>
+<DATA>9/3/2015 11:23:42 AM : ====== Create PNR Started at : 9/3/2015 11:23:42 AM</DATA>
+<DATA>9/3/2015 11:24:03 AM : PNR: WRHCRR, Lastname: TYDSL created successfully.</DATA>
+<DATA>9/3/2015 11:24:05 AM : ====== Create PNR Process ended at : 9/3/2015 11:24:05 AM</DATA>
+<DATA>9/3/2015 11:24:17 AM : ====== Create PNR Started at : 9/3/2015 11:24:17 AM</DATA>
+<DATA>9/3/2015 11:25:03 AM : PNR: 7YNUSS, Lastname: CSERH created successfully.</DATA>
+<DATA>9/3/2015 11:25:06 AM : ====== Create PNR Process ended at : 9/3/2015 11:25:06 AM</DATA>
+<DATA>9/3/2015 11:25:10 AM : ====== Create PNR Started at : 9/3/2015 11:25:10 AM</DATA>
+<DATA>9/3/2015 11:25:36 AM : PNR: EB1AYD, Lastname: TQMTJ created successfully.</DATA>
+<DATA>9/3/2015 11:26:24 AM : ====== Create PNR Process ended at : 9/3/2015 11:26:24 AM</DATA>
+<DATA>9/3/2015 11:27:00 AM : ====== Create PNR Started at : 9/3/2015 11:27:00 AM</DATA>
+<DATA>9/3/2015 11:27:21 AM : Origin: DOH, Destination: DXB not processed.</DATA>
+<DATA>9/3/2015 11:27:21 AM : Error message: 
+Additional Source Information: ERR3021: Unknown error code ERR3021 in Rbo_SaveReservation. Error Details: 
+Date - 9/3/2015 Time - 7:27:13 AM
+Message details from  Reservation_Data_Facade
+Procedure executing: CreateReservation
+The message details follow: 
+Oracle.DataAccess.Client.OracleException ORA-20001: { ERROR : CREATE_PNR_RRFO_XML_REFORA-20001: Error: CREATE_RES_CHARGE_NET ORA-02291: integrity constraint (RAFZSTG1.FK_RESCHG2SERV) violated - parent key not found }\n { DBMS_UTILITY.FORMAT_ERROR_STACK ==+ > ORA-20001: Error: CREATE_RES_CHARGE_NET ORA-02291: integrity constraint (RAFZSTG1.FK_RESCHG2SERV) violated - parent key not found
+ORA-06512: at "RAFZSTG1.PKG_RRFO_HYBRID", line 9066
+ORA-06512: at "RAFZSTG1.PKG_RRFO_HYBRID", line 1770
+ } \n { DBMS_UTILITY.FORMAT_CALL_STACK ===> ----- PL/SQL Call Stack -----
+  object      line  object
+  handle    number  name
+0x66f7ed1e8      2227  package body RAFZSTG1.PKG_RRFO_HYBRID
+0x66f51abd8         1  anonymous block
+ }\n
+ORA-06512: at "RAFZSTG1.PKG_RRFO_HYBRID", line 2227
+ORA-06512: at line 1    at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at Radixx.Data.DataLayer.DataLayer.ProcessCommand(BaseDataMessage Request, OracleCommand OracleCommand, Command DataMessageCommand)
+System.Exception: Could not Process Oracle command. 
+
+   at Radixx.Data.DataLayer.DataLayer.CreateCommands(BaseDataMessage Request, OracleConnection& OracleConnection)
+
+
+</DATA>
+<DATA>9/3/2015 11:27:29 AM : ====== Create PNR Process ended at : 9/3/2015 11:27:29 AM</DATA>
+<DATA>9/3/2015 11:27:37 AM : ====== Create PNR Started at : 9/3/2015 11:27:37 AM</DATA>
+<DATA>9/3/2015 11:28:01 AM : PNR: 1CMYF3, Lastname: UHTFR created successfully.</DATA>
+<DATA>9/3/2015 11:29:21 AM : ====== Create PNR Process ended at : 9/3/2015 11:29:21 AM</DATA>
+<DATA>9/3/2015 11:29:38 AM : ====== Create PNR Started at : 9/3/2015 11:29:38 AM</DATA>
+<DATA>9/3/2015 11:29:57 AM : PNR: 4BC48F, Lastname: ENXAF created successfully.</DATA>
+<DATA>9/3/2015 11:30:23 AM : ====== Create PNR Process ended at : 9/3/2015 11:30:23 AM</DATA>
+<DATA>9/3/2015 2:49:35 PM : ====== Create PNR Started at : 9/3/2015 2:49:35 PM</DATA>
+<DATA>9/3/2015 2:50:00 PM : PNR: CR6R3S, Lastname: RNRTF created successfully.</DATA>
+<DATA>9/3/2015 2:54:36 PM : ====== Create PNR Process ended at : 9/3/2015 2:54:36 PM</DATA>
+<DATA>9/3/2015 2:54:42 PM : ====== Create PNR Started at : 9/3/2015 2:54:42 PM</DATA>
+<DATA>9/3/2015 4:13:39 PM : ====== Create PNR Started at : 9/3/2015 4:13:39 PM</DATA>
+<DATA>9/3/2015 4:14:34 PM : Origin: DXB, Destination: KTM not processed.</DATA>
+<DATA>9/3/2015 4:14:34 PM : Error message: Object reference not set to an instance of an object.</DATA>
+<DATA>9/3/2015 4:14:37 PM : ====== Create PNR Process ended at : 9/3/2015 4:14:37 PM</DATA>
+<DATA>9/3/2015 4:19:23 PM : ====== Create PNR Started at : 9/3/2015 4:19:23 PM</DATA>
+<DATA>9/3/2015 4:19:43 PM : PNR: U10IMW, Lastname: IGNDQ created successfully.</DATA>
+<DATA>9/3/2015 4:19:45 PM : ====== Create PNR Process ended at : 9/3/2015 4:19:45 PM</DATA>
+<DATA>9/3/2015 4:19:48 PM : ====== Create PNR Started at : 9/3/2015 4:19:48 PM</DATA>
+<DATA>9/3/2015 4:20:06 PM : PNR: 9J6TLE, Lastname: JAXOT created successfully.</DATA>
+<DATA>9/3/2015 4:35:38 PM : ====== Create PNR Process ended at : 9/3/2015 4:35:38 PM</DATA>

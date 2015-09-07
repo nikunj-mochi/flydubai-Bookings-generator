@@ -143,7 +143,7 @@
             this.cmbIBMeal.Location = new System.Drawing.Point(485, 174);
             this.cmbIBMeal.Name = "cmbIBMeal";
             this.cmbIBMeal.Size = new System.Drawing.Size(116, 21);
-            this.cmbIBMeal.TabIndex = 66;
+            this.cmbIBMeal.TabIndex = 16;
             // 
             // label15
             // 
@@ -164,7 +164,7 @@
             this.cmbIBBaggage.Location = new System.Drawing.Point(486, 147);
             this.cmbIBBaggage.Name = "cmbIBBaggage";
             this.cmbIBBaggage.Size = new System.Drawing.Size(116, 21);
-            this.cmbIBBaggage.TabIndex = 64;
+            this.cmbIBBaggage.TabIndex = 14;
             // 
             // label14
             // 
@@ -177,11 +177,12 @@
             // 
             // txtIBFlightNo
             // 
+            this.txtIBFlightNo.Enabled = false;
             this.txtIBFlightNo.Location = new System.Drawing.Point(485, 69);
             this.txtIBFlightNo.MaxLength = 11;
             this.txtIBFlightNo.Name = "txtIBFlightNo";
             this.txtIBFlightNo.Size = new System.Drawing.Size(100, 20);
-            this.txtIBFlightNo.TabIndex = 62;
+            this.txtIBFlightNo.TabIndex = 7;
             // 
             // label13
             // 
@@ -198,7 +199,7 @@
             this.cmbOBMeal.Location = new System.Drawing.Point(160, 174);
             this.cmbOBMeal.Name = "cmbOBMeal";
             this.cmbOBMeal.Size = new System.Drawing.Size(116, 21);
-            this.cmbOBMeal.TabIndex = 60;
+            this.cmbOBMeal.TabIndex = 15;
             // 
             // label12
             // 
@@ -215,7 +216,7 @@
             this.cmbOBBaggage.Location = new System.Drawing.Point(160, 147);
             this.cmbOBBaggage.Name = "cmbOBBaggage";
             this.cmbOBBaggage.Size = new System.Drawing.Size(116, 21);
-            this.cmbOBBaggage.TabIndex = 58;
+            this.cmbOBBaggage.TabIndex = 13;
             // 
             // label11
             // 
@@ -232,7 +233,7 @@
             this.chkSeating.Location = new System.Drawing.Point(160, 233);
             this.chkSeating.Name = "chkSeating";
             this.chkSeating.Size = new System.Drawing.Size(68, 17);
-            this.chkSeating.TabIndex = 56;
+            this.chkSeating.TabIndex = 20;
             this.chkSeating.Text = "Seating?";
             this.chkSeating.UseVisualStyleBackColor = true;
             // 
@@ -242,7 +243,7 @@
             this.chkIFE.Location = new System.Drawing.Point(96, 233);
             this.chkIFE.Name = "chkIFE";
             this.chkIFE.Size = new System.Drawing.Size(48, 17);
-            this.chkIFE.TabIndex = 55;
+            this.chkIFE.TabIndex = 19;
             this.chkIFE.Text = "IFE?";
             this.chkIFE.UseVisualStyleBackColor = true;
             // 
@@ -252,7 +253,7 @@
             this.btnClear.Location = new System.Drawing.Point(359, 256);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
-            this.btnClear.TabIndex = 52;
+            this.btnClear.TabIndex = 22;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
@@ -266,7 +267,7 @@
             this.cmbIBCabin.Location = new System.Drawing.Point(486, 120);
             this.cmbIBCabin.Name = "cmbIBCabin";
             this.cmbIBCabin.Size = new System.Drawing.Size(116, 21);
-            this.cmbIBCabin.TabIndex = 51;
+            this.cmbIBCabin.TabIndex = 12;
             this.cmbIBCabin.SelectedValueChanged += new System.EventHandler(this.cmbIBCabin_SelectedValueChanged);
             // 
             // label10
@@ -287,7 +288,7 @@
             this.cmbOBCabin.Location = new System.Drawing.Point(159, 120);
             this.cmbOBCabin.Name = "cmbOBCabin";
             this.cmbOBCabin.Size = new System.Drawing.Size(116, 21);
-            this.cmbOBCabin.TabIndex = 49;
+            this.cmbOBCabin.TabIndex = 11;
             this.cmbOBCabin.SelectedValueChanged += new System.EventHandler(this.cmbOBCabin_SelectedValueChanged);
             // 
             // label9
@@ -305,7 +306,7 @@
             this.txtVoucherNo.MaxLength = 7;
             this.txtVoucherNo.Name = "txtVoucherNo";
             this.txtVoucherNo.Size = new System.Drawing.Size(100, 20);
-            this.txtVoucherNo.TabIndex = 47;
+            this.txtVoucherNo.TabIndex = 18;
             // 
             // label8
             // 
@@ -322,7 +323,7 @@
             this.txtOBFlightNo.MaxLength = 11;
             this.txtOBFlightNo.Name = "txtOBFlightNo";
             this.txtOBFlightNo.Size = new System.Drawing.Size(100, 20);
-            this.txtOBFlightNo.TabIndex = 45;
+            this.txtOBFlightNo.TabIndex = 6;
             // 
             // label6
             // 
@@ -348,7 +349,7 @@
             0});
             this.txtPNRs.Name = "txtPNRs";
             this.txtPNRs.Size = new System.Drawing.Size(57, 20);
-            this.txtPNRs.TabIndex = 43;
+            this.txtPNRs.TabIndex = 17;
             this.txtPNRs.Value = new decimal(new int[] {
             1,
             0,
@@ -365,7 +366,7 @@
             0});
             this.txtInfantCount.Name = "txtInfantCount";
             this.txtInfantCount.Size = new System.Drawing.Size(57, 20);
-            this.txtInfantCount.TabIndex = 42;
+            this.txtInfantCount.TabIndex = 10;
             // 
             // txtChildCount
             // 
@@ -377,7 +378,7 @@
             0});
             this.txtChildCount.Name = "txtChildCount";
             this.txtChildCount.Size = new System.Drawing.Size(57, 20);
-            this.txtChildCount.TabIndex = 41;
+            this.txtChildCount.TabIndex = 9;
             // 
             // txtAdtCount
             // 
@@ -394,7 +395,7 @@
             0});
             this.txtAdtCount.Name = "txtAdtCount";
             this.txtAdtCount.Size = new System.Drawing.Size(57, 20);
-            this.txtAdtCount.TabIndex = 40;
+            this.txtAdtCount.TabIndex = 8;
             this.txtAdtCount.Value = new decimal(new int[] {
             1,
             0,
@@ -416,7 +417,7 @@
             this.dtArrivalDate.Location = new System.Drawing.Point(485, 44);
             this.dtArrivalDate.Name = "dtArrivalDate";
             this.dtArrivalDate.Size = new System.Drawing.Size(200, 20);
-            this.dtArrivalDate.TabIndex = 38;
+            this.dtArrivalDate.TabIndex = 5;
             // 
             // label4
             // 
@@ -433,7 +434,7 @@
             this.dtDepartureDate.MinDate = new System.DateTime(2015, 8, 26, 0, 0, 0, 0);
             this.dtDepartureDate.Name = "dtDepartureDate";
             this.dtDepartureDate.Size = new System.Drawing.Size(200, 20);
-            this.dtDepartureDate.TabIndex = 36;
+            this.dtDepartureDate.TabIndex = 4;
             this.dtDepartureDate.ValueChanged += new System.EventHandler(this.dtDepartureDate_ValueChanged);
             // 
             // lblInfCount
@@ -478,7 +479,7 @@
             this.chkRT.Location = new System.Drawing.Point(486, 23);
             this.chkRT.Name = "chkRT";
             this.chkRT.Size = new System.Drawing.Size(47, 17);
-            this.chkRT.TabIndex = 31;
+            this.chkRT.TabIndex = 3;
             this.chkRT.Text = "RT?";
             this.chkRT.UseVisualStyleBackColor = true;
             this.chkRT.CheckedChanged += new System.EventHandler(this.chkRT_CheckedChanged);
@@ -507,7 +508,7 @@
             this.cmbDestination.MaxLength = 3;
             this.cmbDestination.Name = "cmbDestination";
             this.cmbDestination.Size = new System.Drawing.Size(100, 20);
-            this.cmbDestination.TabIndex = 28;
+            this.cmbDestination.TabIndex = 2;
             this.cmbDestination.Leave += new System.EventHandler(this.txtDestination_TextChanged);
             // 
             // txtOrigin
@@ -516,7 +517,7 @@
             this.txtOrigin.MaxLength = 3;
             this.txtOrigin.Name = "txtOrigin";
             this.txtOrigin.Size = new System.Drawing.Size(100, 20);
-            this.txtOrigin.TabIndex = 27;
+            this.txtOrigin.TabIndex = 1;
             this.txtOrigin.Text = "DXB";
             this.txtOrigin.Leave += new System.EventHandler(this.txtOrigin_Leave);
             // 
@@ -526,7 +527,7 @@
             this.btnCreate.Location = new System.Drawing.Point(264, 256);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(75, 23);
-            this.btnCreate.TabIndex = 26;
+            this.btnCreate.TabIndex = 21;
             this.btnCreate.Text = "Create PNRs";
             this.btnCreate.UseVisualStyleBackColor = true;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
@@ -572,7 +573,7 @@
             this.btnBrowse.Location = new System.Drawing.Point(152, 32);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(110, 23);
-            this.btnBrowse.TabIndex = 3;
+            this.btnBrowse.TabIndex = 23;
             this.btnBrowse.Text = "Browse";
             this.btnBrowse.UseVisualStyleBackColor = true;
             this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
@@ -591,8 +592,8 @@
             this.btnProcessPNRs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProcessPNRs.Location = new System.Drawing.Point(298, 32);
             this.btnProcessPNRs.Name = "btnProcessPNRs";
-            this.btnProcessPNRs.Size = new System.Drawing.Size(110, 23);
-            this.btnProcessPNRs.TabIndex = 5;
+            this.btnProcessPNRs.Size = new System.Drawing.Size(112, 23);
+            this.btnProcessPNRs.TabIndex = 24;
             this.btnProcessPNRs.Text = "Process PNRs";
             this.btnProcessPNRs.UseVisualStyleBackColor = true;
             this.btnProcessPNRs.Click += new System.EventHandler(this.btnProcessPNRs_Click);
@@ -650,14 +651,13 @@
             this.lblApplicationVersion.Size = new System.Drawing.Size(81, 13);
             this.lblApplicationVersion.TabIndex = 54;
             this.lblApplicationVersion.Text = "Version: 1.0.0.6";
-            this.lblApplicationVersion.Visible = false;
             // 
             // frmCreatePNRs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(723, 422);
+            this.ClientSize = new System.Drawing.Size(723, 449);
             this.Controls.Add(this.lblApplicationVersion);
             this.Controls.Add(this.txtStatus);
             this.Controls.Add(this.lnkOpenLog);
