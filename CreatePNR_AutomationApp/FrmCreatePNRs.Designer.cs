@@ -305,7 +305,7 @@
             this.txtVoucherNo.Location = new System.Drawing.Point(486, 202);
             this.txtVoucherNo.MaxLength = 7;
             this.txtVoucherNo.Name = "txtVoucherNo";
-            this.txtVoucherNo.Size = new System.Drawing.Size(100, 20);
+            this.txtVoucherNo.Size = new System.Drawing.Size(115, 20);
             this.txtVoucherNo.TabIndex = 18;
             // 
             // label8
